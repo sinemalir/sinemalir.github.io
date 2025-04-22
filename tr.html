@@ -15,9 +15,9 @@
       font-size: 26px;
       cursor: pointer;
       color: #4a148c;
-      position: fixed;
-      top: 90px;
-      left: 60px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
       background: none;
       border: none;
       z-index: 10000;
@@ -50,12 +50,14 @@
       font-weight: bold;
     }
     header {
-      margin: 50px;
-      padding: 30px;
+      max-width: 860px;
+      margin: 20px auto 0 auto;
+      padding: 10px;
       border-radius: 20px;
       text-align: center;
       background-color: #fdf6ee;
-      border: 6px solid #b39ddb;
+      border: 2px solid #b39ddb;
+      position: relative;
     }
     header h1 {
       margin: 0;
@@ -104,7 +106,10 @@
 </head>
 <body>
 
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <h1>Sinem Alır</h1>
+  </header>
 
   <nav id="sideNav">
     <ul>
@@ -113,10 +118,6 @@
       <li><a href="index.html">Ana Sayfa</a></li>
     </ul>
   </nav>
-
-  <header>
-    <h1>Sinem Alır</h1>
-  </header>
 
   <main>
     <section id="about">
@@ -167,4 +168,3 @@
 
 </body>
 </html>
-
