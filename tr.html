@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sinem Alır | Portföy (TR)</title>
   <style>
     body {
@@ -12,27 +12,31 @@
       background-color: #fefbf6;
     }
 
-    .background-left,
-    .background-right {
+    .left-img, .right-img {
       position: fixed;
       top: 0;
-      bottom: 0;
       width: 250px;
-      background-repeat: no-repeat;
+      height: 100%;
       background-size: cover;
+      background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.7;
       z-index: 0;
+      opacity: 0.2;
     }
 
-    .background-left {
+    .left-img {
       left: 0;
       background-image: url("img/side-left.jpeg");
     }
 
-    .background-right {
+    .right-img {
       right: 0;
-      background-image: url("img/side-right.jpeg");
+      background-image: url("img/side-left.jpeg");
+    }
+
+    header, .menu, .section {
+      position: relative;
+      z-index: 1;
     }
 
     header {
@@ -43,8 +47,6 @@
       padding: 20px;
       text-align: center;
       max-width: 800px;
-      position: relative;
-      z-index: 1;
     }
 
     .menu-icon {
@@ -53,22 +55,18 @@
       top: 20px;
       font-size: 26px;
       cursor: pointer;
-      z-index: 1000;
     }
 
     .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
+      position: fixed;
+      top: 80px;
+      left: -250px;
       width: 200px;
+      height: calc(100% - 80px);
       background-color: #a678d3;
       padding: 20px;
-      border-radius: 10px;
-      display: none;
-    }
-
-    .menu.open {
-      display: block;
+      transition: left 0.3s ease-in-out;
+      z-index: 2;
     }
 
     .menu a {
@@ -79,6 +77,10 @@
       font-weight: bold;
     }
 
+    .menu.open {
+      left: 0;
+    }
+
     .section {
       max-width: 800px;
       margin: 30px auto;
@@ -86,8 +88,6 @@
       padding: 20px;
       border-radius: 15px;
       border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
     }
 
     h2 {
@@ -99,8 +99,6 @@
       font-size: 12px;
       margin: 60px 0 20px;
       color: #888;
-      position: relative;
-      z-index: 1;
     }
 
     ul {
@@ -118,23 +116,29 @@
   </style>
 </head>
 <body>
-  <div class="background-left"></div>
-  <div class="background-right"></div>
+
+  <div class="left-img"></div>
+  <div class="right-img"></div>
+
+  <div class="menu" id="menu">
+    <a href="#hakkimda">📌 Hakkımda</a>
+    <a href="#projeler">📁 Projeler</a>
+    <a href="index.html">⬅️ Ana Sayfa</a>
+  </div>
 
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="menu" id="menu">
-      <a href="#hakkimda">📌 Hakkımda</a>
-      <a href="#projeler">📁 Projeler</a>
-      <a href="index.html">⬅️ Ana Sayfa</a>
-    </div>
     <h1>Sinem Alır</h1>
   </header>
 
   <section id="hakkimda" class="section">
     <h2>📌 Hakkımda</h2>
-    <p>15 yılı aşkın satış ve ekip yönetimi deneyimimi, veri odaklı karar alma süreçlerine taşıyarak veri analisti olarak yeni bir kariyer yolculuğuna başladım. Jeoloji mühendisliği eğitimimle kazandığım analitik bakış açısını, güçlü iletişim becerilerim ve çözüme odaklı yaklaşımımla birleştirerek iş dünyasının veriyle şekillenen ihtiyaçlarına yanıt vermeye odaklandım.</p>
-    <p>SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.</p>
+    <p>
+      15 yılı aşkın satış ve ekip yönetimi deneyimimi, veri odaklı karar alma süreçlerine taşıyarak veri analisti olarak yeni bir kariyer yolculuğuna başladım. Jeoloji mühendisliği eğitimimle kazandığım analitik bakış açısını, güçlü iletişim becerilerim ve çözüme odaklı yaklaşımımla birleştirerek iş dünyasının veriyle şekillenen ihtiyaçlarına yanıt vermeye odaklandım.
+    </p>
+    <p>
+      SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.
+    </p>
     <strong>Güçlü yönlerim arasında:</strong>
     <ul>
       <li>İş zekâsını ve saha deneyimini veri analitiğiyle buluşturmak</li>
@@ -142,7 +146,9 @@
       <li>Satış ve kampanya verileri üzerinden KPI takibi yapmak</li>
       <li>Takım çalışmasına yatkınlık ve öğrenmeye açık bir yaklaşım sergilemek</li>
     </ul>
-    <p>Veriyi sadece sayılardan ibaret görmeyen, her verinin bir hikâyesi olduğuna inanan ve bu hikâyeyi doğru anlatmaya çalışan bir analistim.</p>
+    <p>
+      Veriyi sadece sayılardan ibaret görmeyen, her verinin bir hikâyesi olduğuna inanan ve bu hikâyeyi doğru anlatmaya çalışan bir analistim.
+    </p>
   </section>
 
   <section id="projeler" class="section">
