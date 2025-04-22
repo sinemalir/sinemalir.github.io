@@ -58,15 +58,16 @@
     }
 
     .menu {
-      position: fixed;
-      top: 80px;
-      left: -250px;
-      width: 200px;
-      height: calc(100% - 80px);
+      position: absolute;
+      top: 60px; /* header yüksekliğine göre ayarla */
+      left: 20px;
+      width: 180px;
       background-color: #a678d3;
-      padding: 20px;
-      transition: left 0.3s ease-in-out;
-      z-index: 2;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .menu a {
@@ -77,8 +78,8 @@
       font-weight: bold;
     }
 
-    .menu.open {
-      left: 0;
+    .menu.show {
+      display: block;
     }
 
     .section {
@@ -171,7 +172,7 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      menu.classList.toggle("open");
+      menu.classList.toggle("show");
     }
   </script>
 </body>
