@@ -3,92 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinem Alır | Veri Analizi Portföyü</title>
+  <title>Sinem Alır | Portföy</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
+      background-color: #fdf6ee;
       color: #333;
     }
-    header {
-      background-color: #007acc;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      color: #4a148c;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      z-index: 10000;
     }
-    header h1 {
-      font-size: 24px;
-      margin: 0;
+    nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 220px;
+      height: 100%;
+      background-color: #d9cbe6;
+      padding: 80px 20px 20px 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      transition: left 0.4s ease;
+      z-index: 9999;
+    }
+    nav.open {
+      left: 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      margin-bottom: 15px;
     }
     nav a {
-      color: white;
       text-decoration: none;
-      margin-left: 20px;
+      color: #4a148c;
       font-weight: bold;
     }
+    header {
+      margin: 20px;
+      padding: 10px;
+      border-radius: 20px;
+      text-align: center;
+      background-color: #fdf6ee;
+      border: 4px solid #b39ddb;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #4a148c;
+    }
     main {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .project-link {
-      margin: 20px 0;
+      max-width: 800px;
+      margin: 0 auto;
       padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
-    .project-link h2 {
-      margin-top: 0;
+    h2 {
+      color: #6a1b9a;
+      margin-bottom: 10px;
     }
-    .project-link a {
-      color: #007acc;
+    .about-box {
+      background-color: #f7f1e9;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid #d1bce3;
+      line-height: 1.6;
+    }
+    ul.project-list {
+      list-style: none;
+      padding: 0;
+    }
+    .project-list li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .project-list a {
+      color: #6a1b9a;
       text-decoration: none;
+    }
+    .project-list a:hover {
+      text-decoration: underline;
     }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       font-size: 14px;
       color: #888;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav id="sideNav">
+    <ul>
+      <li><a href="#about">Hakkımda</a></li>
+      <li><a href="#projects">Projeler</a></li>
+      <li><a href="index.html">Ana Sayfa</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Sinem Alır</h1>
-    <nav>
-      <a href="tr.html">🇹🇷 Türkçe</a>
-      <a href="en.html">🇬🇧 English</a>
-    </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <p>Merhaba! Bu sayfada veri analizi projelerimi Türkçe olarak listeledim. Her bağlantı sizi detaylı proje sayfasına yönlendirir.</p>
+    <section id="about">
+      <h2>📌 Hakkımda</h2>
+      <div class="about-box">
+        <p>15 yılı aşkın satış ve ekip yönetimi deneyimimi, veri odaklı karar alma süreçlerine taşıyarak veri analisti olarak yeni bir kariyer yolculuğuna başladım. Jeoloji mühendisliği eğitimimle kazandığım analitik bakış açısını, güçlü iletişim becerilerim ve çözüm odaklı yaklaşımımla birleştirerek iş dünyasının veriyle şekillenen ihtiyaçlarına yanıt vermeye odaklandım.</p>
+
+        <p>SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.</p>
+
+        <p><strong>Güçlü yönlerim arasında:</strong></p>
+        <ul>
+          <li>• İş zekâsını ve saha deneyimini veri analitiğiyle buluşturmak</li>
+          <li>• Büyük veri setlerinde temizlik, analiz ve görselleştirme süreçlerini yönetmek</li>
+          <li>• Satış ve kampanya verileri üzerinden KPI takibi yapmak</li>
+          <li>• Takım çalışmasına yatkınlık ve öğrenmeye açık bir yaklaşım sergilemek</li>
+        </ul>
+
+        <p>Veriyi sadece sayılardan ibaret görmeyen, her verinin bir hikâyesi olduğuna inanan ve bu hikâyeyi doğru anlatmaya çalışan bir analistim.</p>
+      </div>
     </section>
 
-    <div class="project-link">
-      <h2>📁 Projeler</h2>
-      <ul>
-        <li><a href="projects/project1-saas-dashboard/index-tr.html">1. Proje: SaaS Gelir Analizi</a></li>
-        <li><a href="projects/project2-user-funnel/index-tr.html">2. Proje: Kullanıcı Dönüşüm Hunisi</a></li>
-        <li><a href="projects/project3-game-insights/index-tr.html">3. Proje: Oyun Kullanıcı Davranışı Analizi</a></li>
-        <li><a href="projects/project4-ga4-user-journey/index-tr.html">4. Proje: GA4 Kullanıcı Yolculuğu</a></li>
-        <li><a href="projects/project5-ad-campaign-performance/index-tr.html">5. Proje: Reklam Kampanyası Analizi</a></li>
-        <li><a href="projects/project6-python-romi-trend/index-tr.html">6. Proje: Python ile ROMI Trend Analizi</a></li>
-        <li><a href="projects/project7-sql-cross-platform-romi/index-tr.html">7. Proje: SQL ile Platform Bazlı ROMI Analizi</a></li>
-        <li><a href="projects/project8-sql-benchmark-romi/index-tr.html">8. Proje: SQL ile Yüksek ROMI’li Kampanyalar</a></li>
-        <li><a href="projects/project9-akademisyennhoca/index-tr.html">9. Proje: AkademisyennHoca Anket Analizi</a></li>
+    <section id="projects">
+      <h2>✅ Projeler</h2>
+      <ul class="project-list">
+        <li><strong>1.</strong> <a href="projects/project1-saas-dashboard/index-tr.html">SaaS Gelir Analizi (Tableau)</a></li>
+        <li><strong>2.</strong> <a href="projects/project2-user-funnel/index-tr.html">Kullanıcı Dönüşüm Hunisi Analizi (Tableau)</a></li>
+        <li><strong>3.</strong> <a href="projects/project3-game-insights/index-tr.html">Oyun Kullanıcı Davranış Analizi (Tableau)</a></li>
+        <li><strong>4.</strong> <a href="projects/project4-ga4-user-journey/index-tr.html">GA4 Kullanıcı Yolculuğu (BigQuery & Tableau)</a></li>
+        <li><strong>5.</strong> <a href="projects/project5-ad-campaign-performance/index-tr.html">Reklam Kampanyası Performans Analizi (Looker Studio)</a></li>
+        <li><strong>6.</strong> <a href="projects/project6-python-romi-trend/index-tr.html">Facebook Reklam ROMI Trend Analizi (Python)</a></li>
+        <li><strong>7.</strong> <a href="projects/project7-sql-cross-platform-romi/index-tr.html">Çoklu Platform Reklam Performansı (SQL)</a></li>
+        <li><strong>8.</strong> <a href="projects/project8-sql-benchmark-romi/index-tr.html">Yüksek ROMI’li Kampanya Tespiti (SQL)</a></li>
+        <li><strong>9.</strong> <a href="projects/project9-akademisyennhoca/index-tr.html">Öğrenci ve Veli Form Analizi (Google Forms & Tableau)</a></li>
       </ul>
-    </div>
+    </section>
   </main>
 
   <footer>
     © 2025 Sinem Alır. Tüm hakları saklıdır.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('sideNav');
+      nav.classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
-
