@@ -9,12 +9,29 @@
       margin: 0;
       padding: 0;
       background-color: #fefbf6;
-      background-image: url('img/side-left.jpeg'), url('img/side-left.jpeg');
-      background-position: left center, right center;
-      background-size: 250px auto, 250px auto;
-      background-repeat: no-repeat, no-repeat;
-      background-attachment: fixed;
       font-family: 'Segoe UI', sans-serif;
+    }
+
+    .left-img, .right-img {
+      position: fixed;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    .left-img {
+      left: 0;
+      background-image: url('img/side-left.jpeg');
+    }
+
+    .right-img {
+      right: 0;
+      background-image: url('img/side-left.jpeg');
     }
 
     .overlay {
@@ -26,6 +43,8 @@
       padding: 30px 20px;
       text-align: center;
       backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
     }
 
     .overlay h1 {
@@ -43,9 +62,11 @@
       display: flex;
       justify-content: center;
       gap: 100px;
-      margin-top: 40px;
+      margin-top: 140px;
       margin-bottom: 80px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
     }
 
     .lang-box {
@@ -70,13 +91,12 @@
       font-weight: bold;
       color: #8b2ab2;
     }
-
-    .lang-box img[title] {
-      position: relative;
-    }
   </style>
 </head>
 <body>
+  <div class="left-img"></div>
+  <div class="right-img"></div>
+
   <div class="overlay">
     <h1>Sinem Alır</h1>
     <p>Portfolyo / Portfolio</p>
@@ -85,13 +105,13 @@
   <div class="lang-options">
     <div class="lang-box">
       <a href="index-tr.html">
-        <img src="img/TR.png" alt="Türkçe" title="Türkçe">
+        <img src="img/TR.png" alt="Türkçe" title="Türkçe Projeler">
       </a>
       <p>Projeler</p>
     </div>
     <div class="lang-box">
       <a href="index-en.html">
-        <img src="img/EN.jpeg" alt="English" title="English">
+        <img src="img/EN.jpeg" alt="English" title="English Projects">
       </a>
       <p>Projects</p>
     </div>
