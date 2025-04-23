@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 6: Facebook Ad Performance Analysis</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefbf6;
+    }
+
+    .left-img, .right-img {
+      position: fixed;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    .left-img {
+      left: 0;
+      background-image: url("../../img/side-left.jpeg");
+    }
+
+    .right-img {
+      right: 0;
+      background-image: url("../../img/side-left.jpeg");
+    }
+
+    header {
+      background-color: #fefbf6;
+      border: 3px solid #a678d3;
+      border-radius: 20px;
+      margin: 30px auto 20px;
+      padding: 20px;
+      text-align: center;
+      max-width: 800px;
+      position: relative;
+      z-index: 11111111;
+    }
+
+    .menu-icon {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      width: 250px;
+      background-color: #a678d3;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+      z-index: 10000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .menu.show {
+      display: block;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fffaf2;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid #a678d3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2, h3, h4 {
+      color: #8b2ab2;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      margin: 60px 0 20px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-img"></div>
+  <div class="right-img"></div>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
+    <div class="menu" id="menu">
+      <a href="../../index.html">⬅️ Home</a>
+      <a href="../projects/project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
+      <a href="../projects/project2-user-funnel/index-en.html">2. User Funnel Conversion Analysis</a>
+      <a href="../projects/project3-game-insight/index-en.html">3. Game Insights Dashboard</a>
+      <a href="../projects/project4-ga4-user-journey/index-en.html">4. GA4 User Journey Dashboard</a>
+      <a href="../projects/project5-ad-campaigns/index-en.html">5. Ad Campaign Performance Analysis</a>
+      <a href="../projects/project6-python-romi-analysis/index-en.html">6. Facebook Ad Performance (Python)</a>
+      <a href="../projects/project7-cross-platform-sql/index-en.html">7. Facebook & Google Ads SQL Performance</a>
+      <a href="../projects/project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison & Efficiency</a>
+      <a href="../projects/project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Form Data Analysis</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Project 6 – Facebook Ad Performance Analysis (Python)</h2>
+    <img src="../../img/project6-python-romi-analysis.png" alt="Facebook Ad ROMI Python Analysis">
+
+    <h3>💡 Description</h3>
+    <p>
+      In this project, I analyzed the performance of Facebook ad campaigns run throughout 2021. The main objective was to visualize ad spend trends and ROMI (Return on Marketing Investment) metrics using Python tools.
+    </p>
+    <p>
+      I uncovered seasonal trends in spending, campaign inefficiencies, and peak periods of return. The results revealed key recommendations for budget reallocation and campaign scheduling.
+    </p>
+
+    <h3>🧠 Technical Breakdown</h3>
+    <ul>
+      <li>Cleaned the dataset and filtered 2021 records using Pandas</li>
+      <li>Calculated daily total_spend and ROMI (revenue / spend)</li>
+      <li>Applied 7-day rolling averages to reduce volatility</li>
+      <li>Visualized trends and comparisons with Matplotlib</li>
+      <li>Compared campaign-level spending and ROI distributions</li>
+    </ul>
+    <p>
+      The findings showed that higher ROMI values were often associated with lower ad spend — suggesting smarter timing yields better returns.
+    </p>
+
+    <p>
+      <strong style="color: #8b2ab2;">Tools Used:</strong> 
+      <span style="display: inline-flex; align-items: center;">
+        Python
+        <a href="../../docs/HW6.html" target="_blank" style="margin-left: 6px;">
+          <img src="../../img/python.png" alt="Python Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+        </a>
+      </span>
+    </p>
+  </section>
+
+  <div class="footer">© 2025 Sinem Alır. All rights reserved.</div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
