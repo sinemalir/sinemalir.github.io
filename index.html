@@ -1,132 +1,96 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinem Alır | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sinem Alır | Portföy</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-      background-image: url("img/side-left.jpeg");
+      background-image: url('img/arkaplan.jpg');
       background-size: cover;
-      background-repeat: no-repeat;
       background-position: center;
-      background-attachment: fixed;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .name-box {
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.8);
       border: 3px solid #a678d3;
       border-radius: 20px;
-      padding: 20px 40px;
-      margin-bottom: 40px;
-      background-color: transparent;
-      z-index: 1;
+      max-width: 600px;
+      margin: 60px auto 30px;
+      padding: 30px 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
     }
 
-    .name-box h1 {
+    .overlay h1 {
       margin: 0;
-      font-size: 36px;
-      color: #000;
+      font-size: 32px;
+      color: #111;
     }
 
-    .name-box p {
-      margin-top: 10px;
-      font-size: 20px;
+    .overlay p {
+      font-size: 18px;
       color: #555;
     }
 
-    .flag-container {
+    .lang-options {
       display: flex;
+      justify-content: center;
       gap: 60px;
-      margin-bottom: 20px;
+      margin-top: 80px; /* ARTTIRILDI */
+      flex-wrap: wrap;
     }
 
-    .flag-container a {
-      text-decoration: none;
+    .lang-box {
       text-align: center;
     }
 
-    .flag-container img {
-      width: 120px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #ccc;
-      transition: transform 0.3s ease;
+    .lang-box img {
+      width: 100px;
+      height: 60px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
     }
 
-    .flag-container img:hover {
+    .lang-box img:hover {
       transform: scale(1.05);
     }
 
-    .flag-container span {
-      display: block;
+    .lang-box p {
       margin-top: 10px;
-      color: #8b2ab2;
       font-weight: bold;
+      color: #8b2ab2;
     }
 
-    .tooltip {
+    .lang-box img[title] {
       position: relative;
-      display: inline-block;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 160px;
-      background-color: #8b2ab2;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -80px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="name-box">
-      <h1>Sinem Alır</h1>
-      <p>Portfolio / Portfolyo</p>
+  <div class="overlay">
+    <h1>Sinem Alır</h1>
+    <p>Portfolyo / Portfolio</p>
+  </div>
+
+  <div class="lang-options">
+    <div class="lang-box">
+      <a href="index-tr.html">
+        <img src="img/TR.png" alt="Türkçe" title="Türkçe Projeler">
+      </a>
+      <p>Projeler</p>
     </div>
-    <div class="flag-container">
-      <div class="tooltip">
-        <a href="index-tr.html">
-          <img src="img/TR.png" alt="Türkçe">
-          <span>Projeler</span>
-        </a>
-        <span class="tooltiptext">Türkçe Portfolyo</span>
-      </div>
-      <div class="tooltip">
-        <a href="index-en.html">
-          <img src="img/EN.jpeg" alt="English">
-          <span>Projects</span>
-        </a>
-        <span class="tooltiptext">English Portfolio</span>
-      </div>
+    <div class="lang-box">
+      <a href="index-en.html">
+        <img src="img/EN.jpeg" alt="English" title="English Projects">
+      </a>
+      <p>Projects</p>
     </div>
   </div>
 </body>
