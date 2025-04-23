@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sinem Alır | Portfolio</title>
   <style>
     body {
@@ -10,28 +10,14 @@
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #fefbf6;
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .background-img {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       background-image: url("img/side-left.jpeg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.2;
-      z-index: 0;
+      background-attachment: fixed;
     }
 
     .container {
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -40,62 +26,107 @@
       text-align: center;
     }
 
-    .header-box {
-      background-color: rgba(255, 250, 242, 0.8); /* yarı saydam */
+    .name-box {
       border: 3px solid #a678d3;
       border-radius: 20px;
-      padding: 30px 60px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 60px;
+      padding: 20px 40px;
+      margin-bottom: 40px;
+      background-color: transparent;
+      z-index: 1;
     }
 
-    .header-box h1 {
-      font-size: 42px;
+    .name-box h1 {
       margin: 0;
-      color: #000; /* siyah yazı */
+      font-size: 36px;
+      color: #000;
     }
 
-    .header-box h2 {
-      font-size: 22px;
+    .name-box p {
       margin-top: 10px;
-      color: #333;
+      font-size: 20px;
+      color: #555;
     }
 
-    .flags {
+    .flag-container {
       display: flex;
-      gap: 40px;
+      gap: 60px;
+      margin-bottom: 20px;
     }
 
-    .flags a img {
-      width: 70px;
-      height: 50px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+    .flag-container a {
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .flag-container img {
+      width: 120px;
+      height: 80px;
       object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      transition: transform 0.3s ease;
     }
 
-    .flags a img:hover {
-      transform: scale(1.1);
+    .flag-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .flag-container span {
+      display: block;
+      margin-top: 10px;
+      color: #8b2ab2;
+      font-weight: bold;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #8b2ab2;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <div class="background-img"></div>
-
   <div class="container">
-    <div class="header-box">
+    <div class="name-box">
       <h1>Sinem Alır</h1>
-      <h2>Portfolyo / Portfolio</h2>
+      <p>Portfolio / Portfolyo</p>
     </div>
-
-    <div class="flags">
-      <a href="tr.html">
-        <img src="img/TR.png" alt="Türkçe">
-      </a>
-      <a href="en.html">
-        <img src="img/EN.jpeg" alt="English">
-      </a>
+    <div class="flag-container">
+      <div class="tooltip">
+        <a href="index-tr.html">
+          <img src="img/TR.png" alt="Türkçe">
+          <span>Projeler</span>
+        </a>
+        <span class="tooltiptext">Türkçe Portfolyo</span>
+      </div>
+      <div class="tooltip">
+        <a href="index-en.html">
+          <img src="img/EN.jpeg" alt="English">
+          <span>Projects</span>
+        </a>
+        <span class="tooltiptext">English Portfolio</span>
+      </div>
     </div>
   </div>
 </body>
