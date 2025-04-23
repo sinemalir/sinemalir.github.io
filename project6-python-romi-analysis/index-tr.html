@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Proje: Facebook Reklam Performans Analizi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefbf6;
+    }
+
+    .left-img, .right-img {
+      position: fixed;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    .left-img {
+      left: 0;
+      background-image: url("../../img/side-left.jpeg");
+    }
+
+    .right-img {
+      right: 0;
+      background-image: url("../../img/side-left.jpeg");
+    }
+
+    header {
+      background-color: #fefbf6;
+      border: 3px solid #a678d3;
+      border-radius: 20px;
+      margin: 30px auto 20px;
+      padding: 20px;
+      text-align: center;
+      max-width: 800px;
+      position: relative;
+      z-index: 11111111;
+    }
+
+    .menu-icon {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      width: 250px;
+      background-color: #a678d3;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+      z-index: 10000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .menu.show {
+      display: block;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fffaf2;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid #a678d3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2, h3, h4 {
+      color: #8b2ab2;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      margin: 60px 0 20px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-img"></div>
+  <div class="right-img"></div>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
+    <div class="menu" id="menu">
+      <a href="../../index.html">⬅️ Ana Sayfa</a>
+      <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
+      <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı Analizi</a>
+      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu Analizi</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performans Analizi</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python ile Facebook Reklam ROMI Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. Facebook & Google Ads SQL Performans Analizi</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma ve Etkinlik Analizi</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Google Form Verisi Analizi</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>6. Proje: Facebook Reklam Performans Analizi (Python ile)</h2>
+    <img src="../../img/project6-python-romi-analysis.png" alt="Python ROMI Analysis">
+
+    <h3>💡 Açıklama</h3>
+    <p>
+      Bu projede, 2021 yılı boyunca Facebook üzerinden yürütülen reklam kampanyalarının etkinliğini analiz ettim. Günlük reklam harcaması ve yatırım getirisi (ROMI) gibi temel performans göstergeleri üzerinden pazarlama verilerini görselleştirdim.
+    </p>
+    <p>
+      📌 Ana hedef, harcamaların zaman içindeki değişimini ve bu harcamaların ne ölçüde gelir yarattığını ortaya koymaktı.
+    </p>
+    <p>
+      Özellikle yıl içinde <strong>hangi dönemlerde daha verimli sonuçlar alındığı</strong>, <strong>hangi kampanyaların fazla harcama yapmasına rağmen düşük geri dönüş sağladığı</strong> gibi kritik bulgular öne çıktı.
+    </p>
+    <p>
+      Analiz sonucunda pazarlama stratejilerinin <strong>zamanlama, bütçe dağılımı ve kampanya verimliliği</strong> açısından yeniden değerlendirilmesi önerilmektedir.
+    </p>
+
+    <h3>🧠 Teknik Analiz</h3>
+    <ul>
+      <li>Pandas ile veri ön işleme yapıldı: tarih formatı düzenleme, yıl filtreleme</li>
+      <li>Günlük total_spend ve ROMI (revenue / spend) hesaplandı</li>
+      <li>7 günlük hareketli ortalamalar kullanılarak volatilite azaltıldı</li>
+      <li>Matplotlib ile tüm analizler grafikleştirildi</li>
+      <li>Kampanya bazlı harcama karşılaştırması yapıldı</li>
+    </ul>
+    <p>Sonuçlar, ROMI’nin yüksek olduğu dönemlerde daha az harcama yapıldığını gösterdi. Bu da pazarlama yatırımının <strong>verimli zamanlara odaklanması</strong> gerektiğini ortaya koydu.</p>
+
+    <p>
+      <strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong>
+      <span style="display: inline-flex; align-items: center;">
+        Python, Pandas, Matplotlib
+        <a href="../../project6-python-romi-analysis/HW6.html" target="_blank" style="margin-left: 8px;">
+          <img src="../../img/python.png" alt="Python Icon" style="width: 32px; height: 32px; vertical-align: middle;">
+        </a>
+      </span>
+    </p>
+  </section>
+
+  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
