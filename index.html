@@ -8,10 +8,12 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('img/side-left.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-color: #fefbf6;
+      background-image: url('img/side-left.jpeg'), url('img/side-left.jpeg');
+      background-position: left center, right center;
+      background-size: 250px auto, 250px auto;
+      background-repeat: no-repeat, no-repeat;
+      background-attachment: fixed;
       font-family: 'Segoe UI', sans-serif;
     }
 
@@ -40,8 +42,9 @@
     .lang-options {
       display: flex;
       justify-content: center;
-      gap: 60px;
-      margin-top: 80px; /* ARTTIRILDI */
+      gap: 100px;
+      margin-top: 40px;
+      margin-bottom: 80px;
       flex-wrap: wrap;
     }
 
@@ -50,8 +53,8 @@
     }
 
     .lang-box img {
-      width: 100px;
-      height: 60px;
+      width: 110px;
+      height: 70px;
       border-radius: 8px;
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
