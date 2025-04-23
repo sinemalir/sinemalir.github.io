@@ -34,9 +34,9 @@
       background-image: url("img/side-left.jpeg");
     }
 
-    header, .menu, .section {
+    header, .section {
       position: relative;
-      z-index: 1;
+      z-index: 3;
     }
 
     header {
@@ -47,6 +47,7 @@
       padding: 20px;
       text-align: center;
       max-width: 800px;
+      z-index: 2;
     }
 
     .menu-icon {
@@ -55,6 +56,7 @@
       top: 50px;
       font-size: 26px;
       cursor: pointer;
+      z-index: 9999;
     }
 
     .menu {
@@ -66,7 +68,7 @@
       padding: 15px;
       border-radius: 10px;
       display: none;
-      z-index: 9999999;
+      z-index: 10000;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
@@ -89,6 +91,7 @@
       padding: 20px;
       border-radius: 15px;
       border: 1px solid #a678d3;
+      z-index: 1;
     }
 
     h2 {
