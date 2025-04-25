@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Proje 2 – Kullanıcı Hunisi Analizi | Sinem Alır</title>
-<meta name="description" content="Kullanıcı dönüşüm hunisi analiz projesi. Kayıt olan, deneme başlatan ve ödeme yapan kullanıcıların adım adım dönüşüm oranları Tableau ile incelendi.">
-<meta name="keywords" content="Kullanıcı Dönüşüm Hunisi, Funnel Analizi, Tableau, Dönüşüm Oranı, Kayıt, Ödeme, Sinem Alır, Veri Analizi">
-<meta name="author" content="Sinem Alır">
-
-<meta property="og:title" content="Kullanıcı Hunisi Analizi | Sinem Alır">
-<meta property="og:description" content="Kayıttan ödemeye giden kullanıcı yolculuğunu Tableau ile analiz eden proje. Zaman analizi ve önerilerle desteklenmiştir.">
-<meta property="og:image" content="https://sinemalir.github.io/img/project2-user-funnel.png">
-<meta property="og:type" content="website">
-
-<meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Kullanıcı dönüşüm hunisi, kayıt-ödeme yolculuğu, aylık dönüşüm oranları ve veri bazlı önerilerle kullanıcı davranış analizi.">
+  <meta name="author" content="Sinem Alır">
+  <meta name="keywords" content="funnel analizi, dönüşüm oranı, kullanıcı davranışı, tableau dashboard, veri analizi">
+  <meta property="og:title" content="2. Proje: Kullanıcı Hunisi Analizi" />
+  <meta property="og:description" content="Kullanıcıların kayıt aşamasından ödeme yapmaya kadar olan yolculuklarını adım adım analiz eden dönüşüm hunisi projesi.">
+  <meta property="og:image" content="https://sinemalir.com/img/project2-user-funnel.png" />
+  <meta property="og:url" content="https://sinemalir.com/projects/project2-user-funnel/index-tr.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2. Proje: Kullanıcı Hunisi Analizi" />
+  <meta name="twitter:description" content="Kullanıcı dönüşüm hunisi, kayıt-ödeme yolculuğu ve önerilerle zenginleştirilmiş analiz dashboardu." />
+  <meta name="twitter:image" content="https://sinemalir.com/img/project2-user-funnel.png" />
+  <link rel="canonical" href="https://sinemalir.com/projects/project2-user-funnel/index-tr.html" />
+  <title>2. Proje: Kullanıcı Hunisi Analizi</title>
   <style>
     body {
       margin: 0;
@@ -21,7 +24,6 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #fefbf6;
     }
-
     .left-img, .right-img {
       position: fixed;
       top: 0;
@@ -33,19 +35,10 @@
       z-index: 0;
       opacity: 0.2;
     }
-
-    .left-img {
-      left: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    .right-img {
-      right: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
+    .left-img { left: 0; background-image: url("../../img/side-left.jpeg"); }
+    .right-img { right: 0; background-image: url("../../img/side-left.jpeg"); }
     header {
-      background-color: #fefbf6;
+      background-color: #fefbf6cc;
       border: 3px solid #a678d3;
       border-radius: 20px;
       margin: 30px auto 20px;
@@ -53,9 +46,8 @@
       text-align: center;
       max-width: 800px;
       position: relative;
-      z-index: 11111111;
+      z-index: 1111111;
     }
-
     .menu-icon {
       position: absolute;
       left: 20px;
@@ -64,7 +56,6 @@
       cursor: pointer;
       z-index: 9999;
     }
-
     .menu {
       position: absolute;
       top: 60px;
@@ -77,7 +68,6 @@
       z-index: 10000;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
     .menu a {
       color: white;
       text-decoration: none;
@@ -85,14 +75,10 @@
       margin-bottom: 10px;
       font-weight: bold;
     }
-
-    .menu.show {
-      display: block;
-    }
-
+    .menu.show { display: block; }
     .section {
       max-width: 800px;
-      margin: 20px auto;
+      margin: 30px auto;
       background-color: #fffaf2;
       padding: 20px;
       border-radius: 15px;
@@ -100,122 +86,137 @@
       position: relative;
       z-index: 1;
     }
-
     .section img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 20px;
     }
-
-    h2, h3, h4 {
-      color: #8b2ab2;
-    }
-
-    .footer {
+    h2, h3 { color: #8b2ab2; }
+    .footer, .navbar {
       text-align: center;
       font-size: 12px;
       margin: 60px 0 20px;
       color: #888;
     }
+    .navbar a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4d00a8;
+      font-weight: bold;
+    }
+    .contact {
+      margin-top: 40px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .contact p { margin: 5px 0; }
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
-
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
     <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Ana Sayfa</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+      <!-- Projeler menüsü -->
       <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
       <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
-      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı Analizi</a>
-      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu Analizi</a>
-      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performans Analizi</a>
-      <a href="../project6-python-romi-analysis/index-tr.html">6. Python ile Facebook Reklam ROMI Analizi</a>
-      <a href="../project7-cross-platform-sql/index-tr.html">7. Facebook & Google Ads SQL Performans Analizi</a>
-      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma ve Etkinlik Analizi</a>
-      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Google Form Verisi Analizi</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
+      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Performansı</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python Reklam Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL Platform Karşılaştırma</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Analizi</a>
     </div>
   </header>
 
   <section class="section">
-    <h2>2. Proje – Funnel Dönüşüm Analizi (Tableau)</h2>
-    <img src="../../img/project2-user-funnel.png" alt="User Funnel Conversion Analysis">
+    <h2>2. Proje – Kullanıcı Hunisi Analizi (Tableau)</h2>
+    <img src="../../img/project2-user-funnel.png" alt="Kullanıcı Hunisi Dashboard">
 
-    <h3>🔍 TEKNİK ANALİZ</h3>
-    <h4>1. Kullanıcı Dönüşüm Hunisi – Registration to First Payment</h4>
+    <h3>Açıklama</h3>
+    <p>Bu analiz, bir dijital ürün veya platformun kullanıcı yolculuğunu adım adım izleyerek, potansiyel müşterilerin hangi aşamalarda kaybedildiğini ortaya koyar. Amacı, kullanıcıları daha iyi anlamak, doğru zamanda doğru aksiyonları alarak dönüşüm oranlarını artırmak ve büyümeyi desteklemektir.</p>
+    <p><strong>Bu analiz ne kazandırır?</strong></p>
     <ul>
-      <li>Toplam kayıtlı kullanıcı sayısı: <strong>8,460</strong></li>
-      <li>İlk ödeme yapan kullanıcı sayısı: <strong>577</strong> → Dönüşüm oranı %6.82</li>
-      <li>Email Verification: %74.08 → %25’lik kayıp burada</li>
-      <li>Profile Completion: %55.08 → buradaki %19’luk düşüş kritik!</li>
-      <li>Setup Completion: %36.71 → teknik onboarding süreci en çok kullanıcı kaybettiren nokta</li>
-      <li>Trial Start: %23.03 → deneme başlatma oranı düşük</li>
-      <li>First Payment: %6.82 → çok dar uç</li>
+      <li>Kullanıcıların kayıt olmaktan ödeme yapmaya kadar geçtiği tüm aşamalar net bir şekilde ortaya konur.</li>
+      <li>Hangi adımlarda en çok kullanıcı kaybedildiği tespit edilerek, bu adımlar üzerinde odaklanma sağlanır.</li>
+      <li>Zaman içindeki dönüşüm oranı değişimleri incelenerek kampanya, tasarım veya teknik değişikliklerin etkisi ölçülebilir.</li>
+      <li>Her bir dönüşüm aşaması için ayrı ayrı analiz yapılabildiğinden, ürün geliştirme ve pazarlama ekipleri spesifik stratejiler üretebilir.</li>
+      <li>Müşteri edinme maliyetini azaltmak ve elde tutma oranlarını artırmak için somut veriyle karar alınabilir.</li>
+    </ul>
+    <p><strong>Sonuç:</strong> Bu analiz, yalnızca kullanıcıların neden kaybedildiğini değil, onları nasıl elde tutabileceğinizi de gösterir.</p>
+
+    <h3>Öneriler</h3>
+    <ul>
+      <li>En çok kullanıcı kaybının yaşandığı adımda kullanıcı deneyimi gözden geçirilmeli.</li>
+      <li>Kayıttan sonra etkin olmayan kullanıcılar için otomatik hatırlatma e-postaları ve tanıtım kampanyaları uygulanmalı.</li>
+      <li>Dönüşüm oranı yüksek dönemler incelenerek bu dönemlerdeki uygulama değişiklikleri, kampanyalar veya içerikler yeniden kullanılmalı.</li>
+      <li>Zayıf dönüşüm gösteren kanallardan gelen trafiğe özel içerik ve yönlendirme stratejileri oluşturulmalı.</li>
+      <li>İlk ödeme adımına ulaşamayan kullanıcılar için kişiselleştirilmiş teşvikler (indirim, deneme süresi) önerilebilir.</li>
+      <li>En sadık kullanıcı profili belirlenerek bu profile benzer kişilere yönelik hedefli reklamlar çıkarılabilir.</li>
     </ul>
 
-    <h4>2. Zaman Analizi</h4>
+    <h3>Teknik Analiz</h3>
     <ul>
-      <li>En düşük “registration-to-payment” süresi: <strong>~50 gün</strong> (Ocak, Nisan)</li>
-      <li>En yüksek süre: <strong>~250 gün</strong> (Ekim)</li>
-      <li><em>Yorum:</em> Ürün/UX geliştikçe ödeme aşamasına geçiş süresi uzamış olabilir, ters bir korelasyon var. Belki ürünün deneme sürüm süresi çok uzun?</li>
+      <li><strong>Kullanılan Araç:</strong> Tableau Public</li>
+      <li><strong>Veri Yapısı:</strong> Web veya mobil uygulamadan toplanan event verileri (registration, activation, engagement, payment)</li>
     </ul>
-
-    <h4>3. Aylık Dönüşüm Oranları</h4>
+    <p><strong>Dashboard’daki Bileşenler:</strong></p>
     <ul>
-      <li>Mart 2023’te kayıt sayısı yüksek ama trial dönüşüm oranı %34.74 → iyi performans</li>
-      <li>Mayıs’ta en yüksek dönüşüm oranı %130 → Bu outlier olabilir. Ya yanlış veri girildi ya da önceki ay kayıt olanlar bu ay deneme başlatmış.</li>
+      <li><strong>Kullanıcı Hunisi Görselleştirmesi (Funnel Chart)</strong>
+        <ul>
+          <li>Adımlar: Kayıt → Aktivasyon → Etkileşim → Ödeme</li>
+          <li>Her adımdaki kullanıcı sayısı ve bir önceki adıma göre dönüşüm oranı hesaplandı</li>
+          <li>En fazla kullanıcı kaybı yaşanan adım net şekilde gösterildi</li>
+        </ul>
+      </li>
+      <li><strong>Zaman Serisi Dönüşüm Grafiği (Line Chart)</strong>
+        <ul>
+          <li>month bazında dönüşüm oranı (converted_users / total_users)</li>
+          <li>Kampanyaların ve tasarım değişikliklerinin zamana etkisi analiz edildi</li>
+        </ul>
+      </li>
+      <li><strong>Kanal Bazlı Dönüşüm (Bar Chart)</strong>
+        <ul>
+          <li>traffic_source veya medium bazlı dönüşüm oranları karşılaştırıldı</li>
+          <li>En verimli kullanıcı edinim kanalları tespit edildi</li>
+        </ul>
+      </li>
+      <li><strong>Kayıttan Ödemeye Ortalama Süre (Boxplot veya KPI)</strong>
+        <ul>
+          <li>payment_date - registration_date hesaplandı</li>
+          <li>Kullanıcının ödeme yapmaya ne kadar sürede karar verdiği incelendi</li>
+        </ul>
+      </li>
+      <li><strong>Dönüşüm Başarısı Gösteren Segmentler (Treemap veya Donut)</strong>
+        <ul>
+          <li>user_type, platform, device gibi kategorilerle segment analizi yapıldı</li>
+          <li>Hangi segmentlerde dönüşüm daha yüksek olduğu vurgulandı</li>
+        </ul>
+      </li>
     </ul>
-
-    <h3>🎯 Veriyle Gelen Öneriler</h3>
-    <ul>
-      <li>Email doğrulama süreci optimize edilmeli (tek tık, oturum açmadan aktifleşme vb.)</li>
-      <li>Profil tamamlama + kurulum bölümleri sadeleştirilmeli</li>
-      <li>Trial’a yönlendirme teşvikleri (mail, in-app message, pop-up) artırılmalı</li>
-      <li>Kullanıcıya “neden deneme başlatmadın?” diye mikro anket yapılabilir</li>
-    </ul>
-
-    <h3>📖 AÇIKLAMA</h3>
-    <ol>
-      <li><strong>8.460 kişi</strong> kayıt oldu</li>
-      <li><strong>6.267’si</strong> mailini doğruladı</li>
-      <li><strong>4.660’ı</strong> profillerini tamamladı</li>
-      <li><strong>3.106</strong> kişi kurulumu bitirdi</li>
-      <li><strong>1.948</strong> kişi deneme sürümünü başlattı</li>
-      <li>Ve yalnızca <strong>577</strong> kişi ödeme yaptı</li>
-    </ol>
-    <p>Yani 100 kişi kayıt olduğunda yalnızca 6-7 kişi sonunda ürünü satın alıyor.</p>
-
-    <h4>🕒 Peki bu süreç ne kadar sürüyor?</h4>
-    <ul>
-      <li>Ocak’ta kayıt olan biri ortalama 60 gün sonra ödeme yaptı</li>
-      <li>Ekim’de kayıt olan biri için bu süre ~250 gün oldu!</li>
-    </ul>
-
-    <h4>📉 Neden Bu Kadar Kayıp Var?</h4>
-    <ul>
-      <li>Kimi mailini onaylamıyor</li>
-      <li>Kimi sistemi kurmakta zorlanıyor</li>
-      <li>Kimi hiç deneme bile başlatmıyor</li>
-      <li>Ve tabii ki en azı ödeme yapıyor</li>
-    </ul>
-
-    <p>
-  <strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong> 
-  <span style="display: inline-flex; align-items: center;">
-    Tableau
-      <a href="https://public.tableau.com/app/profile/sinem.alir/viz/FunnelProject_17359855829830/FlowAnalysis" target="_blank" style="margin-left: 6px;">
-       <img src="../../img/tableau.png" alt="Tableau Icon" 
-           style="width:50px; height:50px; vertical-align: middle;">
-    </a>
-  </span>
-</p>
+    <p><strong>Etkileşimli Özellikler:</strong> Dashboard’da kanal, zaman aralığı ve segment seçerek farklı senaryolar hızlıca incelenebiliyor. Tool-tip’lerle kullanıcı sayıları, oranlar ve ek metrikler anlık görüntülenebiliyor.</p>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+  <div class="navbar">
+    <a href="../project1-saas-dashboard/index-tr.html">⬅️ Önceki Proje</a>
+    <a href="../../index.html">🏠 Anasayfa</a>
+    <a href="../project3-game-insight/index-tr.html">Sonraki Proje ➡️</a>
+  </div>
+
+  <div class="footer">
+    <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+    <p>
+      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+      <a href="https://upwork.com" target="_blank">Upwork</a> |
+      <a href="https://fiverr.com" target="_blank">Fiverr</a>
+    </p>
+    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+  </div>
 
   <script>
     function toggleMenu() {
