@@ -7,21 +7,15 @@
   <meta name="description" content="SaaS gelir analizi, ARPPU, lokasyon bazlı gelir, segment gelir analizleri ve veri görselleştirme ile karar destek.">
   <meta name="author" content="Sinem Alır">
   <meta name="keywords" content="SaaS, gelir analizi, Tableau, ARPPU, veri analizi, dashboard">
-    <!-- Open Graph Etiketleri (Sosyal Medya için) -->
-  <meta property="og:title" content="1. Proje: SaaS Gelir Analizi | Sinem Alır Portföyü">
-  <meta property="og:description" content="SaaS gelir analizine dair kapsamlı bir Tableau dashboardu. ARPPU, segment gelirleri, lokasyon bazlı metrikler ve daha fazlası.">
-  <meta property="og:image" content="https://sinemalir.github.io/img/project1-saas-dashboard.png">
-  <meta property="og:url" content="https://sinemalir.github.io/projects/project1-saas-dashboard/index-tr.html">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card Etiketleri -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="1. Proje: SaaS Gelir Analizi | Sinem Alır">
-  <meta name="twitter:description" content="Tableau ile hazırlanmış SaaS gelir analizi dashboardu.">
-  <meta name="twitter:image" content="https://sinemalir.github.io/img/project1-saas-dashboard.png">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://sinemalir.github.io/projects/project1-saas-dashboard/index-tr.html">
+  <meta property="og:title" content="1. Proje: SaaS Gelir Analizi" />
+  <meta property="og:description" content="SaaS modelinde gelir, segment, ARPPU analizleri ve veri görselleştirme ile karar destek." />
+  <meta property="og:image" content="https://sinemalir.com/img/project1-saas-dashboard.png" />
+  <meta property="og:url" content="https://sinemalir.com/projects/project1-saas-dashboard/index-tr.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="1. Proje: SaaS Gelir Analizi" />
+  <meta name="twitter:description" content="SaaS gelir analiz projesi, ARPPU, segmentler ve zaman bazlı gelir trendleri ile veri destekli kararlar sunar." />
+  <meta name="twitter:image" content="https://sinemalir.com/img/project1-saas-dashboard.png" />
+  <link rel="canonical" href="https://sinemalir.com/projects/project1-saas-dashboard/index-tr.html" />
   <title>1. Proje: SaaS Gelir Analizi</title>
   <style>
     body {
@@ -30,6 +24,7 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #fefbf6;
     }
+
     .left-img, .right-img {
       position: fixed;
       top: 0;
@@ -41,16 +36,19 @@
       z-index: 0;
       opacity: 0.2;
     }
+
     .left-img {
       left: 0;
       background-image: url("../../img/side-left.jpeg");
     }
+
     .right-img {
       right: 0;
       background-image: url("../../img/side-left.jpeg");
     }
+
     header {
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: #fefbf6;
       border: 3px solid #a678d3;
       border-radius: 20px;
       margin: 30px auto 20px;
@@ -60,39 +58,10 @@
       position: relative;
       z-index: 1111111;
     }
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 99999;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .menu.show {
-      display: block;
-    }
+
     .section {
       max-width: 800px;
-      margin: 20px auto;
+      margin: 30px auto;
       background-color: #fffaf2;
       padding: 20px;
       border-radius: 15px;
@@ -100,29 +69,33 @@
       position: relative;
       z-index: 1;
     }
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    h2, h3, h4 {
+
+    h2, h3 {
       color: #8b2ab2;
     }
+
     .footer, .navbar {
       text-align: center;
       font-size: 12px;
-      margin: 40px 0 20px;
+      margin: 60px 0 20px;
       color: #888;
     }
+
     .navbar a {
       margin: 0 10px;
-      color: #4d00a8;
       text-decoration: none;
+      color: #4d00a8;
       font-weight: bold;
     }
-    .navbar a:hover {
-      text-decoration: underline;
+
+    .contact {
+      margin-top: 40px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -131,62 +104,74 @@
   <div class="right-img"></div>
 
   <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
-    <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Ana Sayfa</a>
-      <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
-      <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
-      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı Analizi</a>
-      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
-      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Analizi</a>
-      <a href="../project6-python-romi-analysis/index-tr.html">6. Facebook Reklam Python Analizi</a>
-      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL Reklam Performansı</a>
-      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL Karşılaştırma</a>
-      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Analizi</a>
-    </div>
   </header>
 
   <section class="section">
     <h2>1. Proje – SaaS Gelir Analizi (Tableau)</h2>
-    <img src="../../img/project1-saas-dashboard.png" alt="SaaS Gelir Analizi">
+    <img src="../../img/project1-saas-dashboard.png" alt="SaaS Dashboard" style="width:100%; border-radius:10px; margin-bottom: 20px;">
 
     <h3>Açıklama (Müşteriler için – Değer Odaklı ve Güven Veren Dil)</h3>
     <p>Bu analiz, abonelik tabanlı (SaaS) bir iş modelinde gelir kaynaklarını daha net görmek, stratejik kararları veriyle desteklemek ve büyümeyi sürdürülebilir hale getirmek için tasarlandı.</p>
+    <p><strong>Bu analiz ne kazandırır?</strong></p>
     <ul>
-      <li>Hangi ürünlerin en çok gelir getirdiğini açıkça ortaya koyar.</li>
-      <li>Gelirin hangi coğraflardan geldiğini görselleştirir.</li>
-      <li>Zaman içindeki gelir değişimlerini gösterir.</li>
-      <li>ARPPU gibi metriklerle fiyat stratejisi geliştirmeye yardımcı olur.</li>
-      <li>Kullanıcı segmentlerine göre stratejik kararlar verir.</li>
+      <li>Hangi ürünlerin en çok gelir getirdiğini açıkça ortaya koyar. Böylece, ürün stratejinizi somut verilere dayanarak şekillendirebilir, yüksek performanslı ürünlere daha fazla yatırım yapabilirsiniz.</li>
+      <li>Gelirin hangi coğrafyalardan geldiğini görselleştirerek, pazarlama ve satış çabalarını doğru bölgelerde yoğunlaştırmanıza yardımcı olur.</li>
+      <li>Zaman içindeki gelir değişimlerini göstererek sezonluk trendleri yakalamanızı ve doğru zamanda doğru aksiyonları almanızı sağlar.</li>
+      <li>Kullanıcı başına ortalama gelir (ARPPU) gibi metrikler sayesinde, fiyatlandırma politikalarınızı yeniden değerlendirebilir ya da farklı segmentlerde potansiyeli artırmak için yeni teklifler tasarlayabilirsiniz.</li>
+      <li>Kullanıcı segmentlerine göre gelir katkısı analiz edilerek, sadakat programları, çapraz satış kampanyaları veya premium geçiş stratejileri için sağlam bir temel sunar.</li>
     </ul>
-    <p><strong>Özetle:</strong> Bu analiz, yalnızca bugünkü değil, gelecekteki büyümeyi planlamak için de güçlü bir rehberdir.</p>
+    <p><strong>Özetle:</strong> Bu analiz, yalnızca bugünkü gelirlerinizi görmek için değil, gelecekteki büyümeyi planlamak ve veriyle ilerlemek için güçlü bir rehberdir.</p>
 
     <h3>Öneriler (Veriye Dayalı Aksiyon Planı)</h3>
     <ul>
-      <li>Yüksek gelirli ürünlere ekstra tanıtım yapılmalı.</li>
-      <li>Zayıf gelir bölgelerine lokal kampanyalar uygulanmalı.</li>
-      <li>ARPPU'su yüksek olanlara sadakat programı.</li>
-      <li>Freemium'dan premium'a geçiş için teklif ve e-posta kampanyaları.</li>
-      <li>Yılbaşı/yaz döneminde ekip takviyesi.</li>
-      <li>Premium davranışların analizine dayalı kampanyalar.</li>
+      <li>En yüksek gelir sağlayan ürünlerde indirim değil, ekstra tanıtım yapılmalı. Bu ürünlerin başarı formülleri incelenerek diğer ürünlere uyarlanabilir.</li>
+      <li>Gelirin zayıf olduğu bölgelerde lokal kampanyalar, yerel ödeme yöntemleri ve müşteri desteği sunulmalı.</li>
+      <li>ARPPU değeri yüksek olan kullanıcılar için sadakat programları oluşturulmalı; bu kullanıcılar için özel içerikler ve erken erişim avantajları sağlanabilir.</li>
+      <li>Freemium kullanıcıları premium segmente geçirmek için zaman sınırlı denemeler ve kişiselleştirilmiş e-posta kampanyaları önerilir.</li>
+      <li>Sezonluk gelir artışlarının görüldüğü dönemlerde (örneğin yılbaşı, yaz başı), satış ekipleri yoğunluğa göre takviye edilmeli.</li>
+      <li>Premium kullanıcıların davranışları detaylı analiz edilerek segment bazlı pazarlama yapılabilir.</li>
     </ul>
 
     <h3>Teknik Analiz (Data Analysts / Recruiters için)</h3>
     <ul>
-      <li><strong>Kullanılan Araç:</strong> Tableau Public</li>
-      <li><strong>Veri Yapısı:</strong> Kullanıcı, gelir ve ürün verileri</li>
+      <li>Kullanılan Araç: Tableau Public</li>
+      <li>Veri Yapısı: SaaS şirketine ait kullanıcı, gelir ve ürün verileri</li>
     </ul>
-    <ol>
-      <li>Zaman bazlı gelir grafiği (Line chart)</li>
-      <li>Ürün bazlı gelir (Bar chart)</li>
-      <li>Ülke bazlı harita (Map chart)</li>
-      <li>ARPPU KPI kartı</li>
-      <li>Segment bazlı gelir (Treemap)</li>
-    </ol>
-    <p>Etkileşimli filtre ve tooltip desteği vardır.</p>
+    <p><strong>Dashboard’daki Bileşenler:</strong></p>
+    <ul>
+      <li>Zaman Bazlı Gelir Grafiği (Line Chart)
+        <ul>
+          <li>payment_date üzerinden SUM(revenue_amount) ile oluşturuldu</li>
+          <li>Mevsimsel etkiler ve kampanya dönemleri tespit edildi</li>
+        </ul>
+      </li>
+      <li>Ürün Bazlı Gelir (Bar Chart)
+        <ul>
+          <li>product_name bazlı SUM(revenue_amount) ile sıralı çubuk grafik</li>
+          <li>En çok gelir sağlayan ürünler belirgin şekilde öne çıkarıldı</li>
+        </ul>
+      </li>
+      <li>Ülke Bazlı Harita Görselleştirmesi (Map Chart)
+        <ul>
+          <li>country alanına göre SUM(revenue_amount)</li>
+          <li>Gelir coğrafi olarak karşılaştırmalı gösterildi</li>
+        </ul>
+      </li>
+      <li>ARPPU KPI Kartı
+        <ul>
+          <li>Hesap: SUM(revenue_amount) / COUNTD(paying_user_id)</li>
+        </ul>
+      </li>
+      <li>Segment Bazlı Kullanıcı Dağılımı (Treemap / Donut)
+        <ul>
+          <li>user_segment bazlı SUM(revenue_amount)</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>Etkileşimli Özellikler:</strong> Tüm grafiklerde dinamik filtreleme ve tool-tip ile derinlemesine kullanıcı deneyimi sağlandı.</p>
 
-    <p><strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong> 
+    <p><strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong>
       <span style="display: inline-flex; align-items: center;">
         Tableau
         <a href="https://public.tableau.com/app/profile/sinem.alir/viz/SaaSGelirAnalizi/Dashboard1" target="_blank" style="margin-left: 6px;">
