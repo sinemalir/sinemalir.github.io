@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SaaS Gelir Analizi | Sinem Alır</title>
-  <meta name="description" content="SaaS modelindeki gelir performansını analiz eden veri odaklı Tableau projesi. Ürün, bölge ve zaman bazlı analizlerle stratejik içgörüler." />
-  <meta name="keywords" content="SaaS, Veri Analizi, Tableau Dashboard, Gelir Analizi, ROMI, Sinem Alır, Veri Görselleştirme" />
-  <meta name="author" content="Sinem Alır" />
-  <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
-
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="SaaS gelir analizi, ARPPU, lokasyon bazlı gelir, segment gelir analizleri ve veri görselleştirme ile karar destek.">
+  <meta name="author" content="Sinem Alır">
+  <meta name="keywords" content="SaaS, gelir analizi, Tableau, ARPPU, veri analizi, dashboard">
+  <title>1. Proje: SaaS Gelir Analizi</title>
   <style>
     body {
       margin: 0;
@@ -16,7 +15,6 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #fefbf6;
     }
-
     .left-img, .right-img {
       position: fixed;
       top: 0;
@@ -28,19 +26,16 @@
       z-index: 0;
       opacity: 0.2;
     }
-
     .left-img {
       left: 0;
       background-image: url("../../img/side-left.jpeg");
     }
-
     .right-img {
       right: 0;
       background-image: url("../../img/side-left.jpeg");
     }
-
     header {
-      background-color: #fefbf6;
+      background-color: rgba(255, 255, 255, 0.7);
       border: 3px solid #a678d3;
       border-radius: 20px;
       margin: 30px auto 20px;
@@ -50,7 +45,6 @@
       position: relative;
       z-index: 1111111;
     }
-
     .menu-icon {
       position: absolute;
       left: 20px;
@@ -59,7 +53,6 @@
       cursor: pointer;
       z-index: 9999;
     }
-
     .menu {
       position: absolute;
       top: 60px;
@@ -69,10 +62,9 @@
       padding: 15px;
       border-radius: 10px;
       display: none;
-      z-index: 10000;
+      z-index: 99999;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
     .menu a {
       color: white;
       text-decoration: none;
@@ -80,11 +72,9 @@
       margin-bottom: 10px;
       font-weight: bold;
     }
-
     .menu.show {
       display: block;
     }
-
     .section {
       max-width: 800px;
       margin: 20px auto;
@@ -95,74 +85,33 @@
       position: relative;
       z-index: 1;
     }
-
     .section img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 20px;
     }
-
     h2, h3, h4 {
       color: #8b2ab2;
     }
-
-    .footer {
+    .footer, .navbar {
       text-align: center;
       font-size: 12px;
-      margin: 60px 0 20px;
+      margin: 40px 0 20px;
       color: #888;
     }
-
-    .navbar {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #a678d3;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      z-index: 99999;
-    }
-
     .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact-box {
-      background-color: #f3ebff;
-      border-radius: 10px;
-      padding: 20px;
-      margin-top: 40px;
-      border: 1px solid #a678d3;
-    }
-
-    .contact-box h3 {
-      color: #8b2ab2;
-    }
-
-    .contact-box p {
-      margin: 5px 0;
-    }
-
-    .contact-box a {
+      margin: 0 10px;
       color: #4d00a8;
-      font-weight: bold;
       text-decoration: none;
+      font-weight: bold;
     }
-
-    .contact-box a:hover {
+    .navbar a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
   <div class="left-img"></div>
   <div class="right-img"></div>
 
@@ -173,47 +122,56 @@
       <a href="../../index.html">⬅️ Ana Sayfa</a>
       <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
       <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
-      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı Analizi</a>
       <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
-      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performansı</a>
-      <a href="../project6-python-romi-analysis/index-tr.html">6. Facebook Reklam ROMI Python</a>
-      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL ile Reklam Analizi</a>
-      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma</a>
-      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Verisi</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Analizi</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Facebook Reklam Python Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL Reklam Performansı</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL Karşılaştırma</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Analizi</a>
     </div>
   </header>
 
   <section class="section">
     <h2>1. Proje – SaaS Gelir Analizi (Tableau)</h2>
-    <img src="../../img/project1-saas-dashboard.png" alt="SaaS Dashboard">
+    <img src="../../img/project1-saas-dashboard.png" alt="SaaS Gelir Analizi">
 
     <h3>Açıklama (Müşteriler için – Değer Odaklı ve Güven Veren Dil)</h3>
-    <p>Bu analiz, SaaS iş modelinde gelir kaynaklarını daha net görmek, stratejik kararları veriyle desteklemek ve büyümeyi sürdürülebilir hale getirmek için tasarlandı.</p>
+    <p>Bu analiz, abonelik tabanlı (SaaS) bir iş modelinde gelir kaynaklarını daha net görmek, stratejik kararları veriyle desteklemek ve büyümeyi sürdürülebilir hale getirmek için tasarlandı.</p>
     <ul>
-      <li>Ürün gelirlerini net biçimde analiz eder</li>
-      <li>Coğrafi gelir dağılımını sunar</li>
-      <li>Sezonluk dalgalanmaları gösterir</li>
-      <li>ARPPU metrikleriyle fiyat stratejisi geliştirir</li>
-      <li>Kullanıcı segmentlerini karşılaştırır</li>
+      <li>Hangi ürünlerin en çok gelir getirdiğini açıkça ortaya koyar.</li>
+      <li>Gelirin hangi coğraflardan geldiğini görselleştirir.</li>
+      <li>Zaman içindeki gelir değişimlerini gösterir.</li>
+      <li>ARPPU gibi metriklerle fiyat stratejisi geliştirmeye yardımcı olur.</li>
+      <li>Kullanıcı segmentlerine göre stratejik kararlar verir.</li>
     </ul>
+    <p><strong>Özetle:</strong> Bu analiz, yalnızca bugünkü değil, gelecekteki büyümeyi planlamak için de güçlü bir rehberdir.</p>
 
     <h3>Öneriler (Veriye Dayalı Aksiyon Planı)</h3>
     <ul>
-      <li>Yüksek gelirli ürünlere yatırım artırılmalı</li>
-      <li>Zayıf bölgelerde yerel kampanyalar önerilmeli</li>
-      <li>Sadakat programları ile yüksek ARPPU kullanıcıları elde tutulmalı</li>
-      <li>Freemium → Premium geçişi teşvik edilmeli</li>
-      <li>Yılbaşı/yaz kampanyalarında satış desteği artırılmalı</li>
+      <li>Yüksek gelirli ürünlere ekstra tanıtım yapılmalı.</li>
+      <li>Zayıf gelir bölgelerine lokal kampanyalar uygulanmalı.</li>
+      <li>ARPPU'su yüksek olanlara sadakat programı.</li>
+      <li>Freemium'dan premium'a geçiş için teklif ve e-posta kampanyaları.</li>
+      <li>Yılbaşı/yaz döneminde ekip takviyesi.</li>
+      <li>Premium davranışların analizine dayalı kampanyalar.</li>
     </ul>
 
     <h3>Teknik Analiz (Data Analysts / Recruiters için)</h3>
     <ul>
-      <li>Araç: Tableau Public</li>
-      <li>Grafikler: Zaman serisi, ürün çubuğu, ülke haritası, ARPPU KPI, segment treemap</li>
-      <li>Etkileşimli filtreler ve tool-tip özellikleri aktif</li>
+      <li><strong>Kullanılan Araç:</strong> Tableau Public</li>
+      <li><strong>Veri Yapısı:</strong> Kullanıcı, gelir ve ürün verileri</li>
     </ul>
+    <ol>
+      <li>Zaman bazlı gelir grafiği (Line chart)</li>
+      <li>Ürün bazlı gelir (Bar chart)</li>
+      <li>Ülke bazlı harita (Map chart)</li>
+      <li>ARPPU KPI kartı</li>
+      <li>Segment bazlı gelir (Treemap)</li>
+    </ol>
+    <p>Etkileşimli filtre ve tooltip desteği vardır.</p>
 
-    <p><strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong>
+    <p><strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong> 
       <span style="display: inline-flex; align-items: center;">
         Tableau
         <a href="https://public.tableau.com/app/profile/sinem.alir/viz/SaaSGelirAnalizi/Dashboard1" target="_blank" style="margin-left: 6px;">
@@ -223,22 +181,21 @@
     </p>
   </section>
 
-  <section class="section contact-box">
-    <h3>İletişim</h3>
-    <p><strong>Email:</strong> <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a></p>
-    <p><strong>Telefon:</strong> <a href="tel:+905457750852">+90 545 775 08 52</a></p>
-    <p><strong>Bionluk:</strong> <a href="https://bionluk.com" target="_blank">bionluk.com/sinemalir</a></p>
-    <p><strong>Upwork:</strong> <a href="https://upwork.com" target="_blank">upwork.com/freelancers/sinemalir</a></p>
-    <p><strong>Fiverr:</strong> <a href="https://fiverr.com" target="_blank">fiverr.com/sinemalir</a></p>
-  </section>
-
   <div class="navbar">
     <a href="../project9-akademisyennhoca-form/index-tr.html">⬅️ Önceki Proje</a>
     <a href="../../index.html">🏠 Anasayfa</a>
     <a href="../project2-user-funnel/index-tr.html">Sonraki Proje ➡️</a>
   </div>
 
-  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+  <div class="footer">
+    <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+    <p>
+      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+      <a href="https://upwork.com" target="_blank">Upwork</a> |
+      <a href="https://fiverr.com" target="_blank">Fiverr</a>
+    </p>
+    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+  </div>
 
   <script>
     function toggleMenu() {
