@@ -113,6 +113,31 @@ text-align: center;
 z-index: 1111111111;
 }
 .contact p { margin: 5px 0; }
+.navbar, .footer, .contact {
+  position: relative;
+  z-index: 1111111111;
+}
+  .bottom-wrapper {
+  position: relative;
+  z-index: 10010;
+  background-color: #fefbf6;
+  padding-bottom: 60px;
+}
+
+.navbar,
+.footer {
+  position: relative;
+  z-index: 10011;
+}
+
+.navbar a,
+.footer a {
+  pointer-events: auto;
+}
+
+.left-img, .right-img {
+  z-index: 0;
+}
 </style>
 </head>
 <body>
@@ -207,20 +232,22 @@ Tableau
 </p>
 </section>
 
-<div class="navbar">
-<a href="../project9-akademisyennhoca-form/index-tr.html">⬅️ Önceki Proje</a>
-<a href="../../index.html">🏠 Anasayfa</a>
-<a href="../project2-user-funnel/index-tr.html">Sonraki Proje ➡️</a>
-</div>
+<div class="bottom-wrapper">
+  <div class="navbar">
+    <a href="../project9-akademisyennhoca-form/index-tr.html">⬅️ Önceki Proje</a>
+    <a href="../../index.html">🏠 Anasayfa</a>
+    <a href="../project2-user-funnel/index-tr.html">Sonraki Proje ➡️</a>
+  </div>
 
-<div class="footer">
-<p>📩 [sinemalir@icloud.com](mailto:sinemalir@icloud.com) | 📱 +90 545 775 08 52</p>
-<p>
-<a href="[https://bionluk.com](https://bionluk.com/)" target="_blank">Bionluk</a> |
-<a href="[https://upwork.com](https://upwork.com/)" target="_blank">Upwork</a> |
-<a href="[https://fiverr.com](https://fiverr.com/)" target="_blank">Fiverr</a>
-</p>
-<p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+  <div class="footer">
+    <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+    <p>
+      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+      <a href="https://upwork.com" target="_blank">Upwork</a> |
+      <a href="https://fiverr.com" target="_blank">Fiverr</a>
+    </p>
+    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+  </div>
 </div>
 
 <script>
