@@ -3,227 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. Project: GA4 User Journey</title>
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="GA4 user-journey dashboard that visualizes traffic sources, devices, locations and conversion rates to optimise marketing and UX.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="GA4, user journey, conversion funnel, BigQuery, Tableau, traffic source, digital analytics">
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="Project 4 – GA4 User Journey Analysis" />
+  <meta property="og:description" content="Track every step from session start to purchase with GA4 data; boost conversions and improve user experience." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project4-ga4-user-journey.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project4-ga4-user-journey/index-en.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Project 4 – GA4 User Journey Analysis" />
+  <meta name="twitter:description" content="Visualise GA4 events to discover high-value traffic, optimise funnels and drive revenue growth." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project4-ga4-user-journey.png" />
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project4-ga4-user-journey/index-en.html" />
+  <title>Project 4: GA4 User Journey</title>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-    }
-
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
-
-    .left-img {
-      left: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    .right-img {
-      right: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto 20px;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 11111111;
-    }
-
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h2, h3, h4 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
 
+  <!-- HEADER + MENU -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
     <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Home</a>
+      <a href="../../index.html">🏠 Home</a>
       <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
-      <a href="../project2-user-funnel/index-en.html">2. User Funnel Conversion Analysis</a>
-      <a href="../project3-game-insight/index-en.html">3. Game User Behavior Analysis</a>
-      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey Analysis</a>
-      <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaign Performance Analysis</a>
-      <a href="../project6-python-romi-analysis/index-en.html">6. Facebook ROMI Analysis with Python</a>
-      <a href="../project7-cross-platform-sql/index-en.html">7. Facebook & Google SQL Performance</a>
-      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison & Efficiency</a>
-      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Google Form Analysis</a>
+      <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
+      <a href="../project3-game-insight/index-en.html">3. Game User Behaviour</a>
+      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
+      <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaign Performance</a>
+      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad ROMI</a>
+      <a href="../project7-cross-platform-sql/index-en.html">7. SQL Cross-Platform ROMI</a>
+      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison</a>
+      <a href="../project9-akademisyennhoca-form/index-en.html">9. Education Survey Analysis</a>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <section class="section">
-    <h2>4. Project – GA4 User Journey Dashboard (Tableau)</h2>
+    <h2>Project 4 – GA4 User Journey Analysis (Tableau + BigQuery)</h2>
     <img src="../../img/project4-ga4-user-journey.png" alt="GA4 User Journey Dashboard">
 
-    <h3>📌 Key Metrics</h3>
+    <!-- EXPLANATION -->
+    <h3>Overview (Value-Driven, Client-Friendly)</h3>
+    <p>This analysis tracks website or app traffic with Google Analytics 4. By mapping every step from the first interaction (e.g. landing page) to the final conversion (e.g. purchase), it boosts conversion rates and refines user experience.</p>
+
+    <p><strong>What do you gain?</strong></p>
     <ul>
-      <li>Revenue: <strong>$362K</strong></li>
-      <li>Users: <strong>270K</strong></li>
-      <li>Orders: <strong>5,670</strong></li>
-      <li>Sessions: <strong>355K</strong></li>
-      <li>Converted Users: <strong>4K</strong></li>
-      <li>Conversion Rate: <strong>1.65%</strong></li>
-      <li>AOV: <strong>$63.87</strong></li>
-      <li>LTV: <strong>1.34</strong></li>
-      <li>ARPPU: <strong>82</strong></li>
-      <li>Retention Rate: <strong>1.51%</strong></li>
+      <li>Answers where visitors come from, which pages they engage with and where they drop off.</li>
+      <li>Reveals the most common paths users take, clarifying real-world behaviour.</li>
+      <li>Identifies traffic sources that deliver the highest conversions.</li>
+      <li>Visualises the top-grossing devices, locations and channels at a glance.</li>
+      <li>Retention analysis delivers crystal-clear insights into customer loyalty.</li>
     </ul>
 
-    <h3>🌍 Revenue by Location</h3>
-    <ul>
-      <li>Top country: <strong>USA</strong> → $160K+</li>
-      <li>Followed by India and Canada</li>
-    </ul>
-    <p><em>Regional pricing and campaigns should be considered</em></p>
+    <p><strong>Bottom line:</strong> A powerful tool for brands seeking to optimise marketing spend, raise conversion rates and turn visitors into loyal customers.</p>
 
-    <h3>📈 Time Series: Revenue & Conversion</h3>
+    <!-- RECOMMENDATIONS -->
+    <h3>Data-Driven Recommendations</h3>
     <ul>
-      <li>Peak around <strong>November–December</strong></li>
-      <li>Conversion usually ranges between 1.0–2.0%</li>
-    </ul>
-    <p><em>Seasonality is evident – year-end campaigns might have boosted sales</em></p>
-
-    <h3>🔁 Funnel Breakdown</h3>
-    <ul>
-      <li>Add to Cart: <strong>4.64%</strong></li>
-      <li>Checkout: <strong>3.06%</strong></li>
-      <li>Purchase: <strong>1.64%</strong></li>
-    </ul>
-    <p><em>The cart process is the biggest bottleneck</em></p>
-
-    <h3>📊 Source & Landing Page</h3>
-    <ul>
-      <li>Top pages: Homepage & Google Store</li>
-      <li>Google Ads: <strong>2.1%</strong></li>
-      <li>Google Shopping: <strong>1.05%</strong></li>
-      <li>Direct: <strong>1.11%</strong></li>
-      <li>Organic Search: <strong>3.6%</strong></li>
-    </ul>
-    <p><em>SEO performs significantly better than paid sources</em></p>
-
-    <h3>💻 Device Type</h3>
-    <ul>
-      <li><strong>Desktop</strong>: $208K (highest revenue)</li>
-      <li><strong>Mobile</strong>: $146K with better conversion (1.66%)</li>
-      <li><strong>Tablet</strong>: lowest engagement</li>
-    </ul>
-    <p><em>Mobile-focused design may improve performance</em></p>
-
-    <h3>🧠 Suggestions</h3>
-    <ul>
-      <li>Simplify cart/checkout flow</li>
-      <li>Improve mobile UX for higher conversions</li>
-      <li>Customize campaigns per traffic source</li>
-      <li>Boost SEO based on landing page performance</li>
+      <li>Allocate more budget to high-converting traffic sources.</li>
+      <li>Fix the most-abandoned pages (page speed, content, CTAs).</li>
+      <li>Serve localised content &amp; campaigns in regions with strong loyalty.</li>
+      <li>Optimise mobile performance if metrics lag behind desktop.</li>
+      <li>Run retargeting for users who exit before key pages.</li>
+      <li>Improve onboarding flows for segments with low retention.</li>
     </ul>
 
-    <h3>📖 Simple Explanation</h3>
+    <!-- TECH ANALYSIS -->
+    <h3>Technical Breakdown</h3>
+    <p><strong>Tools:</strong></p>
     <ul>
-      <li>Visitors browse, but most abandon cart</li>
-      <li>Top buyers are from the USA</li>
-      <li>Year-end traffic and purchases increase</li>
-      <li>Organic search (SEO) brings better buyers</li>
-      <li>Mobile users convert better, desktop users spend more</li>
+      <li>Google BigQuery – event-level GA4 extraction</li>
+      <li>Tableau Public   – interactive visualisation</li>
     </ul>
 
-    <p>
-      <strong style="color: #8b2ab2;">Tools Used:</strong> 
-      <span style="display: inline-flex; align-items: center;">
-        Tableau, BigQuery
-        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GA4UserJourney/UserJourneyGA4" target="_blank" style="margin-left: 6px;">
-          <img src="../../img/tableau.png" alt="Tableau Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+    <p><strong>Data Model:</strong></p>
+    <ul>
+      <li><code>events</code> table: <em>session_start, page_view, click, purchase…</em></li>
+      <li>Fields such as <code>user_pseudo_id</code>, <code>device</code>, <code>geo</code>, <code>traffic_source</code></li>
+    </ul>
+
+    <p><strong>Dashboard Components:</strong></p>
+    <ul>
+      <li><strong>User Journey Flow (Funnel / Sankey / Step)</strong>
+        <ul><li>User counts &amp; rates from <em>session_start → page_view → engagement → purchase</em></li></ul>
+      </li>
+      <li><strong>Conversion by Traffic Source (Bar / Heatmap)</strong>
+        <ul><li>Performance across <code>source</code>, <code>medium</code>, <code>campaign</code></li></ul>
+      </li>
+      <li><strong>KPIs by Device Category</strong>
+        <ul><li>AOV, conversion rate, session duration for desktop vs mobile</li></ul>
+      </li>
+      <li><strong>Revenue &amp; Conversions by Location (Map + KPI)</strong></li>
+      <li><strong>Retention Analysis</strong>
+        <ul><li>Day 1, 7, 30 return rates; loyal-segment spotlight</li></ul>
+      </li>
+    </ul>
+
+    <p><strong>Interactive Features:</strong> All charts respond to date, channel, device and location filters; tool-tips reveal granular metrics on hover.</p>
+
+    <p><strong style="color:#8b2ab2;">Tool Badge:</strong>
+      <span style="display:inline-flex;align-items:center;">
+        Tableau
+        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GA4UserJourney/UserJourneyGA4" target="_blank" style="margin-left:6px;">
+          <img src="../../img/tableau.png" alt="Tableau Icon" style="width:50px;height:50px;vertical-align:middle;">
         </a>
       </span>
     </p>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. All rights reserved.</div>
+  <!-- NAVBAR + FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project3-game-insight/index-en.html">⬅️ Previous</a>
+      <a href="../../index.html">🏠 Home</a>
+      <a href="../project5-ad-campaigns/index-en.html">Next ➡️</a>
+    </div>
+
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+        <a href="https://upwork.com" target="_blank">Upwork</a> |
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. All rights reserved.</p>
+    </div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
   </script>
 </body>
 </html>
