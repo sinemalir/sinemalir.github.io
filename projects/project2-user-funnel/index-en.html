@@ -1,242 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="index, follow">
-<meta name="description" content="User funnel analysis, conversion rate, drop-off analysis, user segments and time to payment tracking for digital products.">
-<meta name="author" content="Sinem Alır">
-<meta name="keywords" content="user funnel, conversion analysis, digital product, Tableau dashboard, analytics">
-<meta property="og:title" content="Project 2: User Funnel Conversion Analysis" />
-<meta property="og:description" content="Track user behavior from registration to payment. See drop-offs and optimize conversion rates with detailed funnel analytics." />
-<meta property="og:image" content="https://sinemalir.com/img/project2-user-funnel.png" />
-<meta property="og:url" content="https://sinemalir.com/projects/project2-user-funnel/index-en.html" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Project 2: User Funnel Conversion Analysis" />
-<meta name="twitter:description" content="Detailed user journey funnel analysis to identify conversion drop-offs and boost engagement." />
-<meta name="twitter:image" content="https://sinemalir.com/img/project2-user-funnel.png" />
-<link rel="canonical" href="https://sinemalir.com/projects/project2-user-funnel/index-en.html" />
-<title>Project 2: User Funnel Analysis</title>
-<style>
-body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #fefbf6; }
-.left-img, .right-img {
-  position: fixed;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 0;
-  opacity: 0.2;
-}
-.left-img { left: 0; background-image: url("../../img/side-left.jpeg"); }
-.right-img { right: 0; background-image: url("../../img/side-left.jpeg"); }
-header {
-  background-color: #fefbf6cc;
-  border: 3px solid #a678d3;
-  border-radius: 20px;
-  margin: 30px auto 20px;
-  padding: 20px;
-  text-align: center;
-  max-width: 800px;
-  position: relative;
-  z-index: 1111111;
-}
-.menu-icon {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  font-size: 26px;
-  cursor: pointer;
-  z-index: 9999;
-}
-.menu {
-  position: absolute;
-  top: 60px;
-  left: 20px;
-  width: 250px;
-  background-color: #a678d3;
-  padding: 15px;
-  border-radius: 10px;
-  display: none;
-  z-index: 10000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.menu a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.menu.show { display: block; }
-.section {
-  max-width: 800px;
-  margin: 30px auto;
-  background-color: #fffaf2;
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid #a678d3;
-  position: relative;
-  z-index: 1;
-}
-.section img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-h2, h3 { color: #8b2ab2; }
-.footer, .navbar {
-  text-align: center;
-  font-size: 12px;
-  margin: 60px 0 20px;
-  color: #888;
-}
-.navbar a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #4d00a8;
-  font-weight: bold;
-  z-index: 1111111111;
-}
-.contact {
-  margin-top: 40px;
-  font-size: 14px;
-  text-align: center;
-  z-index: 1111111111;
-}
-.contact p { margin: 5px 0; }
-.navbar, .footer, .contact { position: relative; z-index: 1111111111; }
-.bottom-wrapper {
-  position: relative;
-  z-index: 10010;
-  background-color: #fefbf6;
-  padding-bottom: 60px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ────────  SEO  ──────── -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Track each step of the user journey—from sign-up to first payment—identify drop-offs and boost your conversion rate with a Tableau funnel dashboard.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="user funnel, conversion rate, funnel analysis, Tableau dashboard, drop-off analysis">
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="Project 2 – User Funnel Conversion Analysis" />
+  <meta property="og:description" content="Visualise the entire user journey, locate the biggest drop-offs and turn visitors into paying customers." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project2-user-funnel.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project2-user-funnel/index-en.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Project 2 – User Funnel Conversion Analysis" />
+  <meta name="twitter:description" content="A Tableau funnel dashboard that reveals where you lose users and how to grow your conversion rate." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project2-user-funnel.png" />
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project2-user-funnel/index-en.html" />
+  <title>Project 2: User Funnel Conversion Analysis</title>
+
+  <style>
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
+  </style>
 </head>
 <body>
-<div class="left-img"></div>
-<div class="right-img"></div>
+  <div class="left-img"></div>
+  <div class="right-img"></div>
 
-<header>
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-  <h1>Sinem Alır</h1>
-  <div class="menu" id="menu">
-    <a href="../../index.html">🏠 Home</a>
-    <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
-    <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
-    <a href="../project3-game-insight/index-en.html">3. Game User Behavior</a>
-    <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
-    <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaigns</a>
-    <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad Analysis</a>
-    <a href="../project7-cross-platform-sql/index-en.html">7. SQL Cross-Platform</a>
-    <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison</a>
-    <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Analysis</a>
-  </div>
-</header>
+  <!-- HEADER & MENU -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
 
-<section class="section">
-<h2>Project 2 – User Funnel Conversion Analysis (Tableau)</h2>
-<img src="../../img/project2-user-funnel.png" alt="User Funnel Dashboard">
+    <div class="menu" id="menu">
+      <a href="../../index.html">🏠 Home</a>
+      <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
+      <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
+      <a href="../project3-game-insight/index-en.html">3. Game User Behaviour</a>
+      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
+      <a href="../project5-ad-campaigns/index-en.html">5. Ad-Campaign Performance</a>
+      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad ROMI</a>
+      <a href="../project7-cross-platform-sql/index-en.html">7. SQL Cross-Platform Comparison</a>
+      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Benchmark</a>
+      <a href="../project9-akademisyennhoca-form/index-en.html">9. Education Survey Insights</a>
+    </div>
+  </header>
 
-<h3>Description</h3>
-<p>This analysis tracks the user journey of a digital product or platform step-by-step to reveal where potential customers are lost. It helps better understand users, take timely action, increase conversion rates, and support growth.</p>
-<p><strong>What does this analysis offer?</strong></p>
-<ul>
-<li>Clearly visualizes each step from user registration to payment.</li>
-<li>Identifies the most critical drop-off points for users.</li>
-<li>Allows tracking changes in conversion rates over time and assessing the impact of campaigns or design changes.</li>
-<li>Enables step-by-step analysis for product and marketing teams to act strategically.</li>
-<li>Supports data-driven decisions to reduce customer acquisition cost and increase retention.</li>
-</ul>
-<p><strong>Summary:</strong> This analysis doesn't just show why users are lost but also how to retain them.</p>
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <h2>Project 2 – User Funnel Conversion Analysis (Tableau)</h2>
+    <img src="../../img/project2-user-funnel.png" alt="User Funnel Dashboard">
 
-<h3>Recommendations</h3>
-<ul>
-<li>Review user experience at major drop-off points (form length, page speed, interface design).</li>
-<li>Use automated emails and onboarding campaigns for inactive users after registration.</li>
-<li>Examine high-conversion periods and reuse related campaigns or UI features.</li>
-<li>Create dedicated strategies for traffic from low-conversion channels.</li>
-<li>Offer incentives (discounts, free trials) to users who don’t reach the payment step.</li>
-<li>Target ads to profiles similar to the most loyal users.</li>
-</ul>
+    <!-- Description -->
+    <h3>Description (Value-Driven & Trust-Building)</h3>
+    <p>This analysis traces the entire user journey of a digital product step by step, revealing where potential customers drop off. The goal is to understand users better, take the right action at the right time and ultimately grow conversion and revenue.</p>
 
-<h3>Technical Analysis</h3>
-<ul>
-<li><strong>Tool Used:</strong> Tableau Public</li>
-<li><strong>Data Structure:</strong> Event logs collected from web or mobile app (registration, activation, engagement, payment)</li>
-</ul>
-<p><strong>Dashboard Components:</strong></p>
-<ul>
-<li><strong>User Funnel Visualization (Funnel Chart)</strong>
-  <ul>
-    <li>Steps: Registration → Activation → Engagement → Payment</li>
-    <li>User count and conversion rates per step</li>
-    <li>Drop-off hotspots clearly shown</li>
-  </ul>
-</li>
-<li><strong>Conversion Rate Over Time (Line Chart)</strong>
-  <ul>
-    <li>Monthly trend (converted_users / total_users)</li>
-    <li>Tracks the effects of campaigns/design changes</li>
-  </ul>
-</li>
-<li><strong>Channel-Based Conversions (Bar Chart)</strong>
-  <ul>
-    <li>Conversion rates by traffic source or medium</li>
-    <li>Highlights most effective acquisition channels</li>
-  </ul>
-</li>
-<li><strong>Average Time to Payment (Boxplot/KPI)</strong>
-  <ul>
-    <li>Calculated: payment_date - registration_date</li>
-    <li>Indicates how long it takes a user to make a purchase</li>
-  </ul>
-</li>
-<li><strong>Conversion by Segment (Treemap/Donut)</strong>
-  <ul>
-    <li>Segments: user_type, platform, device</li>
-    <li>Shows segments with higher conversion performance</li>
-  </ul>
-</li>
-</ul>
-<p><strong>Interactive Features:</strong> Users can filter by channel, time range, or segment, and view metrics in tooltips.</p>
-<p><strong style="color: #8b2ab2;">Tools:</strong> 
-  <span style="display: inline-flex; align-items: center;">
-    Tableau
-    <a href="https://public.tableau.com/app/profile/sinem.alir/viz/FunnelProject_17359855829830/FlowAnalysis" target="_blank" style="margin-left: 6px;">
-      <img src="../../img/tableau.png" alt="Tableau Icon" style="width: 50px; height: 50px; vertical-align: middle;">
-    </a>
-  </span>
-</p>
-</section>
+    <p><strong>What do you gain?</strong></p>
+    <ul>
+      <li>A crystal-clear view of every stage—from sign-up to first payment.</li>
+      <li>Pinpoint the steps with the largest drop-offs and focus your efforts where they matter most.</li>
+      <li>Track how conversion rates evolve over time to evaluate the impact of campaigns, design changes or tech updates.</li>
+      <li>Analyse each funnel stage separately so product & marketing teams can craft targeted strategies.</li>
+      <li>Cut customer-acquisition cost and boost retention with data-backed decisions.</li>
+    </ul>
+    <p><strong>Bottom line:</strong> It doesn’t just show <em>why</em> users churn, it shows <em>how</em> to keep them.</p>
 
-<div class="bottom-wrapper">
-  <div class="navbar">
-    <a href="../project1-saas-dashboard/index-en.html">⬅️ Previous Project</a>
-    <a href="../../index.html">🏠 Home</a>
-    <a href="../project3-game-insight/index-en.html">Next Project ➡️</a>
-  </div>
+    <!-- Recommendations -->
+    <h3>Recommendations</h3>
+    <ul>
+      <li>Redesign the step with highest drop-off (form length, page speed, UX flow).</li>
+      <li>Send automated reminders & promos to inactive sign-ups.</li>
+      <li>Reuse high-performing campaigns or UI changes observed during peak conversion periods.</li>
+      <li>Create tailored content flows for traffic sources with low conversion.</li>
+      <li>Offer personalised incentives (discounts, trials) to users who stall before paying.</li>
+      <li>Find your most loyal user profile and target look-alikes with paid ads.</li>
+    </ul>
 
-  <div class="footer">
-    <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
-    <p>
-      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
-      <a href="https://upwork.com" target="_blank">Upwork</a> |
-      <a href="https://fiverr.com" target="_blank">Fiverr</a>
+    <!-- Technical Analysis -->
+    <h3>Technical Analysis</h3>
+    <p><strong>Tool:</strong> Tableau Public</p>
+    <p><strong>Data:</strong> App/Web events – registration, activation, engagement, payment</p>
+
+    <p><strong>Dashboard Components:</strong></p>
+    <ul>
+      <li><strong>User Funnel</strong> – Sign-up → Activation → Engagement → Payment</li>
+      <li><strong>Conversion Time-Series</strong> – Monthly conversion rate</li>
+      <li><strong>Channel Conversion</strong> – Compare traffic sources</li>
+      <li><strong>Average Time from Sign-up to Payment</strong> – Boxplot / KPI</li>
+      <li><strong>High-Performing Segments</strong> – Treemap / Donut</li>
+    </ul>
+
+    <p><strong>Interactivity:</strong> Date, channel & segment filters plus detailed tool-tips.</p>
+
+    <!-- Tool Badge -->
+    <p><strong style="color:#8b2ab2;">Tool Used:</strong>
+      <span style="display:inline-flex;align-items:center;">
+        Tableau
+        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GA4UserJourney/UserJourneyGA4" target="_blank" style="margin-left:6px;">
+          <img src="../../img/tableau.png" alt="Tableau Icon" style="width:50px;height:50px;vertical-align:middle;">
+        </a>
+      </span>
     </p>
-    <p>© 2025 Sinem Alır. All rights reserved.</p>
-  </div>
-</div>
+  </section>
 
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("show");
-}
-</script>
+  <!-- NAVBAR & FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project1-saas-dashboard/index-en.html">⬅️ Previous</a>
+      <a href="../../index.html">🏠 Home</a>
+      <a href="../project3-game-insight/index-en.html">Next ➡️</a>
+    </div>
+
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+        <a href="https://upwork.com" target="_blank">Upwork</a> |
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
+  </script>
 </body>
 </html>
