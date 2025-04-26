@@ -3,189 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="SaaS revenue analysis with ARPPU, geographic income distribution, segmentation insights, and data visualizations for decision support.">
-  <meta name="author" content="Sinem Alır">
-  <meta name="keywords" content="SaaS, revenue analysis, Tableau, ARPPU, data analytics, dashboard">
-  <meta property="og:title" content="Project 1: SaaS Revenue Analysis" />
-  <meta property="og:description" content="Visual analysis of SaaS income, ARPPU, and user segments for strategic decisions." />
-  <meta property="og:image" content="https://sinemalir.com/img/project1-saas-dashboard.png" />
-  <meta property="og:url" content="https://sinemalir.com/projects/project1-saas-dashboard/index-en.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Project 1: SaaS Revenue Analysis" />
-  <meta name="twitter:description" content="SaaS income and ARPPU analytics with visual dashboards for insight-driven decisions." />
-  <meta name="twitter:image" content="https://sinemalir.com/img/project1-saas-dashboard.png" />
-  <link rel="canonical" href="https://sinemalir.com/projects/project1-saas-dashboard/index-en.html" />
-  <title>Project 1: SaaS Revenue Analysis</title>
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Tableau dashboard that visualises SaaS revenue, ARPPU, geography & segment metrics for data-driven decisions.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="SaaS revenue analysis, Tableau dashboard, ARPPU, segment analysis, data visualisation">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Project 1 – SaaS Revenue Analysis">
+  <meta property="og:description" content="A Tableau analysis that clarifies revenue sources in a subscription business and guides strategy with data.">
+  <meta property="og:image"       content="https://sinemalir.com/img/project1-saas-dashboard.png">
+  <meta property="og:url"         content="https://sinemalir.com/projects/project1-saas-dashboard/index-en.html">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Project 1 – SaaS Revenue Analysis">
+  <meta name="twitter:description" content="Data-driven insight into revenue, ARPPU and segments for SaaS growth.">
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project1-saas-dashboard.png">
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project1-saas-dashboard/index-en.html">
+
+  <title>Project 1 – SaaS Revenue Analysis</title>
+
   <style>
-    body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #fefbf6; }
-    .left-img, .right-img {
-      position: fixed; top: 0; width: 250px; height: 100%;
-      background-size: cover; background-repeat: no-repeat;
-      background-position: center; z-index: 0; opacity: 0.2;
-    }
-    .left-img { left: 0; background-image: url("../../img/side-left.jpeg"); }
-    .right-img { right: 0; background-image: url("../../img/side-left.jpeg"); }
-    header {
-      background-color: #fefbf6cc; border: 3px solid #a678d3; border-radius: 20px;
-      margin: 30px auto 20px; padding: 20px; text-align: center; max-width: 800px;
-      position: relative; z-index: 1111111;
-    }
-    .menu-icon { position: absolute; left: 20px; top: 20px; font-size: 26px; cursor: pointer; z-index: 9999; }
-    .menu {
-      position: absolute; top: 60px; left: 20px; width: 250px; background-color: #a678d3;
-      padding: 15px; border-radius: 10px; display: none; z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .menu a { color: white; text-decoration: none; display: block; margin-bottom: 10px; font-weight: bold; }
-    .menu.show { display: block; }
-    .section {
-      max-width: 800px; margin: 30px auto; background-color: #fffaf2;
-      padding: 20px; border-radius: 15px; border: 1px solid #a678d3;
-      position: relative; z-index: 1;
-    }
-    .section img {
-      width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;
-    }
-    h2, h3 { color: #8b2ab2; }
-    .footer, .navbar {
-      text-align: center; font-size: 12px; margin: 60px 0 20px; color: #888;
-    }
-    .navbar a {
-      margin: 0 10px; text-decoration: none; color: #4d00a8;
-      font-weight: bold; z-index: 1111111111;
-    }
-    .contact {
-      margin-top: 40px; font-size: 14px; text-align: center;
-      z-index: 1111111111;
-    }
-    .contact p { margin: 5px 0; }
-    .navbar, .footer, .contact { position: relative; z-index: 1111111111; }
-    .bottom-wrapper {
-      position: relative; z-index: 10010; background-color: #fefbf6;
-      padding-bottom: 60px;
-    }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6;}
+    .side{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
+    .side.left{left:0;background-image:url("../../img/side-left.jpeg");}
+    .side.right{right:0;background-image:url("../../img/side-left.jpeg");}
+
+    header{max-width:800px;margin:30px auto 20px;padding:20px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:1111111;}
+    header h1{margin:0;font-size:2rem;color:#000;}
+
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999;}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2);}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:700;}
+    .menu.show{display:block;}
+
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1;}
+    .section img{width:100%;border-radius:10px;margin-bottom:20px;}
+    h2,h3{color:#8b2ab2;}
+
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px;}
+    .navbar,.footer{text-align:center;font-size:12px;color:#888;margin:60px 0 20px;}
+    .navbar a{text-decoration:none;color:#4d00a8;font-weight:700;margin:0 10px;}
+    .footer a{color:#4d00a8;text-decoration:none;}
   </style>
 </head>
 <body>
-  <div class="left-img"></div>
-  <div class="right-img"></div>
+  <!-- Decorative sides -->
+  <div class="side left"></div>
+  <div class="side right"></div>
 
+  <!-- Header -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
-    <div class="menu" id="menu">
+
+    <!-- Navigation menu -->
+    <nav class="menu" id="menu">
       <a href="../../index.html">🏠 Home</a>
       <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
       <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
-      <a href="../project3-game-insight/index-en.html">3. Game User Behavior</a>
+      <a href="../project3-game-insight/index-en.html">3. Game User Behaviour</a>
       <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
       <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaign Performance</a>
-      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad Analysis</a>
-      <a href="../project7-cross-platform-sql/index-en.html">7. SQL Platform Comparison</a>
-      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison</a>
-      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Insights</a>
-    </div>
+      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad ROMI Analysis</a>
+      <a href="../project7-cross-platform-sql/index-en.html">7. Cross-Platform SQL Comparison</a>
+      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Benchmark</a>
+      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Survey</a>
+    </nav>
   </header>
 
- <section class="section">
-  <h2>Project 1 – SaaS Revenue Analysis (Tableau)</h2>
-  <img src="../../img/project1-saas-dashboard.png" alt="SaaS Dashboard" style="width:100%; border-radius:10px; margin-bottom: 20px;">
+  <!-- Main content -->
+  <section class="section">
+    <h2>Project 1 – SaaS Revenue Analysis (Tableau)</h2>
+    <img src="../../img/project1-saas-dashboard.png" alt="SaaS Dashboard">
 
-  <h3>Description</h3>
-  <p>This analysis is designed to help visualize revenue sources in a subscription-based (SaaS) business model more clearly, support strategic decisions with data, and make growth sustainable.</p>
-  <p><strong>What does this analysis offer?</strong></p>
-  <ul>
-    <li>It clearly identifies which products generate the most revenue. This allows you to shape product strategy based on solid data and invest more in high-performing products.</li>
-    <li>It visualizes which geographies generate revenue, helping focus marketing and sales efforts in the right regions.</li>
-    <li>It shows changes in revenue over time, helping you catch seasonal trends and take timely actions.</li>
-    <li>With metrics like ARPPU (Average Revenue Per Paying User), it enables reevaluation of pricing strategies or the creation of new offers for different segments.</li>
-    <li>Analyzing revenue by user segments provides a foundation for loyalty programs, cross-sell campaigns, or premium conversion strategies.</li>
-  </ul>
-  <p><strong>Summary:</strong> This analysis is a powerful guide not only to understand today’s revenue but to plan and drive future growth with data.</p>
+    <!-- Narrative -->
+    <h3>Description (Value-Driven & Trust-Building Language)</h3>
+    <p>This analysis was designed to give a crystal-clear view of revenue streams in a subscription-based (SaaS) business model, back strategic decisions with data and keep growth sustainable.</p>
 
-  <h3>Recommendations</h3>
-  <ul>
-    <li>Top-performing products should be promoted further rather than discounted. Success patterns can be applied to other products.</li>
-    <li>Local campaigns, payment options, and support should be implemented in regions with weak revenue.</li>
-    <li>Loyalty programs should be introduced for users with high ARPPU; these users can be offered exclusive content and early access.</li>
-    <li>Time-limited trials and personalized email campaigns are recommended to convert freemium users to premium.</li>
-    <li>Sales teams should be reinforced during seasonal peaks (e.g., year-end, early summer).</li>
-    <li>Premium users' behaviors should be analyzed for segment-based marketing strategies.</li>
-  </ul>
+    <p><strong>What does this analysis deliver?</strong></p>
+    <ul>
+      <li>It explicitly shows which products generate the most revenue, letting you shape product strategy on solid data and invest more in high-performing lines.</li>
+      <li>By visualising where revenue comes from geographically, it helps focus marketing and sales efforts on the right regions.</li>
+      <li>It uncovers seasonal revenue shifts so you can catch trends and act at the right moment.</li>
+      <li>Metrics like ARPPU let you reassess pricing or craft new offers to unlock potential in different segments.</li>
+      <li>Analysing revenue contribution by user segment lays a firm foundation for loyalty programmes, cross-sell campaigns or premium-upgrade strategies.</li>
+    </ul>
+    <p><strong>In short:</strong> this analysis is a powerful guide not only for seeing today’s revenues, but for planning future growth with data.</p>
 
-  <h3>Technical Analysis</h3>
-  <ul>
-    <li><strong>Tool Used:</strong> Tableau Public</li>
-    <li><strong>Data Structure:</strong> User, revenue, and product data from a SaaS company</li>
-  </ul>
-  <p><strong>Dashboard Components:</strong></p>
-  <ul>
-    <li><strong>Time-Based Revenue Chart (Line Chart)</strong>
-      <ul>
-        <li>Created using SUM(revenue_amount) over payment_date</li>
-        <li>Seasonal effects and campaign periods were detected</li>
-      </ul>
-    </li>
-    <li><strong>Product-Based Revenue (Bar Chart)</strong>
-      <ul>
-        <li>Bar chart sorted by SUM(revenue_amount) per product_name</li>
-        <li>Top revenue-generating products clearly highlighted</li>
-      </ul>
-    </li>
-    <li><strong>Country-Based Map Visualization (Map Chart)</strong>
-      <ul>
-        <li>SUM(revenue_amount) by country</li>
-        <li>Geo-comparative display of income</li>
-      </ul>
-    </li>
-    <li><strong>ARPPU KPI Card</strong>
-      <ul>
-        <li>Formula: SUM(revenue_amount) / COUNTD(paying_user_id)</li>
-      </ul>
-    </li>
-    <li><strong>Segment-Based User Distribution (Treemap / Donut)</strong>
-      <ul>
-        <li>SUM(revenue_amount) by user_segment</li>
-        <li>Freemium vs. premium user contributions analyzed separately</li>
-      </ul>
-    </li>
-  </ul>
-  <p><strong>Interactive Features:</strong> All charts include dynamic filters and tool-tips for deep user insights.</p>
+    <!-- Recommendations -->
+    <h3>Recommendations (Data-Driven Action Plan)</h3>
+    <ul>
+      <li>Run extra promotions (not discounts) on the highest-earning products and replicate their success factors elsewhere.</li>
+      <li>Launch local campaigns, local payment options and support in under-performing regions.</li>
+      <li>Create loyalty programmes for high-ARPPU users, offering exclusive content and early access perks.</li>
+      <li>Convert freemium users to premium with time-limited trials and personalised email campaigns.</li>
+      <li>Staff sales teams up during seasonal peaks (e.g. year-end, early summer).</li>
+      <li>Analyse premium-user behaviour in depth and run segment-specific marketing.</li>
+    </ul>
 
-  <p><strong style="color: #8b2ab2;">Tools:</strong>
-    <span style="display: inline-flex; align-items: center;">
-      Tableau
-      <a href="https://public.tableau.com/app/profile/sinem.alir/viz/SaaSGelirAnalizi/Dashboard1" target="_blank" style="margin-left: 6px;">
-        <img src="../../img/tableau.png" alt="Tableau Icon" style="width: 50px; height: 50px; vertical-align: middle;">
-      </a>
-    </span>
-  </p>
-</section>
+    <!-- Technical -->
+    <h3>Technical Analysis (for Data Analysts / Recruiters)</h3>
+    <ul>
+      <li><strong>Tool:</strong> Tableau Public</li>
+      <li><strong>Data Structure:</strong> SaaS user, revenue & product tables</li>
+    </ul>
 
+    <p><strong>Dashboard Components:</strong></p>
+    <ul>
+      <li><strong>Time-Series Revenue Chart (Line)</strong>
+        <ul>
+          <li><code>payment_date</code> with <code>SUM(revenue_amount)</code></li>
+          <li>Identified seasonal effects and campaign periods</li>
+        </ul>
+      </li>
+      <li><strong>Revenue by Product (Bar)</strong>
+        <ul>
+          <li><code>product_name</code> with <code>SUM(revenue_amount)</code></li>
+          <li>Top earners stand out clearly</li>
+        </ul>
+      </li>
+      <li><strong>Country-Level Map</strong>
+        <ul>
+          <li><code>country</code> with <code>SUM(revenue_amount)</code></li>
+        </ul>
+      </li>
+      <li><strong>ARPPU KPI Card</strong>
+        <ul>
+          <li>Formula: <code>SUM(revenue_amount) / COUNTD(paying_user_id)</code></li>
+        </ul>
+      </li>
+      <li><strong>Revenue by User Segment (Treemap / Donut)</strong>
+        <ul>
+          <li><code>user_segment</code> with <code>SUM(revenue_amount)</code></li>
+          <li>Shows freemium vs premium contribution</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><strong>Interactive Features:</strong> dynamic filters & tool-tips on all charts for deep exploration.</p>
+
+    <!-- Tableau link -->
+    <p><strong style="color:#8b2ab2;">Tool Link:</strong>
+      <span style="display:inline-flex;align-items:center;">
+        Tableau
+        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/SaaSGelirAnalizi/Dashboard1" target="_blank" style="margin-left:6px;">
+          <img src="../../img/tableau.png" alt="Tableau Icon" style="width:50px;height:50px;vertical-align:middle;">
+        </a>
+      </span>
+    </p>
+  </section>
+
+  <!-- Bottom navigation + contact -->
   <div class="bottom-wrapper">
     <div class="navbar">
       <a href="../project9-akademisyennhoca-form/index-en.html">⬅️ Previous Project</a>
-      <a href="../../en.html">🏠 Home</a>
+      <a href="../../index.html">🏠 Home</a>
       <a href="../project2-user-funnel/index-en.html">Next Project ➡️</a>
     </div>
 
     <div class="footer">
-      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
-      <p>
-        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
-        <a href="https://upwork.com" target="_blank">Upwork</a> |
-        <a href="https://fiverr.com" target="_blank">Fiverr</a>
-      </p>
-      <p>© 2025 Sinem Alır. All rights reserved.</p>
+      📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> |
+      📱 <a href="tel:+905457750852">+90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</a><br>
+      <a href="https://bionluk.com"      target="_blank" rel="noopener">Bionluk</a> |
+      <a href="https://www.upwork.com"   target="_blank" rel="noopener">Upwork</a> |
+      <a href="https://www.fiverr.com"   target="_blank" rel="noopener">Fiverr</a><br>
+      © 2025 Sinem Alır – All rights reserved.
     </div>
   </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
   </script>
 </body>
 </html>
