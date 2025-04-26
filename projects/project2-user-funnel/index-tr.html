@@ -3,125 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="Kullanıcı dönüşüm hunisi, kayıt-ödeme yolculuğu, aylık dönüşüm oranları ve veri bazlı önerilerle kullanıcı davranış analizi.">
-  <meta name="author" content="Sinem Alır">
-  <meta name="keywords" content="funnel analizi, dönüşüm oranı, kullanıcı davranışı, tableau dashboard, veri analizi">
-  <meta property="og:title" content="2. Proje: Kullanıcı Hunisi Analizi" />
-  <meta property="og:description" content="Kullanıcıların kayıt aşamasından ödeme yapmaya kadar olan yolculuklarını adım adım analiz eden dönüşüm hunisi projesi.">
-  <meta property="og:image" content="https://sinemalir.com/img/project2-user-funnel.png" />
-  <meta property="og:url" content="https://sinemalir.com/projects/project2-user-funnel/index-tr.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="2. Proje: Kullanıcı Hunisi Analizi" />
-  <meta name="twitter:description" content="Kullanıcı dönüşüm hunisi, kayıt-ödeme yolculuğu ve önerilerle zenginleştirilmiş analiz dashboardu." />
-  <meta name="twitter:image" content="https://sinemalir.com/img/project2-user-funnel.png" />
+
+  <!-- ────────  SEO  ──────── -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Kullanıcı hunisi analiziyle kayıt-tan ödemeye tüm adımlarda kayıpları tespit edin, dönüşüm oranlarını artırın.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="kullanıcı hunisi, funnel analysis, dönüşüm, Tableau, funnel chart, ROMI">
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="2. Proje – Kullanıcı Hunisi Analizi" />
+  <meta property="og:description" content="Kayıt-tan ödemeye kullanıcı yolculuğunu izleyin, en çok kaybedilen adımları bulun, dönüşümünüzü büyütün." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project2-user-funnel.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project2-user-funnel/index-tr.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="2. Proje – Kullanıcı Hunisi Analizi" />
+  <meta name="twitter:description" content="Tableau ile kullanıcı yolculuğu: kayıt → aktivasyon → etkileşim → ödeme. Hangi adımda kayıp var öğrenin." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project2-user-funnel.png" />
+
   <link rel="canonical" href="https://sinemalir.com/projects/project2-user-funnel/index-tr.html" />
   <title>2. Proje: Kullanıcı Hunisi Analizi</title>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-    }
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
-    .left-img { left: 0; background-image: url("../../img/side-left.jpeg"); }
-    .right-img { right: 0; background-image: url("../../img/side-left.jpeg"); }
-    header {
-      background-color: #fefbf6cc;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto 20px;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 1111111;
-    }
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .menu.show { display: block; }
-    .section {
-      max-width: 800px;
-      margin: 30px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
-    }
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    h2, h3 { color: #8b2ab2; }
-    .footer, .navbar {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
-    .navbar a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #4d00a8;
-      font-weight: bold;
-    }
-    .contact {
-      margin-top: 40px;
-      font-size: 14px;
-      text-align: center;
-    }
-    .contact p { margin: 5px 0; }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
+
+  <!-- HEADER & MENU -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
+
     <div class="menu" id="menu">
       <a href="../../index.html">🏠 Ana Sayfa</a>
-      <!-- Projeler menüsü -->
       <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
       <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
       <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
@@ -134,95 +69,84 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <section class="section">
     <h2>2. Proje – Kullanıcı Hunisi Analizi (Tableau)</h2>
-    <img src="../../img/project2-user-funnel.png" alt="Kullanıcı Hunisi Dashboard">
+    <img src="../../img/project2-user-funnel.png" alt="User Funnel Dashboard">
 
+    <!-- Description -->
     <h3>Açıklama</h3>
     <p>Bu analiz, bir dijital ürün veya platformun kullanıcı yolculuğunu adım adım izleyerek, potansiyel müşterilerin hangi aşamalarda kaybedildiğini ortaya koyar. Amacı, kullanıcıları daha iyi anlamak, doğru zamanda doğru aksiyonları alarak dönüşüm oranlarını artırmak ve büyümeyi desteklemektir.</p>
+
     <p><strong>Bu analiz ne kazandırır?</strong></p>
     <ul>
-      <li>Kullanıcıların kayıt olmaktan ödeme yapmaya kadar geçtiği tüm aşamalar net bir şekilde ortaya konur.</li>
-      <li>Hangi adımlarda en çok kullanıcı kaybedildiği tespit edilerek, bu adımlar üzerinde odaklanma sağlanır.</li>
-      <li>Zaman içindeki dönüşüm oranı değişimleri incelenerek kampanya, tasarım veya teknik değişikliklerin etkisi ölçülebilir.</li>
-      <li>Her bir dönüşüm aşaması için ayrı ayrı analiz yapılabildiğinden, ürün geliştirme ve pazarlama ekipleri spesifik stratejiler üretebilir.</li>
-      <li>Müşteri edinme maliyetini azaltmak ve elde tutma oranlarını artırmak için somut veriyle karar alınabilir.</li>
+      <li>Kullanıcıların kayıt olmaktan ödeme yapmaya kadar geçtiği tüm aşamalar net biçimde ortaya konur.</li>
+      <li>En çok kayıp verilen adımlar belirlenir ve bu noktalara odaklanılır.</li>
+      <li>Dönüşüm oranı zaman içinde izlenerek kampanya, tasarım veya teknik değişikliklerin etkisi ölçülür.</li>
+      <li>Her dönüşüm adımı ayrı analiz edildiği için ürün ve pazarlama ekipleri spesifik stratejiler geliştirebilir.</li>
+      <li>Müşteri edinme maliyeti düşer, elde tutma oranı artar.</li>
     </ul>
-    <p><strong>Sonuç:</strong> Bu analiz, yalnızca kullanıcıların neden kaybedildiğini değil, onları nasıl elde tutabileceğinizi de gösterir.</p>
+    <p><strong>Sonuç:</strong> Kullanıcıların neden kaybedildiğini değil, nasıl elde tutulacağını da gösteren güçlü bir rehber.</p>
 
+    <!-- Recommendations -->
     <h3>Öneriler</h3>
     <ul>
-      <li>En çok kullanıcı kaybının yaşandığı adımda kullanıcı deneyimi gözden geçirilmeli.</li>
-      <li>Kayıttan sonra etkin olmayan kullanıcılar için otomatik hatırlatma e-postaları ve tanıtım kampanyaları uygulanmalı.</li>
-      <li>Dönüşüm oranı yüksek dönemler incelenerek bu dönemlerdeki uygulama değişiklikleri, kampanyalar veya içerikler yeniden kullanılmalı.</li>
-      <li>Zayıf dönüşüm gösteren kanallardan gelen trafiğe özel içerik ve yönlendirme stratejileri oluşturulmalı.</li>
-      <li>İlk ödeme adımına ulaşamayan kullanıcılar için kişiselleştirilmiş teşvikler (indirim, deneme süresi) önerilebilir.</li>
-      <li>En sadık kullanıcı profili belirlenerek bu profile benzer kişilere yönelik hedefli reklamlar çıkarılabilir.</li>
+      <li>Kayıp yaşanan adımda UX yeniden tasarlanmalı (form uzunluğu, sayfa hızı vb.).</li>
+      <li>Aktif olmayan kullanıcılar için otomatik hatırlatma ve kampanyalar kurgulanmalı.</li>
+      <li>Yüksek dönüşüm dönemlerindeki uygulama/kampanya değişiklikleri tekrar kullanılmalı.</li>
+      <li>Zayıf dönüşüm sağlayan kaynaklara özel içerik ve yönlendirme stratejileri oluşturulmalı.</li>
+      <li>İlk ödemeye ulaşamayan kullanıcılar için kişiselleştirilmiş teşvikler sunulmalı.</li>
+      <li>Sadık kullanıcı profiline benzer kitlelere hedefli reklamlar gösterilmeli.</li>
     </ul>
 
+    <!-- Technical Analysis -->
     <h3>Teknik Analiz</h3>
+    <p><strong>Kullanılan Araç:</strong> Tableau Public</p>
+    <p><strong>Veri Yapısı:</strong> Kayıt, aktivasyon, etkileşim ve ödeme event’leri</p>
+
+    <p><strong>Dashboard Bileşenleri:</strong></p>
     <ul>
-      <li><strong>Kullanılan Araç:</strong> Tableau Public</li>
-      <li><strong>Veri Yapısı:</strong> Web veya mobil uygulamadan toplanan event verileri (registration, activation, engagement, payment)</li>
+      <li><strong>Kullanıcı Hunisi</strong> – Kayıt → Aktivasyon → Etkileşim → Ödeme</li>
+      <li><strong>Zaman Serisi Dönüşüm</strong> – Aylık dönüşüm oranı</li>
+      <li><strong>Kanal Bazlı Dönüşüm</strong> – Trafik kaynağına göre karşılaştırma</li>
+      <li><strong>Ortalama Kayıttan Ödemeye Süre</strong> – Boxplot / KPI</li>
+      <li><strong>Dönüşümde Başarılı Segmentler</strong> – Treemap / Donut</li>
     </ul>
-    <p><strong>Dashboard’daki Bileşenler:</strong></p>
-    <ul>
-      <li><strong>Kullanıcı Hunisi Görselleştirmesi (Funnel Chart)</strong>
-        <ul>
-          <li>Adımlar: Kayıt → Aktivasyon → Etkileşim → Ödeme</li>
-          <li>Her adımdaki kullanıcı sayısı ve bir önceki adıma göre dönüşüm oranı hesaplandı</li>
-          <li>En fazla kullanıcı kaybı yaşanan adım net şekilde gösterildi</li>
-        </ul>
-      </li>
-      <li><strong>Zaman Serisi Dönüşüm Grafiği (Line Chart)</strong>
-        <ul>
-          <li>month bazında dönüşüm oranı (converted_users / total_users)</li>
-          <li>Kampanyaların ve tasarım değişikliklerinin zamana etkisi analiz edildi</li>
-        </ul>
-      </li>
-      <li><strong>Kanal Bazlı Dönüşüm (Bar Chart)</strong>
-        <ul>
-          <li>traffic_source veya medium bazlı dönüşüm oranları karşılaştırıldı</li>
-          <li>En verimli kullanıcı edinim kanalları tespit edildi</li>
-        </ul>
-      </li>
-      <li><strong>Kayıttan Ödemeye Ortalama Süre (Boxplot veya KPI)</strong>
-        <ul>
-          <li>payment_date - registration_date hesaplandı</li>
-          <li>Kullanıcının ödeme yapmaya ne kadar sürede karar verdiği incelendi</li>
-        </ul>
-      </li>
-      <li><strong>Dönüşüm Başarısı Gösteren Segmentler (Treemap veya Donut)</strong>
-        <ul>
-          <li>user_type, platform, device gibi kategorilerle segment analizi yapıldı</li>
-          <li>Hangi segmentlerde dönüşüm daha yüksek olduğu vurgulandı</li>
-        </ul>
-      </li>
-    </ul>
-    <p><strong>Etkileşimli Özellikler:</strong> Dashboard’da kanal, zaman aralığı ve segment seçerek farklı senaryolar hızlıca incelenebiliyor. Tool-tip’lerle kullanıcı sayıları, oranlar ve ek metrikler anlık görüntülenebiliyor.</p>
+
+    <p><strong>Etkileşim:</strong> Kanal, zaman ve segment filtreleri; detaylı tool-tip’ler.</p>
+
+    <!-- Tool Badge -->
+    <p><strong style="color:#8b2ab2;">Kullanılan Araç:</strong>
+      <span style="display:inline-flex;align-items:center;">
+        Tableau
+        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GA4UserJourney/UserJourneyGA4" target="_blank" style="margin-left:6px;">
+          <img src="../../img/tableau.png" alt="Tableau Icon" style="width:50px;height:50px;vertical-align:middle;">
+        </a>
+      </span>
+    </p>
   </section>
 
-  <div class="navbar">
-    <a href="../project1-saas-dashboard/index-tr.html">⬅️ Önceki Proje</a>
-    <a href="../../index.html">🏠 Anasayfa</a>
-    <a href="../project3-game-insight/index-tr.html">Sonraki Proje ➡️</a>
-  </div>
+  <!-- NAVBAR & FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project1-saas-dashboard/index-tr.html">⬅️ Önceki Proje</a>
+      <a href="../../index.html">🏠 Anasayfa</a>
+      <a href="../project3-game-insight/index-tr.html">Sonraki Proje ➡️</a>
+    </div>
 
-  <div class="footer">
-    <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
-    <p>
-      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
-      <a href="https://upwork.com" target="_blank">Upwork</a> |
-      <a href="https://fiverr.com" target="_blank">Fiverr</a>
-    </p>
-    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+        <a href="https://upwork.com" target="_blank">Upwork</a> |
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+    </div>
   </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
   </script>
 </body>
 </html>
