@@ -3,130 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ────── SEO ────── -->
   <title>Sinem Alır | Portföy (TR)</title>
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Sinem Alır’ın Tableau, SQL, Python ve Looker Studio projelerinden oluşan Türkçe veri analitiği portföyü.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Veri analizi, Tableau, SQL, Python, Looker Studio, Pazarlama Analitiği">
+
+  <!-- Open-Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="tr_TR">
+  <meta property="og:url"         content="https://sinemalir.com/tr.html">
+  <meta property="og:title"       content="Sinem Alır | Portföy (TR)">
+  <meta property="og:description" content="Sinem Alır’ın Türkçe veri analitiği projeleri portföyü">
+  <meta property="og:image"       content="https://sinemalir.com/img/og-cover.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sinem Alır | Portföy (TR)">
+  <meta name="twitter:description" content="SQL, Tableau, Python projeleriyle veri odaklı çözümler.">
+  <meta name="twitter:image"       content="https://sinemalir.com/img/og-cover.png">
+
+  <link rel="canonical" href="https://sinemalir.com/tr.html">
+
+  <!-- ────── STİL ────── -->
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
+    :root {
+      --bg-main:   #fefbf6;
+      --bg-card:   #fffaf2;
+      --violet:    #a678d3;
+      --violet-d:  #8b2ab2;
+      --link:      #4d00a8;
     }
 
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
+    *       { box-sizing: border-box; }
+    body    { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg-main); }
 
-    .left-img {
-      left: 0;
-      background-image: url("img/side-left.jpeg");
-    }
+    /* Yan görseller */
+    .side-img { position: fixed; top: 0; width: 250px; height: 100%; background: center / cover no-repeat; opacity: .2; z-index: 0; }
+    .side-img.left  { left: 0;  background-image: url("img/side-left.jpeg");  }
+    .side-img.right { right: 0; background-image: url("img/side-left.jpeg");  }
 
-    .right-img {
-      right: 0;
-      background-image: url("img/side-left.jpeg");
-    }
+    /* Header */
+    header             { position: relative; z-index: 3; max-width: 800px; margin: 30px auto; padding: 20px; text-align: center;
+                         background: var(--bg-main); border: 3px solid var(--violet); border-radius: 20px; }
 
-    header, .section {
-      position: relative;
-      z-index: 3;
-    }
+    /* Hamburger */
+    .menu-toggle       { position: absolute; left: 20px; top: 45px; font-size: 26px; cursor: pointer; z-index: 9999; }
 
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 2;
-    }
+    /* Menü */
+    .menu              { position: absolute; top: 90px; left: 20px; width: 120px;
+                         background: var(--violet); border-radius: 10px; padding: 15px; display: none;
+                         box-shadow: 0 4px 8px rgba(0,0,0,.12); z-index: 10000; }
+    .menu a            { display: block; margin-bottom: 15px; font-weight: 700; color: #fff; text-decoration: none; }
+    .menu.show         { display: block; }
 
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 45px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
+    /* Genel bölüm kartı */
+    .section           { position: relative; z-index: 2; max-width: 800px; margin: 30px auto;
+                         background: var(--bg-card); border: 1px solid var(--violet); border-radius: 15px; padding: 20px; }
 
-    .menu {
-      position: absolute;
-      top: 90px;
-      left: 20px;
-      width: 110px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+    h2                 { color: var(--violet-d); margin-top: 0; }
+    ul                 { padding-left: 20px; }
+    a                  { color: var(--link); text-decoration: none; }
+    a:hover            { text-decoration: underline; }
 
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 30px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      z-index: 1;
-    }
-
-    h2 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: #4d00a8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    /* Footer (iletişim) */
+    .footer            { position: relative; z-index: 3; text-align: center; font-size: 12px; color: #888; margin: 60px 0 20px; }
+    .footer a          { color: var(--link); }
   </style>
 </head>
 <body>
 
-  <div class="left-img"></div>
-  <div class="right-img"></div>
+  <!-- Sabit arka plan görselleri -->
+  <div class="side-img left"></div>
+  <div class="side-img right"></div>
 
+  <!-- HEADER -->
   <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="menu" id="menu">
       <a href="#hakkimda">📌 Hakkımda</a>
       <a href="#projeler">📁 Projeler</a>
@@ -135,26 +90,24 @@
     <h1>Sinem Alır</h1>
   </header>
 
+  <!-- HAKKIMDA -->
   <section id="hakkimda" class="section">
     <h2>📌 Hakkımda</h2>
-    <p>
-      15 yılı aşkın satış ve ekip yönetimi deneyimimi, veri odaklı karar alma süreçlerine taşıyarak veri analisti olarak yeni bir kariyer yolculuğuna başladım. Jeoloji mühendisliği eğitimimle kazandığım analitik bakış açısını, güçlü iletişim becerilerim ve çözüme odaklı yaklaşımımla birleştirerek iş dünyasının veriyle şekillenen ihtiyaçlarına yanıt vermeye odaklandım.
-    </p>
-    <p>
-      SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.
-    </p>
-    <strong>Güçlü yönlerim arasında:</strong>
+    <p>15 yılı aşkın satış ve ekip yönetimi deneyimimi, veri odaklı karar alma süreçlerine taşıyarak <strong>veri analisti</strong> olarak yeni bir kariyer yolculuğuna başladım. Jeoloji mühendisliği eğitimimle kazandığım analitik bakış açısını, güçlü iletişim becerilerim ve çözüme odaklı yaklaşımımla birleştirerek iş dünyasının veriyle şekillenen ihtiyaçlarına yanıt vermeye odaklandım.</p>
+    <p>SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.</p>
+
+    <strong>Güçlü yönlerim:</strong>
     <ul>
       <li>İş zekâsını ve saha deneyimini veri analitiğiyle buluşturmak</li>
       <li>Büyük veri setlerinde temizlik, analiz ve görselleştirme süreçlerini yönetmek</li>
       <li>Satış ve kampanya verileri üzerinden KPI takibi yapmak</li>
-      <li>Takım çalışmasına yatkınlık ve öğrenmeye açık bir yaklaşım sergilemek</li>
+      <li>Takım çalışmasına yatkınlık ve öğrenmeye açık yaklaşım</li>
     </ul>
-    <p>
-      Veriyi sadece sayılardan ibaret görmeyen, her verinin bir hikâyesi olduğuna inanan ve bu hikâyeyi doğru anlatmaya çalışan bir analistim.
-    </p>
+
+    <p>Veriyi sadece sayılardan ibaret görmeyen, <em>“her verinin bir hikâyesi vardır”</em> mottosuyla hikâyeyi doğru anlatmaya çalışan bir analistim.</p>
   </section>
 
+  <!-- PROJELER -->
   <section id="projeler" class="section">
     <h2>✅ Projeler</h2>
     <ul>
@@ -170,12 +123,20 @@
     </ul>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+  <!-- FOOTER / İLETİŞİM -->
+  <div class="footer">
+    <p>📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> | 📱 <a href="tel:+905457750852">+90 545 775 08 52</a></p>
+    <p>
+      <a href="https://bionluk.com" target="_blank" rel="noopener">Bionluk</a> | 
+      <a href="https://fiverr.com"  target="_blank" rel="noopener">Fiverr</a> | 
+      <a href="https://upwork.com"  target="_blank" rel="noopener">Upwork</a>
+    </p>
+    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+  </div>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
+      document.getElementById('menu').classList.toggle('show');
     }
   </script>
 </body>
