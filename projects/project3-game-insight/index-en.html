@@ -3,225 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project 3: Game Insights</title>
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Game-user behaviour dashboard: play-time, engagement, device preferences, seasonality and actionable insights to boost retention.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="game analytics, user behaviour, Tableau dashboard, device analysis, player retention">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Project 3 – Game User Behaviour Analysis" />
+  <meta property="og:description" content="Deep-dive into age, device and seasonal trends to understand how gamers play and how to keep them engaged." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project3-game-insight.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project3-game-insight/index-en.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Project 3 – Game User Behaviour Analysis" />
+  <meta name="twitter:description" content="Analyse play-time, engagement and device trends to craft data-driven player-retention strategies." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project3-game-insight.png" />
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project3-game-insight/index-en.html" />
+  <title>Project 3 – Game User Behaviour</title>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-    }
-
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
-
-    .left-img {
-      left: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    .right-img {
-      right: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto 20px;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 11111111;
-    }
-
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h2, h3, h4 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
 
+  <!-- HEADER + MENU -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
     <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Home</a>
+      <a href="../../index.html">🏠 Home</a>
       <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
-      <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
-      <a href="../project3-game-insight/index-en.html">3. Game Insights Dashboard</a>
-      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey Analysis</a>
+      <a href="../project2-user-funnel/index-en.html">2. User Funnel Conversion</a>
+      <a href="../project3-game-insight/index-en.html">3. Game User Behaviour</a>
+      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
       <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaign Performance</a>
-      <a href="../project6-python-romi-analysis/index-en.html">6. Python Facebook Ad ROMI</a>
-      <a href="../project7-cross-platform-sql/index-en.html">7. Facebook & Google Ads SQL</a>
+      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad ROMI</a>
+      <a href="../project7-cross-platform-sql/index-en.html">7. SQL Cross-Platform Ads</a>
       <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison</a>
-      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Form Data</a>
+      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Survey</a>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <section class="section">
-    <h2>Project 3 – Game Insights Dashboard (Tableau)</h2>
+    <h2>Project 3 – Game User Behaviour Dashboard (Tableau)</h2>
     <img src="../../img/project3-game-insight.png" alt="Game Insights Dashboard">
 
-    <h3>🔍 TECHNICAL ANALYSIS</h3>
-    <h4>1. Usage by Game Activity Type</h4>
-    <ul>
-      <li>Battle Pass Challenge in Game 3 dominates with nearly 100M seconds</li>
-      <li>Followed by “Main Campaign” and “Clan Multiplayer”</li>
-      <li>“Mini-games” are played far less</li>
-    </ul>
-    <p><em>Players spend more time in large-scale competitive activities</em></p>
+    <!-- EXPLANATION -->
+    <h3>Explanation (Value-Driven & Trust-Building)</h3>
+    <p>This analysis examines player behaviour in a mobile or online game in depth, revealing critical insights into user loyalty, play-time, device preferences and seasonal usage patterns.</p>
 
-    <h4>2. Age Distribution vs Playtime</h4>
+    <p><strong>What does this analysis deliver?</strong></p>
     <ul>
-      <li>Young users (especially <strong>15–25</strong>) play much more</li>
-      <li>After age 30, playtime drops significantly</li>
-      <li>The older the player, the shorter and less frequent the sessions</li>
-    </ul>
-    <p><em>Young segment is clearly the most engaged group</em></p>
-
-    <h4>3. Activity Over Time</h4>
-    <ul>
-      <li>Gameplay increases from March to December</li>
-      <li><strong>August–October</strong> peak → likely due to summer break + new content</li>
-      <li>“Battle Pass” is consistently the top-played mode</li>
-    </ul>
-    <p><em>Seasonal events are the main retention drivers</em></p>
-
-    <h4>4. Device Age and Engagement</h4>
-    <ul>
-      <li>New device users are far more active</li>
-      <li>Old device users are significantly less active</li>
-    </ul>
-    <p><em>Possibly due to performance issues or lack of compatibility</em></p>
-
-    <h3>🎯 Recommendations</h3>
-    <ul>
-      <li>Optimize for old devices or guide users with outdated models</li>
-      <li>Redesign mini-games to improve interest</li>
-      <li>Target 15–25 age group in campaigns and game updates</li>
-      <li>Include device model in gameplay analytics and A/B testing</li>
+      <li>Shows how different age groups interact with game features and which ones they prefer most.</li>
+      <li>Uncovers behavioural metrics such as total play-time, activity levels and churn tendencies.</li>
+      <li>Seasonality trends allow you to time in-game events or campaigns for maximum impact.</li>
+      <li>Analysing devices used helps technical teams decide where to focus optimisation efforts.</li>
+      <li>Comparing playing styles across age segments enables creation of highly targeted content.</li>
     </ul>
 
-    <h3>🎮 Summary (Non-technical)</h3>
-    <h4>🧠 What are players doing most?</h4>
-    <ul>
-      <li>Most time spent on <strong>competitive and seasonal events</strong></li>
-      <li>Mini-games receive far less attention</li>
-    </ul>
-    <p><em>Players prefer battles, teams, and big challenges</em></p>
+    <p><strong>Outcome:</strong> A powerful roadmap for studios that want to enhance player experience and build long-term loyalty.</p>
 
-    <h4>👦 Which age group is most active?</h4>
+    <!-- RECOMMENDATIONS -->
+    <h3>Recommendations</h3>
     <ul>
-      <li><strong>15–25 age group</strong> spends the most time in-game</li>
-      <li>Older players spend less and less time</li>
+      <li>Offer age-specific content and achievement-oriented quests to groups with the longest play-time.</li>
+      <li>Schedule special events and promotions for seasons with natural spikes (e.g. summer holidays, Christmas).</li>
+      <li>Run targeted win-back campaigns based on device and age data of churned users.</li>
+      <li>Optimise loading times, performance or graphics settings per device type.</li>
+      <li>Create ongoing segment-based user profiling to monitor behaviour continuously.</li>
+      <li>Add simpler content or tutorial videos for segments with low engagement.</li>
     </ul>
-    <p><em>Younger players have a stronger bond with the game</em></p>
 
-    <h4>📅 How does playtime change over time?</h4>
+    <!-- TECHNICAL ANALYSIS -->
+    <h3>Technical Analysis</h3>
     <ul>
-      <li>Playtime peaks during summer months</li>
-      <li>Holidays increase in-game engagement</li>
+      <li><strong>Tool:</strong> Tableau Public</li>
+      <li><strong>Data:</strong> Player activities, age, device type, session duration</li>
     </ul>
-    <p><em>Releasing new content around holidays can boost usage</em></p>
 
-    <h4>📱 Device matters?</h4>
+    <p><strong>Dashboard Components:</strong></p>
     <ul>
-      <li>Newer phones/tablets → more active play</li>
-      <li>Older models → less activity</li>
+      <li><strong>Age-Group Activity Distribution (Bar / Heatmap)</strong>
+        <ul>
+          <li>Comparisons of play-time and activity frequency by <code>age_group</code></li>
+          <li>Highlights the most active cohorts</li>
+        </ul>
+      </li>
+      <li><strong>Average Play-time by Device (Bar / KPI)</strong>
+        <ul>
+          <li>Matches <code>device_type</code> with <code>avg_session_duration</code></li>
+          <li>Examines performance differences across Android / iOS / Tablet</li>
+        </ul>
+      </li>
+      <li><strong>Seasonal Usage Change (Line Chart)</strong>
+        <ul>
+          <li>Analyses monthly sessions and duration</li>
+          <li>Identifies periods of increase / decline</li>
+        </ul>
+      </li>
+      <li><strong>Engagement in Game Activities (Treemap / Stacked Bar)</strong>
+        <ul>
+          <li>Compares user interactions by <code>activity_type</code></li>
+          <li>Reveals the most popular features and modes</li>
+        </ul>
+      </li>
+      <li><strong>Behaviour of Churned Users (Donut / KPI)</strong>
+        <ul>
+          <li>Segments users whose last activity is in the past</li>
+          <li>Analyses behaviour patterns before churn</li>
+        </ul>
+      </li>
     </ul>
-    <p><em>Could be due to lag, performance, or incompatibility</em></p>
 
-    <p>
-      <strong style="color: #8b2ab2;">Tools Used:</strong> 
-      <span style="display: inline-flex; align-items: center;">
+    <p><strong>Interactive Features:</strong> Multi-layer dashboard with filters for age, device and date; rich tool-tips and segment comparisons on every visual.</p>
+
+    <p><strong style="color:#8b2ab2;">Tool Badge:</strong>
+      <span style="display:inline-flex;align-items:center;">
         Tableau
-        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GameInsights/Dashboard1" target="_blank" style="margin-left: 6px;">
-          <img src="../../img/tableau.png" alt="Tableau Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GameInsights/Dashboard1" target="_blank" style="margin-left:6px;">
+          <img src="../../img/tableau.png" alt="Tableau Icon" style="width:50px;height:50px;vertical-align:middle;">
         </a>
       </span>
     </p>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. All rights reserved.</div>
+  <!-- NAVBAR + FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project2-user-funnel/index-en.html">⬅️ Previous Project</a>
+      <a href="../../index.html">🏠 Home</a>
+      <a href="../project4-ga4-user-journey/index-en.html">Next Project ➡️</a>
+    </div>
+
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> | 
+        <a href="https://upwork.com" target="_blank">Upwork</a> | 
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. All rights reserved.</p>
+    </div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
   </script>
 </body>
 </html>
