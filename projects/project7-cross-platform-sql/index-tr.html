@@ -3,171 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7. Proje: Cross-Platform Ad Performance & ROMI Analysis with SQL</title>
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Facebook ve Google Ads verilerinin SQL ile normalize edilip ROMI-odaklı karşılaştırıldığı çapraz-platform reklam analizi.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="SQL, PostgreSQL, Google Ads, Facebook Ads, ROMI, reklam analizi, kampanya performansı">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Proje 7 – SQL ile Cross-Platform Reklam Analizi" />
+  <meta property="og:description" content="Facebook & Google kampanyalarının aynı ölçütlerle karşılaştırılması, ROMI hesaplaması ve bütçe optimizasyonu." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project7-cross-platform-sql.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project7-cross-platform-sql/index-tr.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Proje 7 – SQL ile Cross-Platform Reklam Analizi" />
+  <meta name="twitter:description" content="SQL, CTE ve UNION ALL ile Facebook & Google Ads performans karşılaştırması, ROMI ve bütçe verimliliği." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project7-cross-platform-sql.png" />
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project7-cross-platform-sql/index-tr.html" />
+  <title>Proje 7: Cross-Platform Reklam Analizi (SQL)</title>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-    }
-
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
-
-    .left-img {
-      left: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    .right-img {
-      right: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto 20px;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 11111111;
-    }
-
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h2, h3, h4 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
 
+  <!-- HEADER + MENU -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
+
     <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Ana Sayfa</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
       <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
       <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
       <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
       <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
-      <a href="../project5-ad-campaigns/index-tr.html">5. Looker Studio Kampanya</a>
-      <a href="../project6-python-romi-analysis/index-tr.html">6. Facebook ROMI Python</a>
-      <a href="../project7-cross-platform-sql/index-tr.html">7. Cross-Platform SQL</a>
-      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Kıyaslama</a>
-      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Performansı</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python Reklam Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL Platform Karşılaştırma</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Analizi</a>
     </div>
   </header>
 
+  <!-- MAIN -->
   <section class="section">
-    <h2>7. Proje – Cross-Platform Ad Performance & ROMI Analysis with SQL</h2>
-    <img src="../../img/project7-cross-platform-sql.png" alt="Cross-Platform SQL Dashboard">
+    <h2>Proje 7 – Cross-Platform Reklam Analizi (SQL)</h2>
+    <img src="../../img/project7-cross-platform-sql.png" alt="SQL Cross-Platform Dashboard">
 
-    <h3>📍 Açıklama</h3>
-    <p>
-      Bu projede, Facebook ve Google reklam kampanyalarının verileri analiz edilerek <strong>reklam performansı ve yatırım geri dönüş oranı (ROMI)</strong> karşılaştırıldı. Kampanyalar, reklam grupları ve platform bazında birleştirilerek günlük harcamalar, gösterimler, tıklamalar ve elde edilen gelirler analiz edildi.
-    </p>
+    <!-- EXPLANATION -->
+    <h3>Açıklama</h3>
+    <p>Bu analiz, Facebook ve Google reklam verilerinin SQL ile normalize edilip karşılaştırmalı şekilde analiz edilmesini sağlar. Amaç, iki platformun reklam performanslarını net biçimde ortaya koyarak hangi kampanyaların daha verimli olduğunu anlamak ve bütçeyi doğru kanala yönlendirmektir.</p>
 
-    <h3>👩‍💻 Teknik Analiz</h3>
+    <p><strong>Bu analiz ne kazandırır?</strong></p>
     <ul>
-      <li>CTE yapılarıyla veriler öncelikle Facebook ve Google için ayrı ayrı işlendi</li>
-      <li>GROUP BY ile SUM(spend), SUM(clicks), SUM(value) gibi metrikler üretildi</li>
-      <li>UNION ALL ile iki platform normalize edilip birleştirildi</li>
-      <li>ROMI: ((value - spend) / spend) * 100 şeklinde hesaplandı</li>
-      <li>HAVING ile 500.000 TL üzerinde harcamaya sahip kampanyalar filtrelendi</li>
-      <li>MAX(ROMI) ile en verimli kampanya ve reklam seti seçildi</li>
+      <li>Facebook ve Google kampanyalarının aynı ölçütlerle kıyaslanmasını sağlar.</li>
+      <li>Harcama, gösterim, tıklama, dönüşüm gibi temel metrikler karşılaştırılır.</li>
+      <li>En yüksek ROMI sağlayan kampanyalar platform bağımsız olarak ortaya çıkarılır.</li>
+      <li>Bütçe verimliliği için hangi platformun hangi kampanyalarda daha başarılı olduğu tespit edilir.</li>
+      <li>Kampanya düzeyinde analiz yapıldığından, pazarlama ekibi detaylı aksiyonlar alabilir.</li>
+    </ul>
+    <p><strong>Sonuç:</strong> Reklam bütçesini platformlar arasında nasıl bölüştürmesi gerektiğini bilen bir marka, çok daha stratejik büyür.</p>
+
+    <!-- RECOMMENDATIONS -->
+    <h3>Öneriler</h3>
+    <ul>
+      <li>ROMI’si düşük olan platformlar için hedefleme, kreatif ya da teklif stratejileri gözden geçirilmeli.</li>
+      <li>Aynı hedefe yönelik çalışan kampanyalar platform bazında ROMI’ye göre yeniden dağıtılmalı.</li>
+      <li>Platformlar arasında maliyet-performans farkı yüksekse segment bazlı farklılaşma yapılmalı (ör. mobil için Google, masaüstü için Facebook).</li>
+      <li>En başarılı kampanya tipi belirlenip hem platformda yaygınlaştırılmalı hem de varyasyonları test edilmeli.</li>
+      <li>Tıklama sayısı yüksek ama dönüşümü düşük kampanyalar için landing page optimizasyonu yapılmalı.</li>
     </ul>
 
-    <p>
-      <strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong>
-      <span style="display: inline-flex; align-items: center;">
+    <!-- TECHNICAL -->
+    <h3>Teknik Analiz</h3>
+    <p><strong>Kullanılan Araçlar:</strong> PostgreSQL / BigQuery &nbsp;·&nbsp; CTE, JOIN, UNION ALL, CASE WHEN</p>
+    <p><strong>Veri Yapısı:</strong> <code>facebook_ads</code> &amp; <code>google_ads</code> normalize edilerek birleştirildi<br>
+       Alanlar: <code>campaign_name</code>, <code>platform</code>, <code>ad_spend</code>, <code>impressions</code>, <code>clicks</code>, <code>conversions</code>, <code>revenue</code></p>
+
+    <p><strong>Analiz Bileşenleri:</strong></p>
+    <ul>
+      <li><strong>Veri Normalizasyonu:</strong> UNION ALL + CASE ile tek formata getirme.</li>
+      <li><strong>Toplam Harcama & Gelir:</strong> platform bazlı SUM &amp; ROI hesaplaması.</li>
+      <li><strong>CTR, CPC, CPM, ROMI:</strong> tüm temel performans metrikleri.</li>
+      <li><strong>En Verimli Kampanyalar:</strong> yüksek harcama &amp; yüksek ROMI sıralaması.</li>
+      <li><strong>Filtreleme / Segmentasyon:</strong> tarih, kampanya türü, hedef segment vb.</li>
+    </ul>
+
+    <!-- TOOL BADGE -->
+    <p><strong style="color:#8b2ab2;">Araç:</strong>
+      <span style="display:inline-flex;align-items:center;">
         PostgreSQL
-        <a href="../../docs/project7-query.sql" target="_blank" style="margin-left: 6px;">
-          <img src="../../img/postgre.png" alt="SQL Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+        <a href="../../docs/project7-query.sql" target="_blank" style="margin-left:6px;">
+          <img src="../../img/postgre.png" alt="PostgreSQL Icon" style="width:50px;height:50px;vertical-align:middle;">
         </a>
       </span>
     </p>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+  <!-- NAVBAR + FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project6-python-romi-analysis/index-tr.html">⬅️ Önceki</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">Sonraki ➡️</a>
+    </div>
+
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com &nbsp;|&nbsp; 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+        <a href="https://upwork.com" target="_blank">Upwork</a> |
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+    </div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
   </script>
 </body>
 </html>
