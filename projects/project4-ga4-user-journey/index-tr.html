@@ -3,227 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="GA4 kullanıcı yolculuğu analizi: trafik kaynağı, cihaz, lokasyon ve dönüşüm oranlarını görselleştirerek deneyimi ve geliri artırın.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="GA4, kullanıcı yolculuğu, dönüşüm, BigQuery, Tableau, trafik kaynağı, funnel, dijital pazarlama">
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="4. Proje – GA4 Kullanıcı Yolculuğu Analizi" />
+  <meta property="og:description" content="Web trafiği ve dönüşüm oranlarını Google Analytics 4 verisiyle izleyin; kullanıcı deneyimini ve pazarlama stratejilerini veriye dayalı optimize edin." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project4-ga4-user-journey.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project4-ga4-user-journey/index-tr.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="4. Proje – GA4 Kullanıcı Yolculuğu Analizi" />
+  <meta name="twitter:description" content="GA4 event verisiyle kullanıcı yolculuğunu keşfedin, dönüşüm oranınızı yükseltin, gelir odaklı kararlar alın." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project4-ga4-user-journey.png" />
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project4-ga4-user-journey/index-tr.html" />
   <title>4. Proje: GA4 Kullanıcı Yolculuğu</title>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-    }
-
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
-
-    .left-img {
-      left: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    .right-img {
-      right: 0;
-      background-image: url("../../img/side-left.jpeg");
-    }
-
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto 20px;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 11111111;
-    }
-
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h2, h3, h4 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
 
+  <!-- HEADER + MENU -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
     <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Ana Sayfa</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
       <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
       <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
-      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı Analizi</a>
-      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu Analizi</a>
-      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performans Analizi</a>
-      <a href="../project6-python-romi-analysis/index-tr.html">6. Python ile Facebook Reklam ROMI Analizi</a>
-      <a href="../project7-cross-platform-sql/index-tr.html">7. Facebook & Google Ads SQL Performans Analizi</a>
-      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma ve Etkinlik Analizi</a>
-      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Google Form Verisi Analizi</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
+      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Performansı</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python Reklam Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL Platform Karşılaştırma</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Analizi</a>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <section class="section">
-    <h2>4. Proje – GA4 Kullanıcı Yolculuğu Dashboardu (Tableau)</h2>
-    <img src="../../img/project4-ga4-user-journey.png" alt="GA4 Kullanıcı Yolculuğu Dashboard">
+    <h2>4. Proje – GA4 Kullanıcı Yolculuğu Analizi (Tableau + BigQuery)</h2>
+    <img src="../../img/project4-ga4-user-journey.png" alt="GA4 User Journey Dashboard">
 
-    <h3>📌 KPI’lar</h3>
+    <!-- EXPLANATION -->
+    <h3>Açıklama</h3>
+    <p>Bu analiz, bir web sitesi ya da uygulama üzerinden gelen trafiğin Google Analytics 4 (GA4) verileriyle izlenmesini sağlar. Amaç, kullanıcıların ilk etkileşiminden (örneğin sayfaya giriş) son dönüşüme (örneğin satın alma) kadar olan tüm adımlarını anlayarak dönüşüm oranlarını artırmak ve kullanıcı deneyimini iyileştirmektir.</p>
+
+    <p><strong>Bu analiz ne kazandırır?</strong></p>
     <ul>
-      <li>Total Revenue: <strong>$362K</strong></li>
-      <li>Total Users: <strong>270K</strong></li>
-      <li>Total Orders: <strong>5,670</strong></li>
-      <li>Total Sessions: <strong>355K</strong></li>
-      <li>Conversion Users: <strong>4K</strong></li>
-      <li>Conversion Rate: <strong>%1.65</strong></li>
-      <li>AOV: <strong>$63.87</strong></li>
-      <li>LTV: <strong>1.34</strong></li>
-      <li>ARPPU: <strong>82</strong></li>
-      <li>Retention Rate: <strong>%1.51</strong></li>
+      <li>Ziyaretçiler hangi kaynaktan geliyor, hangi sayfalarda daha fazla vakit geçiriyor, nerelerde çıkıyor sorularının yanıtlarını verir.</li>
+      <li>En sık gerçekleşen kullanıcı yolları analiz edilerek kullanıcı davranışı anlaşılır.</li>
+      <li>Kullanıcıların hangi trafik kaynağından geldiğinde daha çok dönüşüm yaptığı tespit edilir.</li>
+      <li>En yüksek gelir getiren cihazlar, lokasyonlar ve trafik kaynakları kolayca görselleştirilir.</li>
+      <li>Retention (geri dönüş) analizi ile kullanıcı sadakati hakkında net bilgiler sunar.</li>
     </ul>
 
-    <h3>📍 Konum Bazlı Gelir Dağılımı</h3>
-    <ul>
-      <li>En yüksek gelir: <strong>ABD</strong> → $160K+</li>
-      <li>Onu Hindistan ve Kanada takip ediyor</li>
-    </ul>
-    <p><em>Lokasyon bazlı kampanya ve fiyatlama kararı için kritik</em></p>
+    <p><strong>Sonuç:</strong> Bu analiz, pazarlama stratejilerini optimize etmek, dönüşüm oranlarını artırmak ve ziyaretçileri müşteriye dönüştürmek isteyen tüm markalar için güçlü bir araçtır.</p>
 
-    <h3>📈 Zaman Serisi: Gelir & Dönüşüm Oranı</h3>
+    <!-- RECOMMENDATIONS -->
+    <h3>Öneriler</h3>
     <ul>
-      <li>Yıllık gelir trendi <strong>Kasım–Aralık</strong> gibi zirvede</li>
-      <li>Dönüşüm oranı genelde %1.0–%2.0 bandında</li>
-    </ul>
-    <p><em>Mevsimsel etkiler net gözüküyor, yıl sonu promosyonları işe yaramış olabilir</em></p>
-
-    <h3>🔁 Kullanıcı Yolculuğu</h3>
-    <ul>
-      <li>Add to Cart: <strong>%4.64</strong></li>
-      <li>Checkout: <strong>%3.06</strong></li>
-      <li>Purchase: <strong>%1.64</strong></li>
-    </ul>
-    <p><em>Sepet süreci en büyük darboğaz; buraya odaklanmak lazım!</em></p>
-
-    <h3>📊 Landing Page ve Source Analizi</h3>
-    <ul>
-      <li>Ana Sayfa & Google Store, en fazla trafik alan sayfalar</li>
-      <li>Google: <strong>2.1%</strong></li>
-      <li>Shop Google: <strong>1.05%</strong></li>
-      <li>Direct: <strong>1.11%</strong></li>
-      <li>Organic Search: <strong>3.6%</strong> (en yüksek CR)</li>
-    </ul>
-    <p><em>Direct ve Shop Google düşük, SEO harika işliyor</em></p>
-
-    <h3>💻 Cihaz Tipine Göre Gelir</h3>
-    <ul>
-      <li><strong>Desktop</strong>: $208K (en yüksek gelir)</li>
-      <li><strong>Mobile</strong>: $146K, ama dönüşüm oranı daha iyi (%1.66)</li>
-      <li><strong>Tablet</strong>: en düşük etkileşimli platform</li>
-    </ul>
-    <p><em>Mobile için özel tasarımlar & kampanyalar faydalı olabilir</em></p>
-
-    <h3>🧠 Öneriler</h3>
-    <ul>
-      <li>Sepet/ödeme süreci sadeleştirilmeli</li>
-      <li>Mobile UX iyileştirmesi daha fazla dönüşüm getirebilir</li>
-      <li>Trafik kaynaklarına göre içerik & kampanya özelleştirilmeli</li>
-      <li>Landing Page analizleriyle SEO gücü artırılmalı</li>
+      <li>Dönüşüm oranı yüksek trafik kaynaklarına daha fazla bütçe ayrılmalı.</li>
+      <li>En çok terk edilen sayfalar iyileştirilmeli (sayfa hızı, içerik, CTA butonları gözden geçirilmeli).</li>
+      <li>Sadık kullanıcıların yoğunlaştığı bölgelerde yerelleştirilmiş içerik ve kampanyalar sunulmalı.</li>
+      <li>Mobil cihazlarda düşük performans varsa sayfa deneyimi ve yüklenme süreleri optimize edilmeli.</li>
+      <li>Hedef sayfalara ulaşmadan çıkan kullanıcılar için retargeting kampanyaları yapılmalı.</li>
+      <li>Geri dönüş oranı düşük kullanıcı segmentleri için onboarding (ilk kullanıcı eğitimi) süreçleri geliştirilmeli.</li>
     </ul>
 
-    <h3>📖 Açıklama</h3>
+    <!-- TECH ANALYSIS -->
+    <h3>Teknik Analiz</h3>
+    <p><strong>Kullanılan Araçlar:</strong></p>
     <ul>
-      <li>İnsanlar sitede gezinip ürünlere bakıyor ama çoğu sepete ekleyip bırakıyor</li>
-      <li>En çok alışveriş yapanlar ABD’den</li>
-      <li>Yıl sonu satışlarında siteye gelen de, alışveriş yapan da artıyor</li>
-      <li>SEO yani Google’da organik olarak sizi bulan kişiler daha çok alışveriş yapıyor</li>
-      <li>Mobil kullanıcılar dönüşüm açısından daha iyi ama masaüstü daha yüksek harcama yapıyor</li>
+      <li>Google BigQuery – GA4 veri setinden event bazlı çekim</li>
+      <li>Tableau Public  – Kullanıcı yolculuğunu görselleştirme</li>
     </ul>
 
-    <p>
-      <strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong> 
-      <span style="display: inline-flex; align-items: center;">
-        Tableau, BigQuery
-        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GA4UserJourney/UserJourneyGA4" target="_blank" style="margin-left: 6px;">
-          <img src="../../img/tableau.png" alt="Tableau Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+    <p><strong>Veri Yapısı:</strong></p>
+    <ul>
+      <li>GA4 <code>events</code> tablosu: <em>session_start, page_view, click, purchase</em> vb.</li>
+      <li><code>user_pseudo_id</code>, <code>device</code>, <code>geo</code>, <code>traffic_source</code> alanları</li>
+    </ul>
+
+    <p><strong>Dashboard Bileşenleri:</strong></p>
+    <ul>
+      <li><strong>Kullanıcı Yolculuğu Akışı (Funnel / Sankey / Step Chart)</strong>
+        <ul>
+          <li><em>session_start → page_view → engagement → purchase</em> adımlarında kullanıcı sayıları ve oranlar</li>
+          <li>Dönüşüm oranları ve adım atlama oranları</li>
+        </ul>
+      </li>
+      <li><strong>Trafik Kaynağına Göre Dönüşüm Oranları (Bar / Heatmap)</strong>
+        <ul>
+          <li><code>traffic_source.source</code>, <code>medium</code>, <code>campaign</code> ile performans</li>
+          <li>En verimli kampanya ve kanalların tespiti</li>
+        </ul>
+      </li>
+      <li><strong>Cihaz Türüne Göre KPI’lar</strong>
+        <ul>
+          <li><code>device.category</code> bazlı AOV, conversion rate, session duration</li>
+          <li>Mobil vs desktop farkları</li>
+        </ul>
+      </li>
+      <li><strong>Lokasyon Bazlı Gelir ve Dönüşüm Analizi (Map + KPI)</strong>
+        <ul>
+          <li><code>geo.country</code>, <code>geo.region</code> bazlı kullanıcı ve gelir</li>
+          <li>Bölgesel önceliklendirme için temel</li>
+        </ul>
+      </li>
+      <li><strong>Retention / Kullanıcı Sadakati Analizi</strong>
+        <ul>
+          <li>1., 7., 30. gün geri dönüş oranları (Line + Donut)</li>
+          <li>Sadık kullanıcı segmentlerinin tespiti</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><strong>Etkileşimli Özellikler:</strong> Tüm grafikler tarih, trafik kanalı, cihaz ve lokasyon filtrelerine duyarlıdır. Hover ile detaylı tool-tip’ler ve segment karşılaştırmaları sağlanır.</p>
+
+    <p><strong style="color:#8b2ab2;">Kullanılan Araç Rozeti:</strong>
+      <span style="display:inline-flex;align-items:center;">
+        Tableau
+        <a href="https://public.tableau.com/app/profile/sinem.alir/viz/GA4UserJourney/UserJourneyGA4" target="_blank" style="margin-left:6px;">
+          <img src="../../img/tableau.png" alt="Tableau Icon" style="width:50px;height:50px;vertical-align:middle;">
         </a>
       </span>
     </p>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+  <!-- NAVBAR + FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project3-game-insight/index-tr.html">⬅️ Önceki Proje</a>
+      <a href="../../index.html">🏠 Anasayfa</a>
+      <a href="../project5-ad-campaigns/index-tr.html">Sonraki Proje ➡️</a>
+    </div>
+
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+        <a href="https://upwork.com" target="_blank">Upwork</a> |
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+    </div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
   </script>
 </body>
 </html>
