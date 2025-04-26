@@ -1,121 +1,133 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- === Temel === -->
+  <!-- --- Temel meta --- -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Sinem Alır · Veri Analitiği Portfolyosu</title>
+
+  <!-- --- SEO meta --- -->
   <meta name="robots" content="index, follow" />
+  <meta name="description" content="Sinem Alır’ın Tableau, SQL, Python ve Looker Studio projelerinden oluşan veri analitiği portfolyosu." />
   <meta name="author" content="Sinem Alır" />
-  <title>Sinem Alır | Data Portfolio</title>
+  <meta name="keywords" content="data analytics portfolio, Veri analitiği, Tableau dashboard, SQL ROMI, Python marketing analysis" />
 
-  <!-- === SEO === -->
-  <meta name="description"
-        content="Sinem Alır’ın veri analizi portfolyosu – SaaS gelir, kullanıcı hunisi, oyun içgörüleri, GA4, reklamlarda ROMI ve SQL analizleri." />
-  <meta name="keywords"
-        content="Sinem Alır, data analyst, Tableau, Python, SQL, Looker Studio, SaaS dashboard, user funnel, game analytics, GA4, ROMI" />
-
-  <!-- Open Graph -->
+  <!-- --- Open Graph / Twitter Cards --- -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Sinem Alır | Data Portfolio" />
-  <meta property="og:description" content="Veri odaklı panolar, kullanıcı içgörüleri ve reklam performans analizleri." />
+  <meta property="og:locale"      content="tr_TR" />
+  <meta property="og:title"       content="Sinem Alır · Veri Analitiği Portfolyosu" />
+  <meta property="og:description" content="Sinem Alır’ın Tableau, SQL, Python ve Looker Studio projeleriyle iş kararlarını veriyle güçlendirin." />
   <meta property="og:url"         content="https://sinemalir.com/" />
   <meta property="og:image"       content="https://sinemalir.com/img/portfolio-cover.png" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Sinem Alır | Data Portfolio" />
-  <meta name="twitter:description" content="Veri odaklı panolar, kullanıcı içgörüleri ve reklam performans analizleri." />
+  <meta name="twitter:title"       content="Sinem Alır · Data Analytics Portfolio" />
+  <meta name="twitter:description" content="Explore dashboards & analyses built with Tableau, SQL, Python and Looker Studio." />
   <meta name="twitter:image"       content="https://sinemalir.com/img/portfolio-cover.png" />
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://sinemalir.com/" />
 
-  <!-- Stil -->
   <style>
-    *{box-sizing:border-box}
-    body{margin:0;background:#fefbf6;font-family:'Segoe UI',sans-serif;color:#222}
+    /* ——— Temel görünüm ——— */
+    body{
+      margin:0;
+      padding:0;
+      font-family:'Segoe UI',sans-serif;
+      background:#fefbf6;
+    }
 
-    /* Arka plan dekor */
-    .side-img{position:fixed;top:0;width:250px;height:100%;background:url('img/side-left.jpeg') center/cover no-repeat;opacity:.2;z-index:0}
-    .side-img.right{right:0;transform:scaleX(-1)}
+    /* ——— Yan görseller ——— */
+    .side-img{
+      position:fixed;top:0;width:250px;height:100%;
+      background-size:cover;background-repeat:no-repeat;
+      background-position:center;opacity:.2;z-index:0;
+    }
+    .side-img.left  {left:0;  background-image:url("img/side-left.jpeg");}
+    .side-img.right {right:0; background-image:url("img/side-left.jpeg");}
 
-    /* Başlık */
-    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;max-width:820px;margin:40px auto 25px;padding:25px 20px;text-align:center;position:relative;z-index:1111111}
-    header h1{margin:0;font-size:32px;color:#000}
-    header h2{margin:8px 0 0;font-size:18px;color:#4d00a8}
+    /* ——— Başlık kutusu ——— */
+    header{
+      max-width:800px;margin:40px auto 60px;padding:25px;
+      background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;
+      text-align:center;z-index:10;position:relative;
+    }
+    header h1{margin:0;font-size:2rem;color:#000;}
+    header p {margin:4px 0 0;color:#4d00a8;font-weight:600;}
 
-    /* Bayraklar + listeler */
-    .lang-blocks{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;margin-bottom:60px;position:relative;z-index:1111111}
-    .lang{display:flex;flex-direction:column;align-items:center;gap:14px}
-    .flag{width:80px;height:55px;border:2px solid #a678d3;border-radius:6px;box-shadow:0 0 4px rgba(0,0,0,.2)}
-    .lang h3{margin:0;font-size:18px;color:#4d00a8}
-    .plist{display:flex;flex-direction:column;gap:8px;max-width:280px}
-    .plist a{background:#fffaf2;border:1px solid #a678d3;border-radius:8px;padding:10px 12px;text-decoration:none;color:#4d00a8;font-weight:600;transition:.2s}
-    .plist a:hover{background:#e9dcff}
+    /* ——— Bayrak & link kutuları ——— */
+    .flag-wrapper{
+      display:flex;justify-content:center;gap:60px;
+      flex-wrap:wrap;z-index:5;position:relative;
+    }
+    .flag-box{
+      text-align:center;
+      transition:transform .2s;
+    }
+    .flag-box:hover{transform:scale(1.05);}
+    .flag-box img{
+      width:110px;height:72px;object-fit:cover;border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,.15);
+    }
+    .flag-box a{
+      display:inline-block;margin-top:10px;text-decoration:none;
+      font-weight:700;color:#4d00a8;
+    }
+    /* Tooltip */
+    .flag-box span.tooltip{
+      visibility:hidden;opacity:0;
+      background:#4d00a8;color:#fff;font-size:12px;padding:4px 8px;
+      border-radius:4px;position:absolute;transform:translateX(-50%);
+      bottom:110%;left:50%;white-space:nowrap;
+      transition:opacity .2s;
+    }
+    .flag-box:hover span.tooltip{visibility:visible;opacity:1;}
 
-    /* Footer */
-    .bottom-wrapper{background:#fefbf6;padding:40px 20px 70px;text-align:center;position:relative;z-index:1111111;font-size:14px;color:#666}
-    .bottom-wrapper a{color:#4d00a8;text-decoration:none;margin:0 6px}
+    /* ——— Alt kısım ——— */
+    footer{
+      text-align:center;font-size:12px;color:#888;
+      margin:120px 0 40px;position:relative;z-index:5;
+    }
   </style>
 </head>
-
 <body>
+
   <!-- Yan görseller -->
-  <div class="side-img"></div>
+  <div class="side-img left"></div>
   <div class="side-img right"></div>
 
   <!-- Başlık -->
   <header>
     <h1>Sinem Alır</h1>
-    <h2>Portfolyo&nbsp;/&nbsp;Portfolio</h2>
+    <p>Portfolyo / Portfolio</p>
   </header>
 
-  <!-- Dil blokları -->
-  <div class="lang-blocks">
+  <!-- Bayraklar ve liste bağlantıları -->
+  <section class="flag-wrapper">
+
     <!-- Türkçe -->
-    <div class="lang">
-      <img src="img/TR.png" alt="Türkçe" class="flag">
-      <h3>Projeler</h3>
-      <div class="plist">
-        <a href="projects/project1-saas-dashboard/index-tr.html">1&nbsp;·&nbsp;SaaS&nbsp;Gelir&nbsp;Analizi</a>
-        <a href="projects/project2-user-funnel/index-tr.html">2&nbsp;·&nbsp;Kullanıcı&nbsp;Hunisi&nbsp;Analizi</a>
-        <a href="projects/project3-game-insight/index-tr.html">3&nbsp;·&nbsp;Oyun&nbsp;Kullanıcı&nbsp;Davranışı</a>
-        <a href="projects/project4-ga4-user-journey/index-tr.html">4&nbsp;·&nbsp;GA4&nbsp;Kullanıcı&nbsp;Yolculuğu</a>
-        <a href="projects/project5-ad-campaigns/index-tr.html">5&nbsp;·&nbsp;Reklam&nbsp;Performansı</a>
-        <a href="projects/project6-python-romi-analysis/index-tr.html">6&nbsp;·&nbsp;Python&nbsp;ROMI&nbsp;Analizi</a>
-        <a href="projects/project7-cross-platform-sql/index-tr.html">7&nbsp;·&nbsp;SQL&nbsp;Platform&nbsp;Karşılaştırma</a>
-        <a href="projects/project8-sql-romi-comparison/index-tr.html">8&nbsp;·&nbsp;SQL&nbsp;ROMI&nbsp;Karşılaştırma</a>
-        <a href="projects/project9-akademisyennhoca-form/index-tr.html">9&nbsp;·&nbsp;AkademisyennHoca&nbsp;Eğitim&nbsp;Verisi</a>
-      </div>
+    <div class="flag-box">
+      <span class="tooltip">Türkçe Projeler</span>
+      <img src="img/TR.png" alt="Türk Bayrağı">
+      <br>
+      <a href="projects/tr.html">Projeler</a>
     </div>
 
     <!-- English -->
-    <div class="lang">
-      <img src="img/EN.jpeg" alt="English" class="flag">
-      <h3>Projects</h3>
-      <div class="plist">
-        <a href="projects/project1-saas-dashboard/index-en.html">1&nbsp;·&nbsp;SaaS&nbsp;Revenue&nbsp;Dashboard</a>
-        <a href="projects/project2-user-funnel/index-en.html">2&nbsp;·&nbsp;User&nbsp;Funnel&nbsp;Conversion</a>
-        <a href="projects/project3-game-insight/index-en.html">3&nbsp;·&nbsp;Game&nbsp;Insights&nbsp;Dashboard</a>
-        <a href="projects/project4-ga4-user-journey/index-en.html">4&nbsp;·&nbsp;GA4&nbsp;User&nbsp;Journey</a>
-        <a href="projects/project5-ad-campaigns/index-en.html">5&nbsp;·&nbsp;Ad&nbsp;Campaign&nbsp;Performance</a>
-        <a href="projects/project6-python-romi-analysis/index-en.html">6&nbsp;·&nbsp;Python&nbsp;ROMI&nbsp;Analysis</a>
-        <a href="projects/project7-cross-platform-sql/index-en.html">7&nbsp;·&nbsp;Cross-Platform&nbsp;SQL&nbsp;Analysis</a>
-        <a href="projects/project8-sql-romi-comparison/index-en.html">8&nbsp;·&nbsp;SQL&nbsp;ROMI&nbsp;Comparison</a>
-        <a href="projects/project9-akademisyennhoca-form/index-en.html">9&nbsp;·&nbsp;Education&nbsp;Survey&nbsp;Insights</a>
-      </div>
+    <div class="flag-box">
+      <span class="tooltip">English Projects</span>
+      <img src="img/EN.jpeg" alt="UK Flag">
+      <br>
+      <a href="projects/en.html">Projects</a>
     </div>
-  </div>
 
-  <!-- Footer & iletişim -->
-  <div class="bottom-wrapper">
-    <p>📩 sinemalir@icloud.com &nbsp;|&nbsp; 📱 +90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</p>
-    <p>
-      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
-      <a href="https://upwork.com" target="_blank">Upwork</a> |
-      <a href="https://fiverr.com"  target="_blank">Fiverr</a>
-    </p>
-    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
-  </div>
+  </section>
+
+  <!-- İletişim / Telif -->
+  <footer>
+    📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> | 📱 <a href="tel:+905457750852">+90 545 775 08 52</a><br>
+    © 2025 Sinem Alır. All rights reserved.
+  </footer>
+
 </body>
 </html>
