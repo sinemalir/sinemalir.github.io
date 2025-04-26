@@ -3,178 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ────── SEO ────── -->
   <title>Sinem Alır | Portfolio (EN)</title>
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="English portfolio of Sinem Alır featuring Tableau, SQL, Python and Looker Studio data-analytics projects.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Data analysis, Tableau, SQL, Python, Looker Studio, Marketing analytics">
+
+  <!-- Open-Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:url"         content="https://sinemalir.com/en.html">
+  <meta property="og:title"       content="Sinem Alır | Portfolio (EN)">
+  <meta property="og:description" content="Explore Sinem Alır’s data-analytics portfolio: dashboards, SQL models and Python projects.">
+  <meta property="og:image"       content="https://sinemalir.com/img/og-cover.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sinem Alır | Portfolio (EN)">
+  <meta name="twitter:description" content="Dashboards & data projects with real business impact.">
+  <meta name="twitter:image"       content="https://sinemalir.com/img/og-cover.png">
+
+  <link rel="canonical" href="https://sinemalir.com/en.html">
+
+  <!-- ────── STYLE ────── -->
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
+    :root {
+      --bg-main:   #fefbf6;
+      --bg-card:   #fffaf2;
+      --violet:    #a678d3;
+      --violet-d:  #8b2ab2;
+      --link:      #4d00a8;
     }
 
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
+    *            { box-sizing: border-box; }
+    body         { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg-main); }
 
-    .left-img {
-      left: 0;
-      background-image: url("img/side-left.jpeg");
-    }
+    /* side images */
+    .side-img    { position: fixed; top: 0; width: 250px; height: 100%;
+                   background: center / cover no-repeat; opacity: .2; z-index: 0; }
+    .side-img.left  { left: 0;  background-image: url("img/side-left.jpeg"); }
+    .side-img.right { right: 0; background-image: url("img/side-left.jpeg"); }
 
-    .right-img {
-      right: 0;
-      background-image: url("img/side-left.jpeg");
-    }
+    /* header */
+    header       { position: relative; z-index: 3; max-width: 800px; margin: 30px auto; padding: 20px; text-align: center;
+                   background: var(--bg-main); border: 3px solid var(--violet); border-radius: 20px; }
 
-    header, .section {
-      position: relative;
-      z-index: 3;
-    }
+    /* hamburger */
+    .menu-toggle { position: absolute; left: 20px; top: 45px; font-size: 26px; cursor: pointer; z-index: 9999; }
 
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      z-index: 2;
-    }
+    /* menu */
+    .menu        { position: absolute; top: 90px; left: 20px; width: 170px;
+                   background: var(--violet); border-radius: 10px; padding: 15px; display: none;
+                   box-shadow: 0 4px 8px rgba(0,0,0,.12); z-index: 10000; white-space: nowrap; }
+    .menu a      { display: block; margin-bottom: 15px; font-weight: 700; color: #fff; text-decoration: none; }
+    .menu.show   { display: block; }
 
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 45px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
+    /* sections */
+    .section     { position: relative; z-index: 2; max-width: 800px; margin: 30px auto;
+                   background: var(--bg-card); border: 1px solid var(--violet); border-radius: 15px; padding: 20px; }
 
-    .menu {
-      position: absolute;
-      top: 90px;
-      left: 20px;
-      width: 110px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+    h2           { color: var(--violet-d); margin-top: 0; }
+    ul           { padding-left: 20px; }
+    a            { color: var(--link); text-decoration: none; }
+    a:hover      { text-decoration: underline; }
 
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 30px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      z-index: 1;
-    }
-
-    h2 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: #4d00a8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    /* footer */
+    .footer      { position: relative; z-index: 3; text-align: center; font-size: 12px; color: #888; margin: 60px 0 20px; }
+    .footer a    { color: var(--link); }
   </style>
 </head>
 <body>
 
-  <div class="left-img"></div>
-  <div class="right-img"></div>
+  <!-- background images -->
+  <div class="side-img left"></div>
+  <div class="side-img right"></div>
 
+  <!-- HEADER -->
   <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="menu" id="menu">
-      <a href="#about">📌 About Me</a>
+      <a href="#about">📌 About</a>
       <a href="#projects">📁 Projects</a>
       <a href="index.html">⬅️ Home</a>
     </div>
     <h1>Sinem Alır</h1>
   </header>
 
+  <!-- ABOUT -->
   <section id="about" class="section">
     <h2>📌 About Me</h2>
-    <p>
-      With over 15 years of experience in sales and team management, I’ve transitioned into the field of data analytics to bring a data-driven perspective to business decision-making. My background in geological engineering has shaped my analytical mindset, which I now combine with strong communication skills and a solution-oriented approach to tackle real-world business challenges.
-    </p>
-    <p>
-      I work with tools like SQL, Excel, Tableau, and Python to analyze data, uncover insights, and build meaningful dashboards. My focus is on marketing campaigns, sales performance, and user behavior analytics — helping businesses track KPIs, improve profitability, and shape smarter strategies.
-    </p>
-    <strong>My strengths include:</strong>
+    <p>After 15+ years in sales and team leadership, I switched to <strong>data analytics</strong> to power business decisions with facts. Combining my geological-engineering mindset with strong communication skills, I tackle business problems through data.</p>
+    <p>I work with SQL, Excel, Tableau and Python to turn raw data into insights. My projects focus on marketing campaigns, sales performance and user behaviour—helping companies track KPIs, measure profitability and refine strategy.</p>
+
+    <strong>Key strengths:</strong>
     <ul>
-      <li>Combining business intuition with data analysis</li>
-      <li>Managing data cleaning, analysis, and visualization end to end</li>
-      <li>Monitoring sales and marketing performance through KPIs</li>
-      <li>Collaborating effectively in teams with a passion for continuous learning</li>
+      <li>Bridging business acumen with data analytics</li>
+      <li>Cleaning, analysing and visualising large datasets</li>
+      <li>KPI tracking on sales & campaign data</li>
+      <li>Team-player with a growth mindset</li>
     </ul>
-    <p>
-      I see data not just as numbers, but as stories waiting to be told — and I aim to uncover and communicate those stories clearly and impactfully.
-    </p>
+
+    <p>I believe every dataset tells a story—and I enjoy translating that story into actionable insights.</p>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects" class="section">
-    <h2>✅ Projects</h2> 
+    <h2>✅ Projects</h2>
     <ul>
       <li><a href="projects/project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis (Tableau)</a></li>
       <li><a href="projects/project2-user-funnel/index-en.html">2. User Funnel Analysis (Tableau)</a></li>
-      <li><a href="projects/project3-game-insight/index-en.html">3. Game User Behavior Analysis (Tableau)</a></li>
+      <li><a href="projects/project3-game-insight/index-en.html">3. Game User Behaviour Analysis (Tableau)</a></li>
       <li><a href="projects/project4-ga4-user-journey/index-en.html">4. GA4 User Journey Analysis (BigQuery + Tableau)</a></li>
       <li><a href="projects/project5-ad-campaigns/index-en.html">5. Ad Campaign Performance Analysis (Looker Studio)</a></li>
-      <li><a href="projects/project6-python-romi-analysis/index-en.html">6. ROMI Analysis for Facebook Ads with Python (Pandas)</a></li>
+      <li><a href="projects/project6-python-romi-analysis/index-en.html">6. Facebook Ads ROMI Analysis with Python (Pandas)</a></li>
       <li><a href="projects/project7-cross-platform-sql/index-en.html">7. Facebook & Google Ads SQL Performance Analysis (PostgreSQL)</a></li>
-      <li><a href="projects/project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison & Effectiveness Analysis (PostgreSQL)</a></li>
+      <li><a href="projects/project8-sql-romi-comparison/index-en.html">8. SQL ROMI Comparison & Effectiveness (PostgreSQL)</a></li>
       <li><a href="projects/project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Form Data Analysis (Tableau)</a></li>
     </ul>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. All rights reserved.</div>
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> | 📱 <a href="tel:+905457750852">+90 545 775 08 52</a></p>
+    <p>
+      <a href="https://bionluk.com" target="_blank" rel="noopener">Bionluk</a> | 
+      <a href="https://fiverr.com"  target="_blank" rel="noopener">Fiverr</a> | 
+      <a href="https://upwork.com"  target="_blank" rel="noopener">Upwork</a>
+    </p>
+    <p>© 2025 Sinem Alır. All rights reserved.</p>
+  </div>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
+      document.getElementById('menu').classList.toggle('show');
     }
   </script>
 </body>
