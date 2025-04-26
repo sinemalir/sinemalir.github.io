@@ -1,182 +1,152 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5. Proje: Reklam Kampanya Analizi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Looker Studio reklam performans dashboard’u — ad spend, ROMI, CPC, CPM, CTR ve kampanya analiziyle bütçeyi veriye dayalı yönetin.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Looker Studio, reklam analizi, ROMI, CPC, CPM, CTR, kampanya performansı, dijital pazarlama">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="5. Proje – Reklam Kampanya Performans Analizi" />
+  <meta property="og:description" content="Hangi kampanyalar gerçekten kazandırıyor? Looker Studio ile ROMI, CPC, CPM ve daha fazlasını canlı takip edin." />
+  <meta property="og:image"       content="https://sinemalir.com/img/project5-ad-campaigns.png" />
+  <meta property="og:url"         content="https://sinemalir.com/projects/project5-ad-campaigns/index-tr.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="5. Proje – Reklam Kampanya Performans Analizi" />
+  <meta name="twitter:description" content="Looker Studio dashboard’u ile reklam yatırım geri dönüşünü (ROMI) kolayca görün, bütçeyi optimize edin." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/project5-ad-campaigns.png" />
+
+  <link rel="canonical" href="https://sinemalir.com/projects/project5-ad-campaigns/index-tr.html" />
+  <title>5. Proje: Reklam Kampanya Performans Analizi</title>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefbf6;
-    }
-
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-    }
-
-    .left-img { left: 0; background-image: url("../../img/side-left.jpeg"); }
-    .right-img { right: 0; background-image: url("../../img/side-left.jpeg"); }
-
-    header {
-      background-color: #fefbf6;
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      margin: 30px auto 20px;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-      z-index: 11111111;
-    }
-
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .menu {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 250px;
-      background-color: #a678d3;
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .menu.show { display: block; }
-
-    .section {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fffaf2;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #a678d3;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h2, h3, h4 {
-      color: #8b2ab2;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 60px 0 20px;
-      color: #888;
-    }
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:0;opacity:.2}
+    .left-img{left:0;background-image:url("../../img/side-left.jpeg")}
+    .right-img{right:0;background-image:url("../../img/side-left.jpeg")}
+    header{background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;margin:30px auto 20px;padding:20px;text-align:center;max-width:800px;position:relative;z-index:1111111}
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:bold}
+    .menu.show{display:block}
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1}
+    .section img{width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+    h2,h3{color:#8b2ab2}
+    .footer,.navbar{text-align:center;font-size:12px;margin:60px 0 20px;color:#888}
+    .navbar a{margin:0 10px;text-decoration:none;color:#4d00a8;font-weight:bold;z-index:1111111111}
+    .contact{margin-top:40px;font-size:14px;text-align:center;z-index:1111111111}
+    .contact p{margin:5px 0}
+    .navbar,.footer,.contact{position:relative;z-index:1111111111}
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px}
   </style>
 </head>
 <body>
   <div class="left-img"></div>
   <div class="right-img"></div>
 
+  <!-- HEADER + MENU -->
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <h1>Sinem Alır</h1>
     <div class="menu" id="menu">
-      <a href="../../index.html">⬅️ Ana Sayfa</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
       <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
       <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a>
-      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı Analizi</a>
-      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu Analizi</a>
-      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Analizi</a>
-      <a href="../project6-python-romi-analysis/index-tr.html">6. Facebook Reklam Performansı (Python)</a>
-      <a href="../project7-cross-platform-sql/index-tr.html">7. Facebook & Google Ads SQL Performans Analizi</a>
-      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma ve Etkinlik Analizi</a>
-      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Google Form Verisi Analizi</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
+      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Performansı</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python ROMI Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. SQL Platform Karşılaştırma</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırma</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Analizi</a>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <section class="section">
     <h2>5. Proje – Reklam Kampanya Performans Analizi (Looker Studio)</h2>
-    <img src="../../img/project5-ad-campaigns.png" alt="Reklam Kampanya Analizi Dashboard">
+    <img src="../../img/project5-ad-campaigns.png" alt="Ad Campaign Dashboard">
 
-    <h3>👩‍💻 Teknik Analiz</h3>
-    <h4>📈 1. Ad Spend & ROMI Zaman Serisi</h4>
+    <!-- EXPLANATION -->
+    <h3>Açıklama</h3>
+    <p>Bu analiz, farklı reklam kampanyalarının performansını hem görsel hem de metrik bazlı olarak izlemek için tasarlandı. Looker Studio üzerinde kurulan bu dashboard sayesinde şirketler reklam yatırımlarının ne kadar geri dönüş sağladığını kolayca görebilir.</p>
+
+    <p><strong>Bu analiz ne kazandırır?</strong></p>
     <ul>
-      <li>2021 ortası – 2022 başında ROMI yüksek, Ad Spend düşük → verimli dönem</li>
-      <li>2022 sonlarında hem harcama hem ROMI düşüyor</li>
+      <li>Daha fazla tıklama, gösterim ve dönüşüm sağlayan kampanyaları belirleyerek verimli stratejiler geliştirir.</li>
+      <li>CPC, CPM, CTR gibi temel metrikleri karşılaştırmalı olarak sunar.</li>
+      <li>Aylık aktif kampanya sayısını izleyerek mevsimsel planlama yapılmasını sağlar.</li>
+      <li>ROMI hesaplaması ile her kampanyanın yatırım getirisini net ölçer.</li>
+      <li>Reklam bütçesinin en iyi şekilde kullanılmasına yardımcı olur.</li>
     </ul>
 
-    <h4>📊 2. Aylık Aktif Kampanya Sayısı</h4>
+    <p><strong>Sonuç:</strong> Veriyle yönetilen reklam bütçeleri, performansta kesinlik ve kârlılık sağlar.</p>
+
+    <!-- RECOMMENDATIONS -->
+    <h3>Öneriler</h3>
     <ul>
-      <li>2021 yazında 6-7 aktif kampanya</li>
-      <li>ROMI artışıyla paralel</li>
+      <li>ROMI değeri düşük kampanyalar kapatılmalı veya yeniden hedeflenerek optimize edilmeli.</li>
+      <li>CTR yüksek ama dönüşüm sağlamayan kampanyalarda <em>landing page</em> gözden geçirilmeli.</li>
+      <li>Aktif kampanya sayısının düştüğü dönemlerde özel içerik ve fırsat kampanyaları planlanmalı.</li>
+      <li>CPM yüksek kampanyalarda daha niş hedef kitleler denenmeli; maliyetin nedeni analiz edilmeli.</li>
+      <li>ROMI yüksek kampanyalar benzer format ve kitlelerle tekrarlanmalı.</li>
+      <li>Bütçeler geçmiş performansa göre kanal bazlı dağıtılarak verimli planlanmalı.</li>
     </ul>
 
-    <h4>📋 3. Kampanya Bazlı Performans</h4>
+    <!-- TECH ANALYSIS -->
+    <h3>Teknik Analiz</h3>
+    <p><strong>Kullanılan Araçlar:</strong> Looker Studio (Google Data Studio) — Facebook Ads &amp; Google Ads veri aktarımı</p>
+
+    <p><strong>Veri Yapısı:</strong> <code>campaign_name, ad_platform, ad_spend, impressions, clicks, conversions, revenue, romi, ctr, cpc, cpm</code></p>
+
+    <p><strong>Dashboard Bileşenleri:</strong></p>
     <ul>
-      <li>En başarılı kampanya: <strong>Trendy (ROMI: 90.68)</strong></li>
-      <li>En yüksek harcama: <strong>Expansion (11M)</strong>, düşük ROMI (17.73)</li>
+      <li><strong>Toplam Harcama vs Gelir</strong> (Line Chart) – Aylık harcama &amp; gelir yan yana</li>
+      <li><strong>ROMI Zaman Serisi</strong> – (Revenue − Ad Spend) / Ad Spend</li>
+      <li><strong>Kampanya Bazlı Performans</strong> – Tablo + çubuk grafik ile CPC, CPM, CTR, ROMI sıralaması</li>
+      <li><strong>Aktif Kampanya Sayısı</strong> – Aylık yoğunluk analizi</li>
+      <li><strong>Platform Karşılaştırması</strong> – Facebook vs Google ROMI &amp; CTR karşılaştırması</li>
     </ul>
 
-    <h3>🧠 Öneriler</h3>
-    <ul>
-      <li>ROMI yüksek, harcama düşük kampanyalar artırılmalı</li>
-      <li>Verimsiz yüksek bütçeli kampanyalar incelenmeli</li>
-      <li>CPC & CPM metrikleri ROMI’yi etkiliyor</li>
-    </ul>
+    <p><strong>Etkileşimli Özellikler:</strong> Tarih, platform, kampanya filtreleri; canlı veri güncellemesi; tool-tip &amp; koşullu biçimlendirme.</p>
 
-    <h3>🤓 Açıklama</h3>
-    <ul>
-      <li>Az harcamayla çok kazanç bazı dönemlerde mümkün</li>
-      <li>En çok harcayan kampanya her zaman en verimli değil</li>
-      <li>Kampanya sayısı fazla → verim düşüyor olabilir</li>
-    </ul>
-
-    <p>
-      <strong style="color: #8b2ab2;">Kullanılan Araçlar:</strong> 
-      <span style="display: inline-flex; align-items: center;">
+    <p><strong style="color:#8b2ab2;">Kullanılan Araç Rozeti:</strong>
+      <span style="display:inline-flex;align-items:center;">
         Looker Studio
-        <a href="https://lookerstudio.google.com/reporting/c45fb1e2-52c3-4111-83d6-d75127617e2d" target="_blank" style="margin-left: 6px;">
-          <img src="../../img/looker.png" alt="Looker Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+        <a href="https://lookerstudio.google.com/reporting/c45fb1e2-52c3-4111-83d6-d75127617e2d" target="_blank" style="margin-left:6px;">
+          <img src="../../img/looker.png" alt="Looker Studio Icon" style="width:50px;height:50px;vertical-align:middle;">
         </a>
       </span>
     </p>
   </section>
 
-  <div class="footer">© 2025 Sinem Alır. Tüm hakları saklıdır.</div>
+  <!-- NAVBAR + FOOTER -->
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project4-ga4-user-journey/index-tr.html">⬅️ Önceki Proje</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">Sonraki Proje ➡️</a>
+    </div>
+
+    <div class="footer">
+      <p>📩 sinemalir@icloud.com | 📱 +90 545 775 08 52</p>
+      <p>
+        <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+        <a href="https://upwork.com" target="_blank">Upwork</a> |
+        <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+      </p>
+      <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+    </div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
   </script>
 </body>
 </html>
