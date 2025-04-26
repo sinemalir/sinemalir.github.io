@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- — Temel meta — -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sinem Alır · Veri Analitiği Portfolyosu</title>
-
-  <!-- — SEO meta — -->
   <meta name="robots"        content="index, follow" />
   <meta name="description"   content="Sinem Alır’ın Tableau, SQL, Python ve Looker Studio projelerinden oluşan veri analitiği portfolyosu." />
   <meta name="author"        content="Sinem Alır" />
-  <meta name="keywords"      content="data analytics portfolio, Veri analitiği, Tableau dashboard, SQL ROMI, Python marketing analysis" />
+  <meta name="keywords"      content="Veri analitiği portfolyo, Tableau dashboard, SQL ROMI, Python marketing analysis" />
+  <title>Sinem Alır · Veri Analitiği Portfolyosu</title>
 
-  <!-- — Open Graph / Twitter — -->
+  <!-- OG / Twitter -->
   <meta property="og:type"        content="website" />
-  <meta property="og:locale"      content="tr_TR" />
-  <meta property="og:title"       content="Sinem Alır · Veri Analitiği Portfolyosu" />
-  <meta property="og:description" content="Sinem Alır’ın Tableau, SQL, Python ve Looker Studio projeleriyle iş kararlarını veriyle güçlendirin." />
-  <meta property="og:url"         content="https://sinemalir.com/" />
+  <meta property="og:title"       content="Sinem Alır · Data Analytics Portfolio" />
+  <meta property="og:description" content="Tableau, SQL, Python ve Looker Studio projeleriyle iş kararlarını veriyle güçlendirin." />
   <meta property="og:image"       content="https://sinemalir.com/img/portfolio-cover.png" />
+  <meta property="og:url"         content="https://sinemalir.com/" />
 
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Sinem Alır · Data Analytics Portfolio" />
@@ -29,40 +24,41 @@
   <link rel="canonical" href="https://sinemalir.com/" />
 
   <style>
-    /* —— Temel görünüm —— */
     body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6;}
-    /* —— Yan görseller —— */
-    .side-img{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
-    .side-img.left  {left:0; background-image:url("img/side-left.jpeg");}
-    .side-img.right {right:0;background-image:url("img/side-left.jpeg");}
+    /* Yan görseller */
+    .side{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
+    .side.left{left:0;background-image:url("img/side-left.jpeg");}
+    .side.right{right:0;background-image:url("img/side-left.jpeg");}
 
-    /* —— Başlık kutusu —— */
-    header{max-width:800px;margin:40px auto 60px;padding:25px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:10;}
+    header{max-width:800px;margin:40px auto 60px;padding:25px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:5;}
     header h1{margin:0;font-size:2rem;color:#000;}
-    header p {margin:4px 0 0;color:#4d00a8;font-weight:600;}
+    header p{margin:4px 0 0;color:#4d00a8;font-weight:600;}
 
-    /* —— Bayrak alanı —— */
-    .flag-wrapper{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;position:relative;z-index:5;}
-    .flag-box{text-align:center;transition:transform .2s;width:250px;}
-    .flag-box:hover{transform:scale(1.05);}
-    .flag-box img{width:110px;height:72px;object-fit:cover;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.15);}
-    .flag-box > a.flag-link{display:inline-block;margin-top:10px;text-decoration:none;font-weight:700;color:#4d00a8;}
+    /* Bayrak kutuları */
+    .flags{display:flex;justify-content:center;gap:80px;flex-wrap:wrap;position:relative;z-index:4;}
+    .flag-box{transition:transform .2s;text-align:center;}
+    .flag-box:hover{transform:scale(1.06);}
+    .flag-box img{width:120px;height:80px;object-fit:cover;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+    .flag-box span{display:block;margin-top:8px;font-weight:700;color:#4d00a8;}
 
-    /* Liste */
-    .proj-list{list-style:none;padding:0;margin:15px 0 0;text-align:left;font-size:14px;line-height:1.6;}
+    /* Proje listeleri */
+    .projects-wrapper{display:flex;justify-content:center;gap:80px;flex-wrap:wrap;margin-top:40px;position:relative;z-index:3;}
+    .proj-column{width:260px;}
+    .proj-column h3{text-align:center;margin:0 0 10px;color:#4d00a8;}
+    .proj-list{list-style:none;margin:0;padding:0;font-size:14px;line-height:1.7;}
     .proj-list li a{text-decoration:none;color:#333;}
     .proj-list li a:hover{color:#4d00a8;}
 
     /* Alt kısım */
-    footer{text-align:center;font-size:12px;color:#888;margin:100px 0 40px;position:relative;z-index:5;}
+    footer{text-align:center;font-size:12px;color:#888;margin:90px 0 40px;position:relative;z-index:3;}
     footer a{color:#4d00a8;text-decoration:none;}
   </style>
 </head>
 <body>
 
-  <!-- Yan arkaplan görselleri -->
-  <div class="side-img left"></div>
-  <div class="side-img right"></div>
+  <!-- Yan arka plan -->
+  <div class="side left"></div>
+  <div class="side right"></div>
 
   <!-- Başlık -->
   <header>
@@ -70,13 +66,23 @@
     <p>Portfolyo / Portfolio</p>
   </header>
 
-  <!-- Bayraklar + proje listeleri -->
-  <section class="flag-wrapper">
+  <!-- Bayraklar -->
+  <section class="flags">
+    <a class="flag-box" href="tr.html">
+      <img src="img/TR.png" alt="Türkçe">
+      <span>Türkçe</span>
+    </a>
+    <a class="flag-box" href="en.html">
+      <img src="img/EN.jpeg" alt="English">
+      <span>English</span>
+    </a>
+  </section>
 
+  <!-- Proje listeleri -->
+  <section class="projects-wrapper">
     <!-- Türkçe -->
-    <div class="flag-box">
-      <img src="img/TR.png" alt="Türk Bayrağı">
-      <a class="flag-link" href="tr.html">Türkçe Projeler</a>
+    <div class="proj-column">
+      <h3>Projeler</h3>
       <ul class="proj-list">
         <li><a href="projects/project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a></li>
         <li><a href="projects/project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi</a></li>
@@ -91,9 +97,8 @@
     </div>
 
     <!-- English -->
-    <div class="flag-box">
-      <img src="img/EN.jpeg" alt="UK Flag">
-      <a class="flag-link" href="en.html">English Projects</a>
+    <div class="proj-column">
+      <h3>Projects</h3>
       <ul class="proj-list">
         <li><a href="projects/project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a></li>
         <li><a href="projects/project2-user-funnel/index-en.html">2. User Funnel Conversion</a></li>
@@ -106,14 +111,13 @@
         <li><a href="projects/project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Education Data</a></li>
       </ul>
     </div>
-
   </section>
 
-  <!-- İletişim + freelance -->
+  <!-- Footer / iletişim -->
   <footer>
     📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> |
     📱 <a href="tel:+905457750852">+90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</a><br>
-    <a href="https://bionluk.com"  target="_blank" rel="noopener">Bionluk</a> |
+    <a href="https://bionluk.com" target="_blank" rel="noopener">Bionluk</a> |
     <a href="https://www.upwork.com" target="_blank" rel="noopener">Upwork</a> |
     <a href="https://www.fiverr.com" target="_blank" rel="noopener">Fiverr</a><br>
     © 2025 Sinem Alır. Tüm hakları saklıdır.
