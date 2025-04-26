@@ -1,120 +1,161 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <!-- == Temel meta == -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sinem Alır | Portföy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Sinem Alır" />
+  <title>Sinem Alır | Data Portfolio</title>
+
+  <!-- == SEO meta == -->
+  <meta name="description"
+        content="Sinem Alır’ın veri analizi portfolyosu – SaaS gelir panoları, kullanıcı hunisi analizi, oyun davranış içgörüleri, GA4 kullanıcı yolculuğu, reklam ROMI ve SQL performans karşılaştırmaları." />
+  <meta name="keywords"
+        content="Sinem Alır, data analyst, Tableau, Python, SQL, Looker Studio, SaaS dashboard, user funnel, game analytics, GA4, ROMI, reklam analizi, portfolio" />
+
+  <!-- == Open-Graph (Facebook/LinkedIn vb.) == -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="tr_TR" />
+  <meta property="og:title"       content="Sinem Alır | Data Portfolio" />
+  <meta property="og:description" content="Veri odaklı panolar, kullanıcı içgörüleri ve reklam performans analizleri." />
+  <meta property="og:url"         content="https://sinemalir.com/" />
+  <meta property="og:image"       content="https://sinemalir.com/img/portfolio-cover.png" />
+
+  <!-- == Twitter Card == -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Sinem Alır | Data Portfolio" />
+  <meta name="twitter:description" content="Veri odaklı panolar, kullanıcı içgörüleri ve reklam performans analizleri." />
+  <meta name="twitter:image"       content="https://sinemalir.com/img/portfolio-cover.png" />
+
+  <!-- == Canonical == -->
+  <link rel="canonical" href="https://sinemalir.com/" />
+
+  <!-- == Stil == -->
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #fefbf6;
-      font-family: 'Segoe UI', sans-serif;
+    /* Genel görünüm */
+    * { box-sizing: border-box; }
+    body{
+      margin:0; padding:0;
+      font-family:'Segoe UI', sans-serif;
+      background:#fefbf6;
+      color:#222;
     }
 
-    .left-img, .right-img {
-      position: fixed;
-      top: 0;
-      width: 350px;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
+    /* Arka plan yan görseller */
+    .side-img{
+      position:fixed; top:0; width:250px; height:100%;
+      background:url('img/side-left.jpeg') center/cover no-repeat;
+      opacity:.2; z-index:0;
+    }
+    .side-img.right{ right:0; transform:scaleX(-1);} /* aynı resmi sağda ayna */
+
+    /* Başlık kutusu */
+    header{
+      background:#fefbf6cc;          /* yarı-saydam */
+      border:3px solid #a678d3;
+      border-radius:20px;
+      max-width:820px;
+      margin:40px auto 25px;
+      padding:25px 20px;
+      text-align:center;
+      position:relative;
+      z-index:1111111;
+    }
+    header h1{margin:0;font-size:32px;color:#000;}
+    header h2{margin:8px 0 0;font-size:18px;color:#4d00a8;}
+
+    /* Bayraklar */
+    .flags{
+      display:flex; justify-content:center; gap:40px;
+      margin-bottom:30px;
+    }
+    .flag{
+      width:80px; height:55px; cursor:pointer;
+      border:2px solid #a678d3; border-radius:6px;
+      box-shadow:0 0 4px rgba(0,0,0,.2);
+      position:relative;
+    }
+    .flag:hover::after{                     /* tooltip */
+      content:attr(data-tooltip);
+      position:absolute; bottom:-32px; left:50%;
+      transform:translateX(-50%);
+      background:#a678d3; color:#fff;
+      padding:4px 8px; font-size:12px; border-radius:4px;
+      white-space:nowrap; pointer-events:none;
     }
 
-    .left-img {
-      left: 0;
-      background-image: url('img/side-left.jpeg');
+    /* Projeler listesi */
+    .projects{
+      max-width:820px; margin:0 auto 60px; padding:0 20px;
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:12px;
     }
+    .projects a{
+      background:#fffaf2;
+      border:1px solid #a678d3;
+      border-radius:10px;
+      padding:15px; text-decoration:none;
+      color:#4d00a8; font-weight:600;
+      transition:.2s;
+    }
+    .projects a:hover{background:#e9dcff;}
 
-    .right-img {
-      right: 0;
-      background-image: url('img/side-left.jpeg');
+    /* Alt bar + iletişim */
+    .bottom-wrapper{
+      position:relative; z-index:1111111;
+      background:#fefbf6; padding:40px 20px 70px;
+      text-align:center; font-size:14px; color:#666;
     }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 3px solid #a678d3;
-      border-radius: 20px;
-      max-width: 600px;
-      margin: 60px auto 30px;
-      padding: 30px 20px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      position: relative;
-      z-index: 2;
-    }
-
-    .overlay h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #111;
-    }
-
-    .overlay p {
-      font-size: 18px;
-      color: #555;
-    }
-
-    .lang-options {
-      display: flex;
-      justify-content: center;
-      gap: 100px;
-      margin-top: 140px;
-      margin-bottom: 80px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
-    }
-
-    .lang-box {
-      text-align: center;
-    }
-
-    .lang-box img {
-      width: 110px;
-      height: 70px;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-    }
-
-    .lang-box img:hover {
-      transform: scale(1.05);
-    }
-
-    .lang-box p {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #8b2ab2;
-    }
+    .bottom-wrapper a{color:#4d00a8; text-decoration:none; margin:0 6px;}
   </style>
 </head>
+
 <body>
-  <div class="left-img"></div>
-  <div class="right-img"></div>
+  <!-- Yan görseller -->
+  <div class="side-img"></div>
+  <div class="side-img right"></div>
 
-  <div class="overlay">
+  <!-- Başlık -->
+  <header>
     <h1>Sinem Alır</h1>
-    <p>Portfolyo / Portfolio</p>
+    <h2>Portfolyo&nbsp;/&nbsp;Portfolio</h2>
+  </header>
+
+  <!-- Dil bayrakları -->
+  <div class="flags">
+    <a href="index-tr.html" class="flag" data-tooltip="Türkçe">
+      <img src="img/TR.png" alt="TR Flag" style="width:100%;height:100%;border-radius:4px;">
+    </a>
+    <a href="index-en.html" class="flag" data-tooltip="English">
+      <img src="img/EN.jpeg" alt="EN Flag" style="width:100%;height:100%;border-radius:4px;">
+    </a>
   </div>
 
-  <div class="lang-options">
-    <div class="lang-box">
-      <a href="tr.html">
-        <img src="img/TR.png" alt="Türkçe" title="Türkçe">
-      </a>
-      <p>Projeler</p>
-    </div>
-    <div class="lang-box">
-      <a href="en.html">
-        <img src="img/EN.jpeg" alt="English" title="English">
-      </a>
-      <p>Projects</p>
-    </div>
+  <!-- Projeler başlıkları -->
+  <div class="projects">
+    <a href="projects/project1-saas-dashboard/index-tr.html">1&nbsp;·&nbsp;SaaS Gelir Analizi</a>
+    <a href="projects/project2-user-funnel/index-tr.html">2&nbsp;·&nbsp;Kullanıcı Hunisi Analizi</a>
+    <a href="projects/project3-game-insight/index-tr.html">3&nbsp;·&nbsp;Oyun Kullanıcı Davranışı</a>
+    <a href="projects/project4-ga4-user-journey/index-tr.html">4&nbsp;·&nbsp;GA4 Kullanıcı Yolculuğu</a>
+    <a href="projects/project5-ad-campaigns/index-tr.html">5&nbsp;·&nbsp;Reklam Performans Analizi</a>
+    <a href="projects/project6-python-romi-analysis/index-tr.html">6&nbsp;·&nbsp;Python ROMI Analizi</a>
+    <a href="projects/project7-cross-platform-sql/index-tr.html">7&nbsp;·&nbsp;SQL Platform Karşılaştırma</a>
+    <a href="projects/project8-sql-romi-comparison/index-tr.html">8&nbsp;·&nbsp;SQL ROMI Karşılaştırma</a>
+    <a href="projects/project9-akademisyennhoca-form/index-tr.html">9&nbsp;·&nbsp;AkademisyennHoca Eğitim Verisi</a>
   </div>
+
+  <!-- Alt bölüm ve iletişim -->
+  <div class="bottom-wrapper">
+    <p>📩 sinemalir@icloud.com &nbsp;|&nbsp; 📱 +90 545 775 08 52</p>
+    <p>
+      <a href="https://bionluk.com" target="_blank">Bionluk</a> |
+      <a href="https://upwork.com" target="_blank">Upwork</a> |
+      <a href="https://fiverr.com"  target="_blank">Fiverr</a>
+    </p>
+    <p>© 2025 Sinem Alır. Tüm hakları saklıdır.</p>
+  </div>
+
+  <!-- Basit JS – burger menü yok ama gelecekte gerekirse eklenebilir -->
 </body>
 </html>
