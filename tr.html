@@ -7,200 +7,191 @@
   <!-- ────── SEO ────── -->
   <title>Sinem Alır | Portföy (TR)</title>
   <meta name="robots"        content="index, follow">
-  <meta name="description"   content="Sinem Alır’ın Tableau, SQL, Python ve Looker Studio projelerinden oluşan Türkçe veri analitiği portföyü.">
+  <meta name="description"   content="Sinem Alır’ın Tableau, SQL, Python ve pazarlama ROI projelerinden oluşan Türkçe veri-analitiği portföyü.">
   <meta name="author"        content="Sinem Alır">
-  <meta name="keywords"      content="Veri analizi, Tableau, SQL, Python, Looker Studio, Pazarlama Analitiği">
+  <meta name="keywords"      content="Veri analizi, Tableau, SQL, Python, Looker Studio, Pazarlama analitiği">
 
-  <!-- Open-Graph -->
+  <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:locale"      content="tr_TR">
   <meta property="og:url"         content="https://sinemalir.com/tr.html">
   <meta property="og:title"       content="Sinem Alır | Portföy (TR)">
-  <meta property="og:description" content="Sinem Alır’ın Türkçe veri analitiği projeleri portföyü">
+  <meta property="og:description" content="Sinem Alır’ın Türkçe veri-analitiği projeleri portföyü">
   <meta property="og:image"       content="https://sinemalir.com/img/og-cover.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Sinem Alır | Portföy (TR)">
-  <meta name="twitter:description" content="SQL, Tableau, Python projeleriyle veri odaklı çözümler.">
+  <meta name="twitter:description" content="Ham veriyi içgörüye dönüştüren SQL, Tableau ve Python projeleri.">
   <meta name="twitter:image"       content="https://sinemalir.com/img/og-cover.png">
 
   <link rel="canonical" href="https://sinemalir.com/tr.html">
 
-  <!-- ────── STİL ────── -->
- <style>
+  <!-- ────── STYLE (aynı) ────── -->
+  <style>
     :root { --main:#a678d3; --bg:#fefbf6; --txt:#333; }
 
-    body {
-      margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background:var(--bg); color:var(--txt); text-align:center;
-    }
+    body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:var(--bg);color:var(--txt);text-align:center}
 
-    /* Arka plandaki dikey görseller */
-    .left-img,.right-img{
-      position:fixed; top:0; width:250px; height:100%;
-      background:url("img/side-left.jpeg") center/cover no-repeat;
-      opacity:.18; z-index:0;
-    }
-    .left-img{left:0;}
-    .right-img{right:0;}
+    .left-img,.right-img{position:fixed;top:0;width:250px;height:100%;background:url("img/side-left.jpeg") center/cover no-repeat;opacity:.18;z-index:0;pointer-events:none}
+    .left-img{left:0}.right-img{right:0}
 
-    /* Dil bayrakları */
-    .flags{
-      position:absolute; top:12px; right:20px; z-index:5;
-    }
-    .flags a img{
-      width:34px; height:24px; object-fit:cover;
-      border:2px solid var(--main); border-radius:4px; margin-left:8px;
-      transition:transform .2s;
-    }
-    .flags a img:hover{ transform:scale(1.1); }
+    .flags{position:absolute;top:12px;right:20px;z-index:5}
+    .flags a img{width:34px;height:24px;object-fit:cover;border:2px solid var(--main);border-radius:4px;margin-left:8px;transition:transform .2s}
+    .flags a img:hover{transform:scale(1.1)}
 
-    header{
-      position:relative; z-index:3;
-      background:#fff; max-width:820px; margin:40px auto 25px;
-      padding:35px 20px 25px;
-      border:3px solid var(--main); border-radius:20px;
-      box-shadow:0 2px 8px rgba(0,0,0,.08);
-    }
-    header img{
-      width:160px; height:160px; object-fit:cover;
-      border-radius:50%; margin-bottom:20px;
-      border:4px solid var(--main);
-    }
-    h1{font-size:32px; margin:12px 0 6px;}
-    .tagline{font-size:18px; color:#666;}
+    header{position:relative;z-index:3;background:#fff;max-width:820px;margin:40px auto 25px;padding:35px 20px 25px;border:3px solid var(--main);border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    header img{width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:20px;border:4px solid var(--main)}
+    h1{font-size:32px;margin:12px 0 6px}.tagline{font-size:18px;color:#666}
 
-    /* Ana düğmeler */
     .buttons{margin-top:25px}
-    .buttons a{
-      display:inline-block; text-decoration:none; color:#fff;
-      background:#a678d3; padding:12px 28px; margin:10px 8px;
-      border-radius:30px; font-weight:600; transition:.25s;
-    }
+    .buttons a{display:inline-block;text-decoration:none;color:#fff;background:var(--main);padding:12px 28px;margin:10px 8px;border-radius:30px;font-weight:600;transition:.25s}
     .buttons a:hover{background:#005fa3}
 
-    /* Bölümler */
-    section{
-      position:relative; z-index:2;
-      max-width:840px; margin:45px auto; padding:40px 25px;
-      background:#fff; border:1px solid var(--main); border-radius:15px;
-    }
-    section:nth-of-type(even){background:#fffaf2;}
+    section{position:relative;z-index:2;max-width:840px;margin:45px auto;padding:40px 25px;background:#fff;border:1px solid var(--main);border-radius:15px}
+    section:nth-of-type(even){background:#fffaf2}
 
-    h2{color:var(--main); margin-top:0}
-    ul{padding-left:20px; text-align:left}
+    h2{color:var(--main);margin-top:0}
+    ul{padding-left:20px;text-align:left}
 
-    /* Açılır–kapanır Hakkımda  */
-    details summary{
-      cursor:pointer; list-style:none;
-      font-size:20px; font-weight:600; color:var(--main);
-      display:inline-flex; align-items:center;
-    }
-    details[open] summary::after{content:"▲"; margin-left:8px; font-size:14px;}
-    details:not([open]) summary::after{content:"▼"; margin-left:8px; font-size:14px;}
+    details summary{cursor:pointer;list-style:none;font-size:20px;font-weight:600;color:var(--main);display:inline-flex;align-items:center}
+    details[open]  summary::after{content:"▲";margin-left:8px;font-size:14px}
+    details:not([open]) summary::after{content:"▼";margin-left:8px;font-size:14px}
 
-    /* İletişim */
-   .contact-links{
-  display:flex;            /* linkleri yan yana diz */
-  flex-wrap:wrap;          /* gerekirse alt satıra iner, hizayı bozmadan */
-  justify-content:center;  /* her ekranda ortala */
-  gap:6px;                 /* linkler arasında minik boşluk */
-}
-   
-    .contact-links a{
-      color:#0077c8; text-decoration:none; font-weight:600; margin:0 6px; white-space:nowrap; 
-    }
+    .contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+    .contact-links a{color:#0077c8;text-decoration:none;font-weight:600;margin:0 6px;white-space:nowrap}
     .contact-links a:hover{text-decoration:underline}
 
-    footer{
-      margin:60px 0 20px; font-size:13px; color:#666;
-      position:relative; z-index:2;
-    }
+    footer{margin:60px 0 20px;font-size:13px;color:#666;position:relative;z-index:2}
   </style>
 </head>
 <body>
 
-  <!-- Arka plan görselleri -->
+  <!-- yan şeritler -->
   <div class="left-img"></div>
   <div class="right-img"></div>
 
-  <!-- Dil bayrakları -->
+  <!-- bayraklar -->
   <div class="flags">
-    <a href="tr.html"><img src="img/TR.png"  alt="Türkçe"></a>
+    <a href="tr.html"><img src="img/TR.png" alt="Türkçe"></a>
     <a href="en.html"><img src="img/EN.jpeg" alt="English"></a>
   </div>
 
-  <!-- Üst blok -->
+  <!-- ÜST BLOK -->
   <header>
     <img src="img/sinem alir.jpg" alt="Sinem Alır">
     <h1>Sinem Alır</h1>
-    <p class="tagline">Veri Analisti | Freelance Danışman</p>
+    <p class="tagline">Veri Analisti&nbsp;| Freelance Danışman</p>
 
     <div class="buttons">
-      <a href="#projelerim">Projeler</a>
-      <a href="#hakkimda">Hakkımda</a>
-      <a href="#iletisim">İletişim</a>
+      <a href="#projects">Projeler</a>
+      <a href="#about">Hakkımda</a>
+      <a href="#contact">İletişim</a>
     </div>
   </header>
 
   <!-- PROJELER -->
-  <section id="projelerim">
-    <h2>📂 Projelerim</h2>
-    <ul style="text-align:left">
-      <li><a href="projects/project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi (Tableau)</a></li>
-      <li><a href="projects/project2-user-funnel/index-tr.html">2. Kullanıcı Hunisi Analizi (Tableau)</a></li>
-      <li><a href="projects/project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı (Tableau)</a></li>
-      <li><a href="projects/project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu (BigQuery + Tableau)</a></li>
-      <li><a href="projects/project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performansı (Looker Studio)</a></li>
-      <li><a href="projects/project6-python-romi-analysis/index-tr.html">6. Python ile Facebook Reklam ROMI (Pandas)</a></li>
-      <li><a href="projects/project7-cross-platform-sql/index-tr.html">7. Facebook & Google Ads SQL Analizi (PostgreSQL)</a></li>
-      <li><a href="projects/project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırması (PostgreSQL)</a></li>
-      <li><a href="projects/project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Form Analizi (Tableau)</a></li>
+  <section id="projects">
+    <h2>📂 Projeler</h2>
+    <ul>
+      <li><a href="projects/project1-saas-dashboard/index-tr.html">1 – SaaS Gelir Analizi (Tableau)</a></li>
+      <li><a href="projects/project2-user-funnel/index-tr.html">2 – Kullanıcı Hunisi Analizi (Tableau)</a></li>
+      <li><a href="projects/project3-game-insight/index-tr.html">3 – Oyun Kullanıcı Davranışı (Tableau)</a></li>
+      <li><a href="projects/project4-ga4-user-journey/index-tr.html">4 – GA4 Kullanıcı Yolculuğu (BigQuery + Tableau)</a></li>
+      <li><a href="projects/project5-ad-campaigns/index-tr.html">5 – Reklam Kampanya Performansı (Looker Studio)</a></li>
+      <li><a href="projects/project6-python-romi-analysis/index-tr.html">6 – Python ile Facebook ROMI (Pandas)</a></li>
+      <li><a href="projects/project7-cross-platform-sql/index-tr.html">7 – Facebook & Google Ads SQL Analizi (PostgreSQL)</a></li>
+      <li><a href="projects/project8-sql-romi-comparison/index-tr.html">8 – SQL ROMI Karşılaştırması (PostgreSQL)</a></li>
+      <li><a href="projects/project9-akademisyennhoca-form/index-tr.html">9 – AkademisyennHoca Form Analizi (Tableau)</a></li>
     </ul>
   </section>
 
-  <!-- HAKKIMDA – detaylı, açılır / kapanır -->
-  <section id="hakkimda">
+  <!-- HAKKIMDA (güncellenmiş) -->
+  <section id="about">
     <details>
-      <summary>👩‍💻 Hakkımda (Detaylı Gör)</summary>
-      <div style="margin-top:25px; text-align:left">
-        <p>15 yılı aşkın satış ve ekip yönetimi deneyimimi, veri odaklı karar alma süreçlerine taşıyarak <strong>veri analisti</strong> olarak yeni bir kariyer yolculuğuna başladım. Jeoloji mühendisliği eğitimimle kazandığım analitik bakış açısını, güçlü iletişim becerilerim ve çözüme odaklı yaklaşımımla birleştirerek iş dünyasının veriyle şekillenen ihtiyaçlarına yanıt vermeye odaklandım.</p>
+      <summary>
+        <p>
+          👩‍💻 Hakkımda<br>
+          Veri gücüyle hareket eden, analitik düşünceyle iş süreçlerine değer katan bir veri analisti.<br>
+          <em>(detay için tıkla)</em>
+        </p>
+      </summary>
 
-        <p>SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.</p>
+      <div style="margin-top:25px;text-align:left">
 
-        <strong>Yetkinliklerim:</strong>
+        <p><strong>Merhaba, ben Sinem Alır.</strong><br>
+        Kariyerime satış yönetimi ve ekip liderliği alanında başladım; sonuç odaklı çalışmayı, ekip yönetimini ve etkili stratejiler geliştirmeyi burada öğrendim. 15+ yıllık bu deneyimin ardından iş bilgimi veri tutkusu ile birleştirmeye karar verdim.</p>
+
+        <p>Bugün, veri analitiği ve iş zekâsı konularında uzmanlaşmış freelance bir veri analisti olarak şirketlerin karar süreçlerini güçlendirmelerine, veri odaklı büyüme stratejileri geliştirmelerine ve daha akıllı operasyonlar yürütmelerine yardımcı oluyorum.</p>
+
+        <p>SQL, Python, Excel VBA, Tableau, Looker Studio ve BigQuery gibi modern araçlarla gerçek iş problemlerine yönelik analitik çözümler üretiyorum.  
+        Veriye sadece teknik bir bakışla değil, güçlü bir iş sezgisiyle yaklaşıyor; daima <em>aksiyon alınabilir</em> içgörüler ve ölçülebilir sonuçlara odaklanıyorum.</p>
+
+        <p>Sürekli öğreniyor, gelişiyor ve iş birliği yaptığım her organizasyon için veriyi daha erişilebilir ve etkili kılmaya kendimi adıyorum.</p>
+
+        <hr>
+
+        <h3>🛠️ Yetkinlikler &amp; Uzmanlık</h3>
+
+        <strong>Veri Analizi &amp; Sorgulama</strong>
         <ul>
-          <li>İş zekâsını ve saha deneyimini veri analitiğiyle buluşturmak</li>
-          <li>Büyük veri setlerinde temizlik, analiz ve görselleştirme süreçlerini yönetmek</li>
-          <li>Satış ve kampanya verileri üzerinden KPI takibi yapmak</li>
-          <li>Takım çalışmasına yatkın, öğrenmeye açık olmak</li>
+          <li>SQL (PostgreSQL)</li>
+          <li>Excel (ileri seviye, VBA otomasyonu)</li>
+          <li>Python (Pandas, Matplotlib)</li>
         </ul>
 
-        <p>Veriyi sadece sayılardan ibaret görmeyen, her verinin bir <em>hikâyesi</em> olduğuna inanan ve bu hikâyeyi doğru anlatmaya çalışan bir analistim.</p>
+        <strong>Veri Görselleştirme &amp; Raporlama</strong>
+        <ul>
+          <li>Tableau</li>
+          <li>Looker Studio</li>
+          <li>Google Sheets (ileri otomasyon)</li>
+        </ul>
+
+        <strong>Veritabanı &amp; Bulut Teknolojileri</strong>
+        <ul>
+          <li>PostgreSQL</li>
+          <li>Google BigQuery</li>
+        </ul>
+
+        <strong>İş &amp; Pazarlama Analitiği</strong>
+        <ul>
+          <li>KPI analizi &amp; performans takibi</li>
+          <li>Kullanıcı davranışı analizi</li>
+          <li>E-ticaret &amp; SaaS gelir analizi</li>
+          <li>Reklam performansı (ROMI, CPC, CTR)</li>
+        </ul>
+
+        <strong>Diğer Teknik Beceriler</strong>
+        <ul>
+          <li>Jupyter Notebook</li>
+          <li>GitHub versiyon kontrolü</li>
+          <li>Veri temizleme &amp; ön işleme</li>
+        </ul>
+
+        <strong>Profesyonel Güçlü Yönler</strong>
+        <ul>
+          <li>Analitik düşünme &amp; problem çözme</li>
+          <li>Veri hikâyeleştirme</li>
+          <li>Proje yönetimi &amp; organizasyon</li>
+          <li>Sürekli öğrenme &amp; gelişim</li>
+          <li>Takım çalışması &amp; iletişim</li>
+        </ul>
       </div>
     </details>
   </section>
 
-
-  <!-- FOOTER / İLETİŞİM -->
-  <section id="iletisim">
+  <!-- İLETİŞİM -->
+  <section id="contact">
     <h2>📫 İletişim</h2>
     <p class="contact-links">
       <a href="mailto:sinemalir@icloud.com">📧 sinemalir@icloud.com</a> |
       <a href="tel:+905457750852">📞 +90 545 775 08 52</a> |
-       <a href="https://bionluk.com" target="_blank" rel="noopener">Bionluk</a> | 
-      <a href="https://fiverr.com"  target="_blank" rel="noopener">Fiverr</a> | 
-      <a href="https://upwork.com"  target="_blank" rel="noopener">Upwork</a>
+      <a href="https://bionluk.com" target="_blank" rel="noopener">Bionluk</a> |
+      <a href="https://fiverr.com" target="_blank" rel="noopener">Fiverr</a> |
+      <a href="https://upwork.com" target="_blank" rel="noopener">Upwork</a>
     </p>
   </section>
- 
- <footer>© 2025 Sinem Alır. Tüm hakları saklıdır.</footer>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('show');
-    }
-  </script>
+  <footer>© 2025 Sinem Alır. Tüm hakları saklıdır.</footer>
 </body>
 </html>
