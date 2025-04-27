@@ -75,7 +75,7 @@
     .buttons{margin-top:25px}
     .buttons a{
       display:inline-block; text-decoration:none; color:#fff;
-      background:#0077c8; padding:12px 28px; margin:10px 8px;
+      background:#a678d3; padding:12px 28px; margin:10px 8px;
       border-radius:30px; font-weight:600; transition:.25s;
     }
     .buttons a:hover{background:#005fa3}
@@ -101,8 +101,15 @@
     details:not([open]) summary::after{content:"▼"; margin-left:8px; font-size:14px;}
 
     /* İletişim */
+   .contact-links{
+  display:flex;            /* linkleri yan yana diz */
+  flex-wrap:wrap;          /* gerekirse alt satıra iner, hizayı bozmadan */
+  justify-content:center;  /* her ekranda ortala */
+  gap:6px;                 /* linkler arasında minik boşluk */
+}
+   
     .contact-links a{
-      color:#0077c8; text-decoration:none; font-weight:600; margin:0 6px;
+      color:#0077c8; text-decoration:none; font-weight:600; margin:0 6px; white-space:nowrap; 
     }
     .contact-links a:hover{text-decoration:underline}
 
@@ -162,7 +169,7 @@
 
         <p>SQL, Excel, Tableau ve Python gibi araçlarla çalışarak gerçek iş problemlerini çözmeye yönelik projeler üretiyor, veri setlerini analiz ederek anlamlı içgörüler elde ediyorum. Özellikle pazarlama kampanyaları, satış verileri ve kullanıcı davranışları üzerine yaptığım analizlerle; performans değerlendirme, kârlılık takibi ve strateji geliştirme alanlarında fark yaratmayı hedefliyorum.</p>
 
-        <strong>Güçlü yönlerim:</strong>
+        <strong>Yetkinliklerim:</strong>
         <ul>
           <li>İş zekâsını ve saha deneyimini veri analitiğiyle buluşturmak</li>
           <li>Büyük veri setlerinde temizlik, analiz ve görselleştirme süreçlerini yönetmek</li>
