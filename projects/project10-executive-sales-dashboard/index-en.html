@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Excel dashboard visualising executive-level sales strategy: revenue trends, profit, ship mode efficiency, customer segments and top products across US regions.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Excel dashboard, sales strategy, executive dashboard, profit analysis, customer segmentation, data visualisation">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Project 10 – Executive Sales Strategy Dashboard">
+  <meta property="og:description" content="An Excel dashboard that gives executives a clear view of sales performance, profitability and customer segments across regions and time.">
+  <meta property="og:image"       content="https://sinemalir.github.io/img/project10-executive-sales-dashboard.png">
+  <meta property="og:url"         content="https://sinemalir.github.io/projects/project10-executive-sales-dashboard/index-en.html">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Project 10 – Executive Sales Strategy Dashboard">
+  <meta name="twitter:description" content="Excel-powered sales dashboard covering revenue trends, profit, shipping efficiency and top products.">
+  <meta name="twitter:image"       content="https://sinemalir.github.io/img/project10-executive-sales-dashboard.png">
+
+  <link rel="canonical" href="https://sinemalir.github.io/projects/project10-executive-sales-dashboard/index-en.html">
+
+  <title>Project 10 – Executive Sales Strategy Dashboard</title>
+
+  <style>
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6;}
+    .side{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
+    .side.left{left:0;background-image:url("../../img/side-left.jpeg");}
+    .side.right{right:0;background-image:url("../../img/side-left.jpeg");}
+
+    header{max-width:800px;margin:30px auto 20px;padding:20px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:1111111;}
+    header h1{margin:0;font-size:2rem;color:#000;}
+
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999;}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2);}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:700;}
+    .menu.show{display:block;}
+
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1;}
+    .section img{width:100%;border-radius:10px;margin-bottom:20px;}
+    h2,h3{color:#8b2ab2;}
+
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px;}
+    .navbar,.footer{text-align:center;font-size:12px;color:#888;margin:60px 0 20px;}
+    .navbar a{text-decoration:none;color:#4d00a8;font-weight:700;margin:0 10px;}
+    .footer a{color:#4d00a8;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="side left"></div>
+  <div class="side right"></div>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
+    <nav class="menu" id="menu">
+      <a href="../../index.html">🏠 Home</a>
+      <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
+      <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
+      <a href="../project3-game-insight/index-en.html">3. Game User Behaviour</a>
+      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
+      <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaign Performance</a>
+      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad ROMI Analysis</a>
+      <a href="../project7-cross-platform-sql/index-en.html">7. Cross-Platform SQL Comparison</a>
+      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Benchmark</a>
+      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Survey</a>
+      <a href="../project10-executive-sales-dashboard/index-en.html">10. Executive Sales Strategy Dashboard</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Project 10 – Executive Sales Strategy Dashboard (Excel)</h2>
+    <img src="../../img/project10-executive-sales-dashboard.png" alt="Executive Sales Strategy Dashboard">
+
+    <h3>Description</h3>
+    <p>This dashboard was built to give executives and sales leaders an instant, data-driven view of business performance across regions, time periods and customer segments — all within a single Excel file.</p>
+
+    <p><strong>What does this dashboard deliver?</strong></p>
+    <ul>
+      <li>A headline summary of the most critical KPIs: <strong>Total Sales (2,297K)</strong>, <strong>Total Profit (286K)</strong>, <strong>Profit % (12%)</strong>, <strong>Average Order Value (459)</strong> and <strong>Total Orders (5,009)</strong> — giving leadership the big picture at a glance.</li>
+      <li>A <strong>monthly sales trend line chart</strong> covering all regions and years, making it easy to spot seasonal peaks (Q3–Q4) and slow periods.</li>
+      <li>A <strong>ship mode efficiency bar chart</strong> comparing Standard Class, Second Class, First Class and Same Day delivery volumes — helping operations teams optimise logistics costs.</li>
+      <li>A <strong>US regional map</strong> with colour-coded sales intensity, highlighting which states (California, Texas, New York) drive the most revenue.</li>
+      <li>A <strong>customer segment donut chart</strong> breaking down Consumer (50%), Corporate (31%) and Home Office (19%) contributions — guiding targeted marketing and sales strategies.</li>
+      <li>A <strong>Top 10 Most Profitable Products</strong> bar chart identifying the highest-margin items for prioritised promotion and inventory decisions.</li>
+    </ul>
+
+    <p><strong>In short:</strong> this dashboard turns raw transactional data into a strategic decision-making tool — enabling faster, more confident sales planning across regions, segments and product lines.</p>
+
+    <h3>Recommendations (Data-Driven Action Plan)</h3>
+    <ul>
+      <li>Investigate the Sep–Oct revenue peak and replicate the conditions that drive it (campaigns, seasonal demand) in slower months.</li>
+      <li>Standard Class dominates shipping volume — evaluate whether a shift to Second Class for select orders can reduce costs without impacting customer satisfaction.</li>
+      <li>California and Texas are the strongest markets — deepen retention efforts there before expanding to lower-performing states.</li>
+      <li>Consumer segment accounts for 50% of revenue — create loyalty programmes and upsell paths for this group.</li>
+      <li>Canon and Fellowes products lead profitability — ensure they are always in stock and featured prominently in sales materials.</li>
+      <li>Home Office (19%) is the smallest segment but may have growth potential — test targeted B2C campaigns for remote-work products.</li>
+    </ul>
+
+    <h3>Technical Details (for Data Analysts / Recruiters)</h3>
+    <ul>
+      <li><strong>Tool:</strong> Microsoft Excel</li>
+      <li><strong>Data Structure:</strong> Transactional sales data with region, date, product, customer segment and shipping fields</li>
+    </ul>
+
+    <p><strong>Dashboard Components:</strong></p>
+    <ul>
+      <li><strong>KPI Cards (5 metrics):</strong> Total Sales, Total Profit, Profit %, Avg. Order Value, Total Orders — calculated with dynamic formulas linked to slicer selections</li>
+      <li><strong>Monthly Sales Trend (Line Chart):</strong> aggregated by month across all years and regions, revealing seasonality patterns</li>
+      <li><strong>Ship Mode Efficiency (Bar Chart):</strong> order count by delivery class — Standard, Second, First, Same Day</li>
+      <li><strong>US Regional Map:</strong> heat-map style filled map chart showing state-level sales concentration</li>
+      <li><strong>Customer Segment Distribution (Donut Chart):</strong> Consumer vs Corporate vs Home Office revenue share</li>
+      <li><strong>Top 10 Profitable Products (Bar Chart):</strong> ranked by profit contribution</li>
+      <li><strong>Interactive Slicers:</strong> Region (Central, East, South, West), Year (2014–2017), Quarter (Qtr1–Qtr4), Month (Jan–Dec) — all charts update dynamically</li>
+    </ul>
+  </section>
+
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project9-akademisyennhoca-form/index-en.html">⬅️ Previous Project</a>
+      <a href="../../index.html">🏠 Home</a>
+    </div>
+
+    <div class="footer">
+      📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> |
+      📱 <a href="tel:+905457750852">+90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</a><br>
+      <p>
+        <a href="https://bionluk.com/sinemalir" target="_blank" rel="noopener">Bionluk</a> |
+        <a href="https://www.fiverr.com/sinemalir" target="_blank" rel="noopener">Fiverr</a> |
+        <a href="https://www.upwork.com/freelancers/~01eaabebf1168183b1" target="_blank" rel="noopener">Upwork</a>
+      </p>
+      © 2025 Sinem Alır – All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+  </script>
+</body>
+</html>
