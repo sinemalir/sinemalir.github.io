@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="ABD bölgelerinde satış performansı, karlılık, müşteri segmentleri ve en çok kazandıran ürünleri tek ekranda sunan Excel dashboard.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Excel dashboard, satış stratejisi, yönetici dashboard, karlılık analizi, müşteri segmentasyonu, veri görselleştirme">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Proje 10 – Yönetici Satış Strateji Dashboard">
+  <meta property="og:description" content="Satış performansını, karlılığı ve müşteri segmentlerini bölgeler ve zaman dilimlerine göre tek ekranda sunan Excel dashboard.">
+  <meta property="og:image"       content="https://sinemalir.github.io/img/project10-executive-sales-dashboard.png">
+  <meta property="og:url"         content="https://sinemalir.github.io/projects/project10-executive-sales-dashboard/index-tr.html">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Proje 10 – Yönetici Satış Strateji Dashboard">
+  <meta name="twitter:description" content="Satış trendi, karlılık, kargo verimliliği ve en çok kazandıran ürünleri kapsayan Excel dashboard.">
+  <meta name="twitter:image"       content="https://sinemalir.github.io/img/project10-executive-sales-dashboard.png">
+
+  <link rel="canonical" href="https://sinemalir.github.io/projects/project10-executive-sales-dashboard/index-tr.html">
+
+  <title>Proje 10 – Yönetici Satış Strateji Dashboard</title>
+
+  <style>
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6;}
+    .side{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
+    .side.left{left:0;background-image:url("../../img/side-left.jpeg");}
+    .side.right{right:0;background-image:url("../../img/side-left.jpeg");}
+
+    header{max-width:800px;margin:30px auto 20px;padding:20px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:1111111;}
+    header h1{margin:0;font-size:2rem;color:#000;}
+
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999;}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2);}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:700;}
+    .menu.show{display:block;}
+
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1;}
+    .section img{width:100%;border-radius:10px;margin-bottom:20px;}
+    h2,h3{color:#8b2ab2;}
+
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px;}
+    .navbar,.footer{text-align:center;font-size:12px;color:#888;margin:60px 0 20px;}
+    .navbar a{text-decoration:none;color:#4d00a8;font-weight:700;margin:0 10px;}
+    .footer a{color:#4d00a8;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="side left"></div>
+  <div class="side right"></div>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
+    <nav class="menu" id="menu">
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+      <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
+      <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Huni Analizi</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
+      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performansı</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python Reklam ROMI Analizi</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. Çapraz Platform SQL Karşılaştırması</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Benchmark</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Anketi</a>
+      <a href="../project10-executive-sales-dashboard/index-tr.html">10. Yönetici Satış Strateji Dashboard</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Proje 10 – Yönetici Satış Strateji Dashboard (Excel)</h2>
+    <img src="../../img/project10-executive-sales-dashboard.png" alt="Yönetici Satış Strateji Dashboard">
+
+    <h3>Açıklama</h3>
+    <p>Bu dashboard; satış liderlerine ve üst yöneticilere bölgeler, zaman dilimleri ve müşteri segmentleri genelinde iş performansını tek bir Excel dosyasında, anlık ve veri odaklı biçimde sunmak amacıyla hazırlandı.</p>
+
+    <p><strong>Bu dashboard ne sunuyor?</strong></p>
+    <ul>
+      <li>En kritik KPI'ların özet görünümü: <strong>Toplam Satış (2.297K)</strong>, <strong>Toplam Kâr (286K)</strong>, <strong>Kâr % (12)</strong>, <strong>Ortalama Sipariş Değeri (459)</strong> ve <strong>Toplam Sipariş (5.009)</strong> — yönetimin büyük resmi tek bakışta görmesini sağlar.</li>
+      <li>Tüm bölgeler ve yılları kapsayan <strong>aylık satış trend çizgi grafiği</strong> sayesinde mevsimsel zirveler (Q3–Q4) ve düşük dönemler kolayca tespit edilir.</li>
+      <li><strong>Kargo modu verimlilik çubuğu grafiği</strong>; Standart, İkinci Sınıf, Birinci Sınıf ve Aynı Gün teslimat hacimlerini karşılaştırarak lojistik maliyetlerinin optimize edilmesine yardımcı olur.</li>
+      <li><strong>ABD bölge haritası</strong>; renk yoğunluğuyla hangi eyaletlerin (California, Texas, New York) en yüksek geliri ürettiğini ortaya koyar.</li>
+      <li><strong>Müşteri segmenti halka grafiği</strong>; Tüketici (%50), Kurumsal (%31) ve Ev Ofisi (%19) gelir paylarını göstererek hedefli pazarlama stratejilerine zemin hazırlar.</li>
+      <li><strong>En Kârlı 10 Ürün çubuğu grafiği</strong>; öncelikli tanıtım ve stok kararları için en yüksek marjlı kalemleri sıralar.</li>
+    </ul>
+
+    <p><strong>Kısaca:</strong> bu dashboard, ham işlem verilerini stratejik bir karar destek aracına dönüştürür; bölgeler, segmentler ve ürün hatları genelinde daha hızlı ve güvenli satış planlaması sağlar.</p>
+
+    <h3>Öneriler (Veriye Dayalı Aksiyon Planı)</h3>
+    <ul>
+      <li>Eylül–Ekim gelir zirvesini yaratan koşulları (kampanyalar, mevsimsel talep) incele ve yavaş dönemlere taşı.</li>
+      <li>Standart Kargo hacim açısından baskın — seçili siparişlerde İkinci Sınıf'a geçişin müşteri memnuniyetini etkilemeden maliyeti düşürüp düşüremeyeceğini değerlendir.</li>
+      <li>California ve Texas en güçlü pazarlar — daha düşük performanslı eyaletlere genişlemeden önce burada müşteriyi elde tutma çalışmalarını derinleştir.</li>
+      <li>Tüketici segmenti gelirin %50'sini oluşturuyor — bu grup için sadakat programları ve çapraz satış yolları oluştur.</li>
+      <li>Canon ve Fellowes ürünleri kârlılıkta öne çıkıyor — her zaman stokta olduklarından emin ol ve satış materyallerinde ön plana taşı.</li>
+      <li>Ev Ofisi (%19) en küçük segment ama büyüme potansiyeli taşıyor — uzaktan çalışma ürünleri için hedefli B2C kampanyaları test et.</li>
+    </ul>
+
+    <h3>Teknik Detaylar (Veri Analistleri / İşe Alanlar İçin)</h3>
+    <ul>
+      <li><strong>Araç:</strong> Microsoft Excel</li>
+      <li><strong>Veri Yapısı:</strong> Bölge, tarih, ürün, müşteri segmenti ve kargo alanlarını içeren işlem satış verisi</li>
+    </ul>
+
+    <p><strong>Dashboard Bileşenleri:</strong></p>
+    <ul>
+      <li><strong>KPI Kartları (5 metrik):</strong> Toplam Satış, Toplam Kâr, Kâr %, Ort. Sipariş Değeri, Toplam Sipariş — dilimleyici seçimlerine bağlı dinamik formüllerle hesaplanır</li>
+      <li><strong>Aylık Satış Trendi (Çizgi Grafik):</strong> tüm yıllar ve bölgeler genelinde aylık bazda toplanmış, mevsimsellik örüntülerini ortaya koyar</li>
+      <li><strong>Kargo Modu Verimliliği (Çubuk Grafik):</strong> teslimat sınıfına göre sipariş sayısı — Standart, İkinci, Birinci, Aynı Gün</li>
+      <li><strong>ABD Bölge Haritası:</strong> eyalet düzeyinde satış yoğunluğunu gösteren ısı haritası tarzı dolu harita grafiği</li>
+      <li><strong>Müşteri Segmenti Dağılımı (Halka Grafik):</strong> Tüketici / Kurumsal / Ev Ofisi gelir payı</li>
+      <li><strong>En Kârlı 10 Ürün (Çubuk Grafik):</strong> kâr katkısına göre sıralanmış</li>
+      <li><strong>İnteraktif Dilimleyiciler:</strong> Bölge (Central, East, South, West), Yıl (2014–2017), Çeyrek (Qtr1–Qtr4), Ay (Oca–Ara) — tüm grafikler dinamik olarak güncellenir</li>
+    </ul>
+  </section>
+
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project9-akademisyennhoca-form/index-tr.html">⬅️ Önceki Proje</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+    </div>
+
+    <div class="footer">
+      📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> |
+      📱 <a href="tel:+905457750852">+90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</a><br>
+      <p>
+        <a href="https://bionluk.com/sinemalir" target="_blank" rel="noopener">Bionluk</a> |
+        <a href="https://www.fiverr.com/sinemalir" target="_blank" rel="noopener">Fiverr</a> |
+        <a href="https://www.upwork.com/freelancers/~01eaabebf1168183b1" target="_blank" rel="noopener">Upwork</a>
+      </p>
+      © 2025 Sinem Alır – Tüm hakları saklıdır.
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+  </script>
+</body>
+</html>
