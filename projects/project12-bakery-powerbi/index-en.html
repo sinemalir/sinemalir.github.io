@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="5-page Power BI report built for a real student project: full sales analysis for a bakery and ice cream business covering KPIs, temporal trends, store performance, product profitability and category insights.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Power BI dashboard, bakery analysis, sales report, product profitability, temporal analysis, student project, real data">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Project 12 – Bakery & Ice Cream Sales Analysis (Power BI)">
+  <meta property="og:description" content="A 5-page Power BI report analysing real bakery sales data: KPIs, temporal trends, store & zone performance, product profitability and category breakdown.">
+  <meta property="og:image"       content="https://sinemalir.github.io/img/project12-bakery-powerbi.png">
+  <meta property="og:url"         content="https://sinemalir.github.io/projects/project12-bakery-powerbi/index-en.html">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Project 12 – Bakery & Ice Cream Sales Analysis (Power BI)">
+  <meta name="twitter:description" content="5-page Power BI report: bakery KPIs, seasonal trends, store rankings and product margin analysis.">
+  <meta name="twitter:image"       content="https://sinemalir.github.io/img/project12-bakery-powerbi.png">
+
+  <link rel="canonical" href="https://sinemalir.github.io/projects/project12-bakery-powerbi/index-en.html">
+
+  <title>Project 12 – Bakery & Ice Cream Sales Analysis (Power BI)</title>
+
+  <style>
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6;}
+    .side{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
+    .side.left{left:0;background-image:url("../../img/side-left.jpeg");}
+    .side.right{right:0;background-image:url("../../img/side-left.jpeg");}
+
+    header{max-width:800px;margin:30px auto 20px;padding:20px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:1111111;}
+    header h1{margin:0;font-size:2rem;color:#000;}
+
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999;}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2);}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:700;}
+    .menu.show{display:block;}
+
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1;}
+    .section img{width:100%;border-radius:10px;margin-bottom:24px;border:1px solid #e0d0f0;}
+    h2,h3{color:#8b2ab2;}
+    h4{color:#4d00a8;margin:8px 0 4px;}
+
+    .badge{display:inline-block;background:#8b2ab2;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+    .page-label{display:inline-block;background:#4d00a8;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:8px;}
+
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px;}
+    .navbar,.footer{text-align:center;font-size:12px;color:#888;margin:60px 0 20px;}
+    .navbar a{text-decoration:none;color:#4d00a8;font-weight:700;margin:0 10px;}
+    .footer a{color:#4d00a8;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="side left"></div>
+  <div class="side right"></div>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
+    <nav class="menu" id="menu">
+      <a href="../../index.html">🏠 Home</a>
+      <a href="../project1-saas-dashboard/index-en.html">1. SaaS Revenue Analysis</a>
+      <a href="../project2-user-funnel/index-en.html">2. User Funnel Analysis</a>
+      <a href="../project3-game-insight/index-en.html">3. Game User Behaviour</a>
+      <a href="../project4-ga4-user-journey/index-en.html">4. GA4 User Journey</a>
+      <a href="../project5-ad-campaigns/index-en.html">5. Ad Campaign Performance</a>
+      <a href="../project6-python-romi-analysis/index-en.html">6. Python Ad ROMI Analysis</a>
+      <a href="../project7-cross-platform-sql/index-en.html">7. Cross-Platform SQL Comparison</a>
+      <a href="../project8-sql-romi-comparison/index-en.html">8. SQL ROMI Benchmark</a>
+      <a href="../project9-akademisyennhoca-form/index-en.html">9. AkademisyennHoca Survey</a>
+      <a href="../project10-executive-sales-dashboard/index-en.html">10. Executive Sales Strategy Dashboard</a>
+      <a href="../project11-hispana-chile-dashboard/index-en.html">11. Hispana Chile Ltda. Dashboard</a>
+      <a href="../project12-bakery-powerbi/index-en.html">12. Bakery & Ice Cream Sales Analysis</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Project 12 – Bakery & Ice Cream Sales Analysis (Power BI)</h2>
+    <span class="badge">Fiverr Project — Real Data — 5 Pages</span>
+
+    <h3>Description</h3>
+    <p>This 5-page Power BI report was built for a real student project using actual sales data from a bakery and ice cream business. The goal was to deliver a comprehensive, multi-dimensional analysis — covering overall performance, seasonal patterns, store-level comparisons, product profitability and category integrity — all within a single connected report.</p>
+
+    <p><strong>Report Pages:</strong></p>
+
+    <!-- Page 1 -->
+    <span class="page-label">Page 1 — KPIs & Summary</span>
+    <img src="../../img/project12-bakery-powerbi-p5.png" alt="KPIs y Resumen">
+    <ul>
+      <li>Headline KPIs: <strong>Total Sales (304.39bn)</strong>, <strong>Profit (138.10bn)</strong> and <strong>Margin % (45.37%)</strong> — giving management the bottom line at a glance.</li>
+      <li>Product-level cost table and a full price / cost / margin breakdown table covering all 15 products.</li>
+      <li>Pastel de Chocolate Tradicional and Tarta de Manzana Clásica lead with the highest margins (1,500 per unit); Galletas de Avena y Pasas has the lowest (600).</li>
+    </ul>
+
+    <!-- Page 2 -->
+    <span class="page-label">Page 2 — Temporal Analysis</span>
+    <img src="../../img/project12-bakery-powerbi-p1.png" alt="Análisis Temporal">
+    <ul>
+      <li>Records by semester (donut chart): 100K in semester 1 vs 45K in semester 2 — a significant volume gap worth investigating.</li>
+      <li>Quarterly sales volume is remarkably stable across all four quarters (~37.5M–38M), suggesting consistent demand year-round.</li>
+      <li>Average cost by season is nearly flat (1,095K–1,103K), indicating stable input costs regardless of season.</li>
+      <li>Monthly records and average cost by month reveal October and January as peak transaction months; February has the highest average cost.</li>
+      <li>Sales by day of week: Thursday leads in volume; Saturday has the highest cost share (14.15%), Thursday the lowest (14.56% — note: this is cost %, not sales %).</li>
+    </ul>
+
+    <!-- Page 3 -->
+    <span class="page-label">Page 3 — Store & Zone Analysis</span>
+    <img src="../../img/project12-bakery-powerbi-p2.png" alt="Análisis por Tienda y Zona">
+    <ul>
+      <li>Zone distribution is nearly equal: Sur (33.49K), Norte (33.28K) and Centro (33.23K) — no single zone dominates.</li>
+      <li>Store-level ranking: Helados Celestiales leads in quantity sold (10.33M), closely followed by Delicias Nevadas and Sabor y Frescura.</li>
+      <li>Cost variation by store: Dulce Nieve (+1.27%) and Dulce Frío (+1.14%) show the highest positive cost deviation; Delicias Nevadas (-0.78%) and Sabores Congelados (-0.75%) show the largest negative deviation — flagging potential pricing or cost inconsistencies.</li>
+    </ul>
+
+    <!-- Page 4 -->
+    <span class="page-label">Page 4 — Category Analysis</span>
+    <img src="../../img/project12-bakery-powerbi-p3.png" alt="Análisis por Categoría">
+    <ul>
+      <li>Three categories: Bebidas (46.72K records), Heladería (33.37K) and Pastelería (19.91K).</li>
+      <li>Average price by category: Heladería (2,451K) far exceeds Bebidas (2,001K) and Pastelería (1,301K).</li>
+      <li><strong>Key finding flagged directly in the report:</strong> a data inconsistency was detected — all 15 products appear classified under all 3 categories simultaneously, indicating a categorisation error in the source database. This was clearly communicated to the client as an actionable data quality issue.</li>
+    </ul>
+
+    <!-- Page 5 -->
+    <span class="page-label">Page 5 — Product Analysis</span>
+    <img src="../../img/project12-bakery-powerbi-p4.png" alt="Análisis por Producto">
+    <ul>
+      <li>Price-cost difference by product: Pastel de Chocolate Tradicional and Tarta de Manzana Clásica lead with 1,500 unit margin; Galletas de Avena y Pasas has the smallest gap (600).</li>
+      <li>Products with most records: Galletas de Avena y Pasas (6.790K) slightly ahead of Helado de Fresa Natural (6.755K) — indicating steady demand across the full catalogue.</li>
+    </ul>
+
+    <h3>What makes this project stand out</h3>
+    <ul>
+      <li>Delivered in the client's language (Spanish) with professional terminology throughout.</li>
+      <li>Proactively identified and clearly flagged a data quality issue (category mis-assignment) rather than simply presenting misleading charts — demonstrating analytical integrity.</li>
+      <li>5 interconnected report pages covering every business dimension: finance, time, geography, category and product.</li>
+      <li>Clean, consistent green-themed visual design across all pages.</li>
+    </ul>
+
+    <h3>Technical Details (for Data Analysts / Recruiters)</h3>
+    <ul>
+      <li><strong>Tool:</strong> Microsoft Power BI</li>
+      <li><strong>Language:</strong> Spanish (delivered in client's language)</li>
+      <li><strong>Data:</strong> Real sales data — bakery and ice cream business</li>
+      <li><strong>Report Pages:</strong> 5 (KPIs & Summary, Temporal Analysis, Store & Zone Analysis, Category Analysis, Product Analysis)</li>
+      <li><strong>Visuals used:</strong> KPI cards, donut charts, bar charts, treemap, data tables, matrix tables</li>
+      <li><strong>Notable:</strong> data quality issue independently identified and communicated to the client</li>
+    </ul>
+  </section>
+
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project11-hispana-chile-dashboard/index-en.html">⬅️ Previous Project</a>
+      <a href="../../index.html">🏠 Home</a>
+    </div>
+
+    <div class="footer">
+      📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> |
+      📱 <a href="tel:+905457750852">+90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</a><br>
+      <p>
+        <a href="https://bionluk.com/sinemalir" target="_blank" rel="noopener">Bionluk</a> |
+        <a href="https://www.fiverr.com/sinemalir" target="_blank" rel="noopener">Fiverr</a> |
+        <a href="https://www.upwork.com/freelancers/~01eaabebf1168183b1" target="_blank" rel="noopener">Upwork</a>
+      </p>
+      © 2025 Sinem Alır – All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+  </script>
+</body>
+</html>
