@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="robots"        content="index, follow">
+  <meta name="description"   content="Gerçek öğrenci projesi: pastane ve dondurma işletmesi için 5 sayfalık Power BI raporu — KPI'lar, mevsimsel trendler, mağaza performansı, ürün karlılığı ve kategori analizi.">
+  <meta name="author"        content="Sinem Alır">
+  <meta name="keywords"      content="Power BI dashboard, pastane analizi, satış raporu, ürün karlılığı, temporal analiz, öğrenci projesi, gerçek veri">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Proje 12 – Pastane & Dondurma Satış Analizi (Power BI)">
+  <meta property="og:description" content="Gerçek pastane satış verileriyle hazırlanmış 5 sayfalık Power BI raporu: KPI'lar, mevsimsel trendler, mağaza & bölge performansı, ürün karlılığı ve kategori analizi.">
+  <meta property="og:image"       content="https://sinemalir.github.io/img/project12-bakery-powerbi.png">
+  <meta property="og:url"         content="https://sinemalir.github.io/projects/project12-bakery-powerbi/index-tr.html">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Proje 12 – Pastane & Dondurma Satış Analizi (Power BI)">
+  <meta name="twitter:description" content="5 sayfalık Power BI raporu: pastane KPI'ları, mevsimsel trendler, mağaza sıralaması ve ürün marj analizi.">
+  <meta name="twitter:image"       content="https://sinemalir.github.io/img/project12-bakery-powerbi.png">
+
+  <link rel="canonical" href="https://sinemalir.github.io/projects/project12-bakery-powerbi/index-tr.html">
+
+  <title>Proje 12 – Pastane & Dondurma Satış Analizi (Power BI)</title>
+
+  <style>
+    body{margin:0;padding:0;font-family:'Segoe UI',sans-serif;background:#fefbf6;}
+    .side{position:fixed;top:0;width:250px;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.2;z-index:0;}
+    .side.left{left:0;background-image:url("../../img/side-left.jpeg");}
+    .side.right{right:0;background-image:url("../../img/side-left.jpeg");}
+
+    header{max-width:800px;margin:30px auto 20px;padding:20px;text-align:center;background:#fefbf6cc;border:3px solid #a678d3;border-radius:20px;position:relative;z-index:1111111;}
+    header h1{margin:0;font-size:2rem;color:#000;}
+
+    .menu-icon{position:absolute;left:20px;top:20px;font-size:26px;cursor:pointer;z-index:9999;}
+    .menu{position:absolute;top:60px;left:20px;width:250px;background:#a678d3;padding:15px;border-radius:10px;display:none;z-index:10000;box-shadow:0 4px 8px rgba(0,0,0,.2);}
+    .menu a{color:#fff;text-decoration:none;display:block;margin-bottom:10px;font-weight:700;}
+    .menu.show{display:block;}
+
+    .section{max-width:800px;margin:30px auto;background:#fffaf2;padding:20px;border-radius:15px;border:1px solid #a678d3;position:relative;z-index:1;}
+    .section img{width:100%;border-radius:10px;margin-bottom:24px;border:1px solid #e0d0f0;}
+    h2,h3{color:#8b2ab2;}
+    h4{color:#4d00a8;margin:8px 0 4px;}
+
+    .badge{display:inline-block;background:#8b2ab2;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+    .page-label{display:inline-block;background:#4d00a8;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:8px;}
+
+    .bottom-wrapper{position:relative;z-index:10010;background:#fefbf6;padding-bottom:60px;}
+    .navbar,.footer{text-align:center;font-size:12px;color:#888;margin:60px 0 20px;}
+    .navbar a{text-decoration:none;color:#4d00a8;font-weight:700;margin:0 10px;}
+    .footer a{color:#4d00a8;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="side left"></div>
+  <div class="side right"></div>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sinem Alır</h1>
+    <nav class="menu" id="menu">
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+      <a href="../project1-saas-dashboard/index-tr.html">1. SaaS Gelir Analizi</a>
+      <a href="../project2-user-funnel/index-tr.html">2. Kullanıcı Huni Analizi</a>
+      <a href="../project3-game-insight/index-tr.html">3. Oyun Kullanıcı Davranışı</a>
+      <a href="../project4-ga4-user-journey/index-tr.html">4. GA4 Kullanıcı Yolculuğu</a>
+      <a href="../project5-ad-campaigns/index-tr.html">5. Reklam Kampanya Performansı</a>
+      <a href="../project6-python-romi-analysis/index-tr.html">6. Python ile Facebook ROMI</a>
+      <a href="../project7-cross-platform-sql/index-tr.html">7. Çapraz Platform SQL Karşılaştırması</a>
+      <a href="../project8-sql-romi-comparison/index-tr.html">8. SQL ROMI Karşılaştırması</a>
+      <a href="../project9-akademisyennhoca-form/index-tr.html">9. AkademisyennHoca Anketi</a>
+      <a href="../project10-executive-sales-dashboard/index-tr.html">10. Yönetici Satış Strateji Dashboard</a>
+      <a href="../project11-hispana-chile-dashboard/index-tr.html">11. Hispana Chile Ltda. Dashboard</a>
+      <a href="../project12-bakery-powerbi/index-tr.html">12. Pastane & Dondurma Satış Analizi</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Proje 12 – Pastane & Dondurma Satış Analizi (Power BI)</h2>
+    <span class="badge">Fiverr Projesi — Gerçek Veri — 5 Sayfa</span>
+
+    <h3>Açıklama</h3>
+    <p>Bu 5 sayfalık Power BI raporu, bir pastane ve dondurma işletmesinin gerçek satış verileriyle hazırlanmış bir öğrenci projesi için geliştirildi. Amaç; genel performans, mevsimsel örüntüler, mağaza karşılaştırmaları, ürün karlılığı ve kategori bütünlüğünü kapsayan çok boyutlu, kapsamlı bir analizi tek bir bağlı raporda sunmaktı.</p>
+
+    <p><strong>Rapor Sayfaları:</strong></p>
+
+    <!-- Page 1 -->
+    <span class="page-label">Sayfa 1 — KPI'lar & Özet</span>
+    <img src="../../img/project12-bakery-powerbi-p5.png" alt="KPIs y Resumen">
+    <ul>
+      <li>Ana KPI'lar: <strong>Toplam Satış (304.39bn)</strong>, <strong>Kâr (138.10bn)</strong> ve <strong>Marj % (45.37)</strong> — yönetimin sonucu tek bakışta görmesini sağlar.</li>
+      <li>Ürün bazında maliyet tablosu ve tüm 15 ürün için fiyat / maliyet / marj dökümü içeren tam karşılaştırma tablosu.</li>
+      <li>Pastel de Chocolate Tradicional ve Tarta de Manzana Clásica en yüksek birim marjıyla öne çıkar (1.500); Galletas de Avena y Pasas en düşük marjlı üründür (600).</li>
+    </ul>
+
+    <!-- Page 2 -->
+    <span class="page-label">Sayfa 2 — Zamansal Analiz</span>
+    <img src="../../img/project12-bakery-powerbi-p1.png" alt="Análisis Temporal">
+    <ul>
+      <li>Sömestr bazında kayıtlar (halka grafik): 1. sömestr 100K, 2. sömestr 45K — incelemeye değer önemli bir hacim farkı.</li>
+      <li>Çeyreklik satış hacmi dört çeyrekte de son derece istikrarlı (~37.5M–38M), yıl boyunca tutarlı talebe işaret eder.</li>
+      <li>Mevsim bazında ortalama maliyet neredeyse sabit (1.095K–1.103K), mevsimden bağımsız stabil girdi maliyetlerini gösterir.</li>
+      <li>Aylık kayıtlar ve ortalama maliyet analizi: Ekim ve Ocak en yoğun işlem ayları; Şubat en yüksek ortalama maliyetli ay.</li>
+      <li>Haftanın günü analizi: Perşembe satış hacminde öne çıkar; Cumartesi en yüksek maliyet payına sahip (%14.15).</li>
+    </ul>
+
+    <!-- Page 3 -->
+    <span class="page-label">Sayfa 3 — Mağaza & Bölge Analizi</span>
+    <img src="../../img/project12-bakery-powerbi-p2.png" alt="Análisis por Tienda y Zona">
+    <ul>
+      <li>Bölge dağılımı neredeyse eşit: Sur (33.49K), Norte (33.28K) ve Centro (33.23K) — hiçbir bölge baskın değil.</li>
+      <li>Mağaza sıralaması: Helados Celestiales satış hacminde lider (10.33M), Delicias Nevadas ve Sabor y Frescura yakın takipte.</li>
+      <li>Mağaza bazında maliyet sapması: Dulce Nieve (+%1.27) ve Dulce Frío (+%1.14) en yüksek pozitif sapmayı gösterirken, Delicias Nevadas (-%0.78) ve Sabores Congelados (-%0.75) en yüksek negatif sapmayı gösterir — fiyatlandırma veya maliyet tutarsızlıklarına işaret eder.</li>
+    </ul>
+
+    <!-- Page 4 -->
+    <span class="page-label">Sayfa 4 — Kategori Analizi</span>
+    <img src="../../img/project12-bakery-powerbi-p3.png" alt="Análisis por Categoría">
+    <ul>
+      <li>Üç kategori: Bebidas (46.72K kayıt), Heladería (33.37K) ve Pastelería (19.91K).</li>
+      <li>Kategori bazında ortalama fiyat: Heladería (2.451K) Bebidas (2.001K) ve Pastelería (1.301K)'yı belirgin biçimde geçiyor.</li>
+      <li><strong>Raporda doğrudan işaretlenen kritik bulgu:</strong> tüm 15 ürünün aynı anda 3 kategoride de sınıflandırıldığı bir veri tutarsızlığı tespit edildi; bu durum kaynak veri tabanında kategori atama hatası olduğuna işaret ediyor. Müşteriye actionable bir veri kalitesi sorunu olarak açıkça iletildi.</li>
+    </ul>
+
+    <!-- Page 5 -->
+    <span class="page-label">Sayfa 5 — Ürün Analizi</span>
+    <img src="../../img/project12-bakery-powerbi-p4.png" alt="Análisis por Producto">
+    <ul>
+      <li>Ürün bazında fiyat-maliyet farkı: Pastel de Chocolate Tradicional ve Tarta de Manzana Clásica 1.500 birim marjıyla lider; Galletas de Avena y Pasas en küçük farka sahip (600).</li>
+      <li>En fazla kayıt: Galletas de Avena y Pasas (6.790K) Helado de Fresa Natural (6.755K)'ı hafif geçiyor — katalog genelinde istikrarlı talebe işaret eder.</li>
+    </ul>
+
+    <h3>Bu Projeyi Öne Çıkaran Özellikler</h3>
+    <ul>
+      <li>Müşterinin diliyle (İspanyolca) profesyonel terminoloji kullanılarak teslim edildi.</li>
+      <li>Yanıltıcı grafikler sunmak yerine veri kalitesi sorunu (hatalı kategori ataması) proaktif olarak tespit edildi ve açıkça raporlandı — analitik dürüstlüğü yansıtır.</li>
+      <li>5 bağlantılı rapor sayfası iş boyutlarının tamamını kapsar: finans, zaman, coğrafya, kategori ve ürün.</li>
+      <li>Tüm sayfalarda tutarlı, temiz yeşil temalı görsel tasarım.</li>
+    </ul>
+
+    <h3>Teknik Detaylar (Veri Analistleri / İşe Alanlar İçin)</h3>
+    <ul>
+      <li><strong>Araç:</strong> Microsoft Power BI</li>
+      <li><strong>Dil:</strong> İspanyolca (müşterinin dilinde teslim edildi)</li>
+      <li><strong>Veri:</strong> Gerçek satış verisi — pastane ve dondurma işletmesi</li>
+      <li><strong>Rapor Sayfaları:</strong> 5 (KPI'lar & Özet, Zamansal Analiz, Mağaza & Bölge Analizi, Kategori Analizi, Ürün Analizi)</li>
+      <li><strong>Kullanılan görseller:</strong> KPI kartları, halka grafikler, çubuk grafikler, treemap, veri tabloları, matris tablolar</li>
+      <li><strong>Öne çıkan:</strong> veri kalitesi sorunu bağımsız olarak tespit edildi ve müşteriye iletildi</li>
+    </ul>
+  </section>
+
+  <div class="bottom-wrapper">
+    <div class="navbar">
+      <a href="../project11-hispana-chile-dashboard/index-tr.html">⬅️ Önceki Proje</a>
+      <a href="../../index.html">🏠 Ana Sayfa</a>
+    </div>
+
+    <div class="footer">
+      📩 <a href="mailto:sinemalir@icloud.com">sinemalir@icloud.com</a> |
+      📱 <a href="tel:+905457750852">+90&nbsp;545&nbsp;775&nbsp;08&nbsp;52</a><br>
+      <p>
+        <a href="https://bionluk.com/sinemalir" target="_blank" rel="noopener">Bionluk</a> |
+        <a href="https://www.fiverr.com/sinemalir" target="_blank" rel="noopener">Fiverr</a> |
+        <a href="https://www.upwork.com/freelancers/~01eaabebf1168183b1" target="_blank" rel="noopener">Upwork</a>
+      </p>
+      © 2025 Sinem Alır – Tüm hakları saklıdır.
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+  </script>
+</body>
+</html>
